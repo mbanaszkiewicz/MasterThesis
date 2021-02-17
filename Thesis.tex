@@ -102,16 +102,16 @@
 % Therefore, when working with files in UTF-8 encoding, you need to declare the mapping as follows (just unmark to use).
 % Unfortunately, when this mapping is applied, there may be problems with syntax highlighting (see further comments). 
 %%\lstset{literate=%-
-%%{ï¿½}{{\k{a}}}1 {ï¿½}{{\'c}}1 {ï¿½}{{\k{e}}}1 {ï¿½}{{\l{}}}1 {ï¿½}{{\'n}}1 {ï¿½}{{\'o}}1 {ï¿½}{{\'s}}1 {ï¿½}{{\.z}}1 {ï¿½}{{\'z}}1 {ï¿½}{{\k{A}}}1 {ï¿½}{{\'C}}1 {ï¿½}{{\k{E}}}1 {ï¿½}{{\L{}}}1 {ï¿½}{{\'N}}1 {ï¿½}{{\'O}}1 {ï¿½}{{\'S}}1 {ï¿½}{{\.Z}}1 {ï¿½}{{\'Z}}1 
-    %%{ï¿½}{{\"O}}1
-    %%{ï¿½}{{\"A}}1
-    %%{ï¿½}{{\"U}}1
-    %%{ï¿½}{{\ss}}1
-    %%{ï¿½}{{\"u}}1
-    %%{ï¿½}{{\"a}}1
-    %%{ï¿½}{{\"o}}1
+%%{¹}{{\k{a}}}1 {æ}{{\'c}}1 {ê}{{\k{e}}}1 {³}{{\l{}}}1 {ñ}{{\'n}}1 {ó}{{\'o}}1 {œ}{{\'s}}1 {¿}{{\.z}}1 {Ÿ}{{\'z}}1 {¥}{{\k{A}}}1 {Æ}{{\'C}}1 {Ê}{{\k{E}}}1 {£}{{\L{}}}1 {Ñ}{{\'N}}1 {Ó}{{\'O}}1 {Œ}{{\'S}}1 {¯}{{\.Z}}1 {}{{\'Z}}1 
+    %%{Ö}{{\"O}}1
+    %%{Ä}{{\"A}}1
+    %%{Ü}{{\"U}}1
+    %%{ß}{{\ss}}1
+    %%{ü}{{\"u}}1
+    %%{ä}{{\"a}}1
+    %%{ö}{{\"o}}1
     %%{~}{{\textasciitilde}}1
-		%%{ï¿½}{{{\textemdash} }}1
+		%%{—}{{{\textemdash} }}1
 %%}%{\ \ }{{\ }}1}
 
 
@@ -570,7 +570,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 
 %\AtBeginDocument{% 
 %        \addto\captionspolish{% 
-%        \renewcommand{\chaptername}{Rozdziaï¿½}% 
+%        \renewcommand{\chaptername}{Rozdzia³}% 
 %}} 
 
 %\AtBeginDocument{% 
@@ -614,7 +614,7 @@ Listing \thelstlisting: #1\hfill%\hfill%
 
 \newcommand\mykeywords[1]{\hspace{\absleftindent}
        \iflanguage{polish}{
-			\textbf{Sï¿½owa kluczowe:} #1}{%
+			\textbf{S³owa kluczowe:} #1}{%
 			  \iflanguage{english}{{\textbf{Keywords:} #1}}{}}
 				}
 
@@ -730,7 +730,7 @@ SPECIALIZATION: & \@specjalnosc\\
 \end{tabular}\\[1.3cm]
 }
 {\centering
-{\fontsize{32pt}{36pt}\selectfont ENGINEERING}\\[0.5cm]
+{\fontsize{32pt}{36pt}\selectfont MASTER}\\[0.5cm]
 {\fontsize{32pt}{36pt}\selectfont THESIS}\\[2.5cm]
 }
 \vfill
@@ -762,19 +762,19 @@ SPECIALIZATION: & \@specjalnosc\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Thesis metadata 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Szablon pracy dyplomowej inï¿½ynierskiej/magisterskiej, wersja 0.5}
+\title{ Zastosowanie technik programowania wspó³bie¿nego do optymalizacji algorytmów i oprogramowania na platformie .NET}
 \titleShort{Engineering/master thesis template ...}
-\titleEN{Engineering/master thesis template, version 0.5}
-\author{MikoÅ‚aj Banaszkiewicz}
-\uczelnia{WROCÅ‚AW UNIVERSITY OF SCIENCE AND TECHNOLOGY}
+\titleEN{Application of concurrent programming techniques to optimize algorithms and software on the .NET platform}
+\author{Miko³aj Banaszkiewicz}
+\uczelnia{WROC£AW UNIVERSITY OF SCIENCE AND TECHNOLOGY}
 \wydzial{FACULTY OF ELECTRONICS}
 \kierunek{INFORMATICS}
 \specjalnosc{INTERNET ENGINEERING}
-\promotor{sci title, Name Surname, Organization}
-\date{WROCÅAW, 2021}
+\promotor{PhD, Tomasz Kubik, DoCE}
+\date{WROC£AW, 2021}
 
 % Setting the space above nonnumbered chapters and list: ToC, LoT, LoF, Index
-% Spis treï¿½ci, Spis tabel, Spis rysunkï¿½w, Indeks rzeczowy
+% Spis treœci, Spis tabel, Spis rysunków, Indeks rzeczowy
 
 %\newlength{\linespace}
 %\setlength{\linespace}{-\beforechapskip-\topskip+\headheight+\topsep}
@@ -782,7 +782,7 @@ SPECIALIZATION: & \@specjalnosc\\
 %\renewcommand\chapterheadstart{\vspace*{\linespace}}
 %}
 
-%% powyï¿½sza komenda zaï¿½atwia to, co robiï¿½ komendy poniï¿½sze dla spisï¿½w
+%% powy¿sza komenda za³atwia to, co robi¹ komendy poni¿sze dla spisów
 %\renewcommand*{\tocheadstart}{\vspace*{\linespace}}
 %\renewcommand*{\lotheadstart}{\vspace*{\linespace}}
 %\renewcommand*{\lofheadstart}{\vspace*{\linespace}}
@@ -813,14 +813,14 @@ SPECIALIZATION: & \@specjalnosc\\
 %% The information about licence given below can be safely commented out when editing the thesis (the licence covers the text with instructions on how to use the template, but not the template itself).
 \thispagestyle{empty}
 \mbox{}\vfill
-\noindent\begin{tabular}{@{}ll} Opracowaï¿½: & Tomasz Kubik \texttt{<tomasz.kubik@pwr.edu.pl>}\\
+\noindent\begin{tabular}{@{}ll} Opracowa³: & Tomasz Kubik \texttt{<tomasz.kubik@pwr.edu.pl>}\\
  Data: & luty 2021 
  \end{tabular}\\[15mm]
 \noindent\includegraphics[width=3cm]{by-nc-sa}\newline
 {\normalfont 
-Tekst zawarty w niniejszym szablonie jest udostï¿½pniany na licencji Creative Commons: \emph{Uznanie autorstwa -- Uï¿½ycie niekomercyjne -- Na tych samych warunkach, 3.0 Polska}, Wrocï¿½aw 2021. \\[2pt]
-Oznacza to, ï¿½e wszystkie przekazane treï¿½ci moï¿½na kopiowaï¿½ i  wykorzystywaï¿½ do celï¿½w niekomercyjnych, a takï¿½e tworzyï¿½ na ich podstawie utwory zaleï¿½ne pod warunkiem podania autora i~nazwy licencjodawcy oraz udzielania na utwory zaleï¿½ne takiej samej licencji. Tekst licencji jest dostï¿½pny pod adresem: \url{http://creativecommons.org/licenses/by-nc-sa/3.0/pl/}.\\[2pt]
-Podczas redakcji pracy dyplomowej stronï¿½ tï¿½ moï¿½na usunï¿½ï¿½. Licencja dotyczy bowiem zredagowanego opisu, a nie samego latexowego szablonu. Latexowy szablon moï¿½na wykorzystywaï¿½ bez wzmiankowania o jego autorze. 
+Tekst zawarty w niniejszym szablonie jest udostêpniany na licencji Creative Commons: \emph{Uznanie autorstwa -- U¿ycie niekomercyjne -- Na tych samych warunkach, 3.0 Polska}, Wroc³aw 2021. \\[2pt]
+Oznacza to, ¿e wszystkie przekazane treœci mo¿na kopiowaæ i  wykorzystywaæ do celów niekomercyjnych, a tak¿e tworzyæ na ich podstawie utwory zale¿ne pod warunkiem podania autora i~nazwy licencjodawcy oraz udzielania na utwory zale¿ne takiej samej licencji. Tekst licencji jest dostêpny pod adresem: \url{http://creativecommons.org/licenses/by-nc-sa/3.0/pl/}.\\[2pt]
+Podczas redakcji pracy dyplomowej stronê tê mo¿na usun¹æ. Licencja dotyczy bowiem zredagowanego opisu, a nie samego latexowego szablonu. Latexowy szablon mo¿na wykorzystywaæ bez wzmiankowania o jego autorze. 
 }
 \clearpage
 
