@@ -1,13 +1,13 @@
 \chapter{Overview}
 One of the most popular observations in computer science is Moore's Law.
-It was introduced in the mid-1960s when Gordon E. Moore described an empirical relationship \cite{Moore}
+It was introduced in the mid-1960s when Gordon E. Moore described an empirical relationship \cite{Moore1965}
 projecting that the number of transistors per IC (Integrated Circuit) will increase twofold every year.
 He predicted that this trend will continue for at least a decade, but remarkably enough this is still true 50 years later. 
 For most of that time CPU (Central Processing Unit) consisted of only one single processing core with performance growing through a combined increase of clock frequency speed and number of components per IC. At some point though, CPUs ran into a bottleneck,
-further clock frequency increases would come with drastically higher heat production and energy consumption. Thus it became clear that to develop CPUs which will meet ever increasing demand for computing power, new architectural designs have to be engineered.
+further clock frequency increases would come with drastically higher heat production and energy consumption. \cite{Illinois} Thus it became clear that to develop CPUs which will meet ever increasing demand for computing power, new architectural designs have to be engineered.
 \newline
 Before multi-core CPUs became commercialy available, Intel came up with a new idea of boosting performance, SMT (Simultaneous Multi-Threading) and it's implementation - Hyper-Threading. It was first included with Pentium 4 and Xeon processors in 2002. Architecturally, a processor with Hyper-Threading Technology consists of two logical processors per core, each of which has its own processor architectural state. Each logical processor can be individually halted, interrupted or directed to execute a specified thread, independently from the other logical processor sharing the same physical core.
-Unlike a traditional dual-processor configuration that uses two separate physical processors, the logical processors in a hyper-threaded core share the execution resources. Intel claimed that they would get a performance boost around 15 to 30 \% [2] compared to other non-Hyper-
+Unlike a traditional dual-processor configuration that uses two separate physical processors, the logical processors in a hyper-threaded core share the execution resources. Intel claimed that they would get a performance boost around 15 to 30 \% \cite{intel} compared to other non-Hyper-
 Threaded CPUs and only increase the size of the die with 5\%. AMD in response developed the Bulldozer architecture (released 2011), based on CMT (Cluster Multi-Threading), but it never delivered satisfactory performance increases, thus it was replaced by the SMT Zen architecture in 2017, which will be described later.
 \newline
 Soon after, in 2005, world's first dual core processors were introduced, first by AMD (Athlon 64 x2) then by Intel (Pentium D). Cores in such processors are separate physical entities and can execute instructions in a truly simultaneous way. In specific architectures cores may or may not share caches, and they may implement message passing or shared-memory inter-core communication methods. 
