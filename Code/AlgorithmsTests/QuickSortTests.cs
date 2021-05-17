@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using Algorithms;
+using Algorithms.QuickSort.Functional;
+using Algorithms.QuickSort.Imperative;
 using FluentAssertions;
 
 namespace AlgorithmsTests
