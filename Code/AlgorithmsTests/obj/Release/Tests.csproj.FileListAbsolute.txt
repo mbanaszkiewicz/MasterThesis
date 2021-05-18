@@ -75,3 +75,4 @@ C:\Users\Vithar\Desktop\Master\MasterThesis\Code\AlgorithmsTests\obj\Release\Tes
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\AlgorithmsTests\obj\Release\Tests.csproj.CopyComplete
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\AlgorithmsTests\obj\Release\AlgorithmsTests.dll
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\AlgorithmsTests\obj\Release\AlgorithmsTests.pdb
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\AlgorithmsTests\bin\Release\KMeans\winequality-red.csv

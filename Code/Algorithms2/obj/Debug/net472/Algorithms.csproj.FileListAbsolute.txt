@@ -1,0 +1,16 @@
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\KMeans\winequality-red.csv
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\Algorithms.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\Algorithms.pdb
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\System.Buffers.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\System.Collections.Immutable.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\System.Drawing.Common.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\System.Memory.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\System.Numerics.Vectors.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\bin\Debug\net472\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.csprojAssemblyReference.cache
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.AssemblyInfoInputs.cache
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.AssemblyInfo.cs
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.csproj.CopyComplete
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms2\obj\Debug\net472\Algorithms.pdb

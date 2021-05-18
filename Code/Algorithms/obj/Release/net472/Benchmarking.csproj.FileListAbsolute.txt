@@ -73,3 +73,4 @@ C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Release\net472\B
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Benchmarking.csproj.CopyComplete
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Benchmarking.exe
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Benchmarking.pdb
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\bin\Release\net472\KMeans\winequality-red.csv
