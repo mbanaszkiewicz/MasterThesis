@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {}
+    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\MasterThesis\\MasterThesis.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
+    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\MasterThesis\\MasterThesis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
-        "projectName": "Algorithms",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\MasterThesis\\MasterThesis.csproj",
+        "projectName": "MasterThesis",
+        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\MasterThesis\\MasterThesis.csproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
+        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\MasterThesis\\obj\\",
         "projectStyle": "PackageReference",
-        "crossTargeting": true,
         "configFilePaths": [
           "C:\\Users\\Vithar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net472",
           "netcoreapp3.1"
         ],
         "sources": {
@@ -29,10 +27,6 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
-          },
-          "net472": {
-            "targetAlias": "net472",
             "projectReferences": {}
           }
         },
@@ -45,16 +39,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "System.Collections.Immutable": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[5.0.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -68,20 +52,6 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
-        },
-        "net472": {
-          "targetAlias": "net472",
-          "dependencies": {
-            "System.Collections.Immutable": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[5.0.2, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
