@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net472</TargetFrameworks>
-    <StartupObject>NetFrameworkBenchmarking.Program</StartupObject>
+    <StartupObject>Net47Benchmarking.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

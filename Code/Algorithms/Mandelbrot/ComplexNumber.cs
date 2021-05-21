@@ -2,63 +2,65 @@
 
 namespace Algorithms.Mandelbrot
 {
-  public interface IComplex
+  public class ComplexNumber 
   {
-    double ImaginaryPart { get; }
-    double RealPart { get; } 
-    IComplex Create(double imaginaryPart, double realPart);
-  }
+    public float ImaginaryPart { get; }
+    public float RealPart { get; }
 
-  public class ComplexNumber : IComplex
-  {
-    public double ImaginaryPart { get; }
-    public double RealPart { get; }
-
-    public ComplexNumber(double imaginaryPart, double realPart)
+    public ComplexNumber(float imaginaryPart, float realPart)
     {
       ImaginaryPart = imaginaryPart;
       RealPart = realPart;
     }
-
-    public IComplex Create(double imaginaryPart, double realPart)
-    {
-      return new ComplexNumber(imaginaryPart, realPart);
-    }
   }
 
-  public readonly struct ComplexNumberStruct : IComplex
+  public readonly  struct ComplexNumberStruct 
   {
-    public double ImaginaryPart { get; }
-    public double RealPart { get; }
+    public float ImaginaryPart { get; }
+    public float RealPart { get; }
 
-    public ComplexNumberStruct(double imaginaryPart, double realPart)
+    public ComplexNumberStruct(float imaginaryPart, float realPart)
     {
       ImaginaryPart = imaginaryPart;
       RealPart = realPart;
-    }
-
-    public IComplex Create(double imaginaryPart, double realPart)
-    {
-      return new ComplexNumberStruct(imaginaryPart, realPart);
     }
   }
 
   public static class ComplexExtensions
   {
-    public static double Magnitude(this IComplex number)
+    public static double Magnitude(this ComplexNumber number)
       => Math.Sqrt(number.RealPart * number.RealPart * number.ImaginaryPart * number.ImaginaryPart);
 
-    public static IComplex Add(this IComplex n1, IComplex n2)
-      => n1.Create(n1.RealPart + n2.RealPart, n1.ImaginaryPart + n2.ImaginaryPart);
+    public static ComplexNumber AddTo(this ComplexNumber n1, ComplexNumber n2)
+      => new ComplexNumber(n1.RealPart + n2.RealPart, n1.ImaginaryPart + n2.ImaginaryPart);
 
-    public static IComplex Multiply(this IComplex n1, IComplex n2)
-      => n1.Create(n1.RealPart * n2.RealPart - n1.ImaginaryPart * n2.ImaginaryPart,
+    public static ComplexNumber MultiplyWith(this ComplexNumber n1, ComplexNumber n2)
+      => new ComplexNumber(n1.RealPart * n2.RealPart - n1.ImaginaryPart * n2.ImaginaryPart,
         n1.RealPart * n2.ImaginaryPart + n1.ImaginaryPart * n2.RealPart);
 
-    public static double ComputeRow(this IComplex center, int columns, int col, float width)
-      => center.RealPart - width / 2.0f + (float)col * width / (float)columns;
+    public static float ComputeRow(this ComplexNumber center, int row, float width, int columns)
+      => center.RealPart - width / 2.0f + row * width / columns;
 
-    public static double ComputeColumn(this IComplex center, int rows, int row, float height)
-      => center.ImaginaryPart - height / 2.0f + (float)row * height / (float)rows;
+    public static float ComputeColumn(this ComplexNumber center, int col, float height, int rows)
+      => center.ImaginaryPart - height / 2.0f + col * height / rows;
+  }
+
+  public static class ComplexStructExtensions
+  {
+    public static double Magnitude(this ComplexNumberStruct number)
+      => Math.Sqrt(number.RealPart * number.RealPart * number.ImaginaryPart * number.ImaginaryPart);
+
+    public static ComplexNumberStruct AddTo(this ComplexNumberStruct n1, ComplexNumberStruct n2)
+      => new ComplexNumberStruct(n1.RealPart + n2.RealPart, n1.ImaginaryPart + n2.ImaginaryPart);
+
+    public static ComplexNumberStruct MultiplyWith(this ComplexNumberStruct n1, ComplexNumberStruct n2)
+      => new ComplexNumberStruct(n1.RealPart * n2.RealPart - n1.ImaginaryPart * n2.ImaginaryPart,
+        n1.RealPart * n2.ImaginaryPart + n1.ImaginaryPart * n2.RealPart);
+
+    public static float ComputeRow(this ComplexNumberStruct center, int row, float width, int columns)
+      => center.RealPart - width / 2.0f + row * width / columns;
+
+    public static float ComputeColumn(this ComplexNumberStruct center, int col, float height, int rows)
+      => center.ImaginaryPart - height / 2.0f + col * height / rows;
   }
 }

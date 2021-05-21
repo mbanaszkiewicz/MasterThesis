@@ -6,13 +6,13 @@ using Algorithms.QuickSort.Imperative;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 
-namespace NetFrameworkBenchmarking
+namespace Net47Benchmarking
 {
   [SimpleJob(RuntimeMoniker.Net472, baseline: true)]
   [MemoryDiagnoser]
   [RPlotExporter]
   [CsvMeasurementsExporter]
-  public class NetFrameworkQuickSortBenchmark
+  public class Net47QuickSortBenchmark
   {
     private readonly SequentialImperativeQuickSort _sequentialImperativeQuickSort = new SequentialImperativeQuickSort();
     private readonly ParallelImperativeQuickSort _parallelImperativeQuickSort = new ParallelImperativeQuickSort();

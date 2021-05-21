@@ -12,3 +12,4 @@ C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Debug\net472\Alg
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Debug\net472\Algorithms.csproj.CopyComplete
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Debug\net472\Algorithms.dll
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Debug\net472\Algorithms.pdb
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Algorithms\obj\Debug\net472\Algorithms.csprojAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -7,60 +8,51 @@ namespace Algorithms.Mandelbrot
 {
   public class ParallelMandelbrot
   {
-    public Bitmap Compute(int rows, int columns, float width, float height, IComplex center)
-    {
-      var bitmap = new Bitmap(rows, columns, PixelFormat.Format24bppRgb);
-      var bitmapData = LockBitmap(bitmap);
-      var pixels = GetPixels(bitmapData, bitmap);
-      var firstPixel = bitmapData.Scan0;
-      Marshal.Copy(firstPixel, pixels, 0, pixels.Length);
+    private float Width { get; }
+    private float Height { get; }
+    private int Rows { get; }
+    private int Columns { get; }
+    private ComplexNumber Center { get; }
 
-      Parallel.For(0, columns - 1, col =>
-      {    //#A
-        for (int row = 0; row < rows; row++)
+    public ParallelMandelbrot(float width, float height, int rows, int columns, ComplexNumber center)
+    {
+      Width = width;
+      Height = height;
+      Rows = rows;
+      Columns = columns;
+      Center = center;
+    }
+
+    public Bitmap Draw()
+    {
+      return Mandelbrot.DrawMandelbrotBitmap(DrawingStrategy(), Rows, Columns);
+    }
+
+    private Action<BitmapData, byte[]> DrawingStrategy()
+      => (bitmapData, pixels) =>
+        Parallel.For(0, Columns - 1, column =>
         {
-          var x = center.ComputeRow(row, columns, width); 
-          var y = center.ComputeColumn(col, rows, height); 
-          var c = new ComplexNumber(x, y);
-          var color = IsMandelbrot(c, 100) ? Color.Black : Color.White; 
-          var offset = col * bitmapData.Stride + 3 * row;
-          WriteColorToPixels(pixels, offset, color);
-        }
-      });
+          for (var row = 0; row < Rows; row++)
+          {
+            var x = Center.ComputeRow(row, Width, Columns);
+            var y = Center.ComputeColumn(column, Height, Rows);
+            var c = new ComplexNumber(x, y);
+            var color = IsMandelbrot(c, 100) ? Color.Black : Color.White;
+            var offset = (column * bitmapData.Stride) + (3 * row);
+            pixels.WriteColors(offset, color);
+          }
+        });
 
-      Marshal.Copy(pixels, 0, firstPixel, pixels.Length);
-      UnlockBitmap(bitmap, bitmapData);
-
-      return (Bitmap)bitmap.Clone();
-    }
-
-    private static void WriteColorToPixels(byte[] pixels, int offset, Color color)
+    private static bool IsMandelbrot(ComplexNumber number, int iterations)
     {
-      pixels[offset + 0] = color.B;
-      pixels[offset + 1] = color.G;
-      pixels[offset + 2] = color.R;
-    }
-
-    private static bool IsMandelbrot(IComplex complex, int iterations)
-    {
-      IComplex z = new ComplexNumber(0.0f, 0.0f);
+      var zNumber = new ComplexNumber(0.0f, 0.0f);
       var accumulator = 0;
-      while (accumulator < iterations && z.Magnitude() < 2.0)
+      while (accumulator < iterations && zNumber.Magnitude() < 2.0)
       {
-        z = z.Multiply(z).Add(complex);
-        accumulator++;
+        zNumber = zNumber.MultiplyWith(zNumber).AddTo(number);
+        ++accumulator;
       }
-
       return accumulator == iterations;
     }
-
-    private static byte[] GetPixels(BitmapData bitmapData, Bitmap bitmap)
-      => new byte[bitmapData.Stride * bitmap.Height];
-
-    private static BitmapData LockBitmap(Bitmap bitmap)
-      => bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-
-    private static void UnlockBitmap(Bitmap bitmap, BitmapData bitmapData)
-      => bitmap.UnlockBits(bitmapData);
   }
 }
