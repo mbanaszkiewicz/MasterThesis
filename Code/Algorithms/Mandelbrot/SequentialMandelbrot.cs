@@ -30,23 +30,21 @@ namespace Algorithms.Mandelbrot
     private Action<BitmapData, byte[]> DrawingStrategy()
       => (bitmapData, pixels) =>
       {
-        for (var column = 0; column < Columns; column++) //#B
+        for (var column = 0; column < Columns; column++) 
         {
-          for (var row = 0; row < Rows; row++) //#B
+          for (var row = 0; row < Rows; row++) 
           {
-            var x = Center.ComputeRow(row, Width, Columns); //#C
-            var y = Center.ComputeColumn(column, Height, Rows); //#C
+            var x = Center.ComputeRow(row, Width, Columns); 
+            var y = Center.ComputeColumn(column, Height, Rows); 
             var c = new ComplexNumber(x, y);
-            var color = IsMandelbrot(c, 100) ? Color.Black : Color.White; //#D
+            var color = BelongsToMandelbrot(c, 100) ? Color.Black : Color.White; 
             var offset = (column * bitmapData.Stride) + (3 * row);
-            pixels[offset + 0] = color.B; // Blue component      //#E
-            pixels[offset + 1] = color.G; // Green component     //#E
-            pixels[offset + 2] = color.R; // Red component       //#E
+            pixels.WriteColors(offset, color);
           }
         }
       };
 
-    private static bool IsMandelbrot(ComplexNumber number, int iterations)
+    private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
     {
       var zNumber = new ComplexNumber(0.0f, 0.0f);
       var accumulator = 0;

@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Running;
+﻿using System.Drawing.Imaging;
+using BenchmarkDotNet.Running;
 
 namespace Benchmarking
 {
@@ -6,7 +7,9 @@ namespace Benchmarking
   {
     public static void Main(string[] args)
     {
-      BenchmarkRunner.Run(typeof(Program).Assembly);
+      var bench = new MandelbrotBenchmark();
+      bench.ParallelMandelbrot().Save("MandelbrotVis.png", ImageFormat.Png);
+      //BenchmarkRunner.Run(typeof(Program).Assembly);
     }
   }
 }

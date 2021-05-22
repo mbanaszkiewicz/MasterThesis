@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj": {}
+    "D:\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
+    "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+        "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
         "projectName": "Algorithms",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+        "projectPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
+        "outputPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -88,14 +88,14 @@
         }
       }
     },
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj": {
+    "D:\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj",
+        "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj",
         "projectName": "Net47Benchmarking",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj",
+        "projectPath": "D:\\Master\\MasterThesis\\Code\\Net47Benchmarking\\Net47Benchmarking.csproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Net47Benchmarking\\obj\\",
+        "outputPath": "D:\\Master\\MasterThesis\\Code\\Net47Benchmarking\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -113,8 +113,8 @@
           "net472": {
             "targetAlias": "net472",
             "projectReferences": {
-              "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
-                "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj"
+              "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
+                "projectPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj"
               }
             }
           }

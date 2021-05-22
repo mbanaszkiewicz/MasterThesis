@@ -22,5 +22,191 @@ PARTITION(A, p, r)
 	return i + 1
 \end{lstlisting}
 
-%\begin{lstlisting}[language={[Sharp]C}, caption={C\# exaple}, label={Script}]
-%\end{lstlisting}
+
+\clearpage
+\section{Mandelbrot}
+
+Mandelbrot set images are made by sampling complex numbers and testing for each sample point whether the orbit of the critical point z = 0 under iteration of the quadratic map remains bounded (eq.\ref{eq:Mandelbrot}) \cite{MandelbrotExplorer}. Images of the Mandelbrot set display an elaborate boundary that reveals complex structure arising from the application of simple rules. It's one of the best-known examples of mathematical visualization. It was named in the tribute of a pioneer of fractal geometry, Benoit Mandelbrot, by Adrien Douady. \cite{Douady}
+
+\begin{equation}
+\centering 
+z_n + 1 = z_n^2 + c
+\label{eq:Mandelbrot}
+\end{equation}
+
+In the following subsections 3 implementations of Mandelbrot set drawing algorithms will be presented. Each of the them is injected into bitmap generating code (Lst. \ref{lst:Bitmap}) during performance benchmarking. Example visualization made during the experiments is presented on Fig. \ref{fig:MandelbrotVis}.
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Mandelbrot bitmap generation}, label={lst:Bitmap}]
+public static Bitmap DrawMandelbrotBitmap(Action<BitmapData, byte[]> mandelbrotDrawingStrategy, int rows, int columns)
+{
+  var bitmap = new Bitmap(rows, columns, PixelFormat.Format24bppRgb);
+  var bitmapData = LockBitmap(bitmap);
+  var allPixels = new byte[bitmapData.Stride * bitmap.Height];
+  var firstPixel = bitmapData.Scan0;
+  Marshal.Copy(firstPixel, allPixels, 0, allPixels.Length);
+
+  mandelbrotDrawingStrategy(bitmapData, allPixels);
+
+  Marshal.Copy(allPixels, 0, firstPixel, allPixels.Length);
+  UnlockBitmap(bitmap, bitmapData);
+
+  return (Bitmap)bitmap.Clone();
+}
+
+private static BitmapData LockBitmap(Bitmap bitmap) 
+  => bitmap.LockBits(new Rectangle(0,
+      0,
+      bitmap.Width,
+      bitmap.Height),
+    ImageLockMode.ReadWrite,
+    PixelFormat.Format24bppRgb);
+
+private static void UnlockBitmap(Bitmap bitmap, BitmapData bitmapData) 
+  => bitmap.UnlockBits(bitmapData);
+
+\end{lstlisting}
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width = 0.5\textwidth]{figures04/MandelbrotVis.png}
+	\caption{Mandelbrot set visualization}
+	\label{fig:MandelbrotVis}
+\end{figure}
+
+\pagebreak
+\subsubsection{Sequential implementation}
+This implementation consists of two nested loops. The outer one iterates over the columns of the bitmap while the inner one iterates over its rows. 
+Pixel coordinates are translated into real and imaginary parts of a complex number by using the \emph{ComputeColumn} and \emph{ComputeRow} functions. Afterwards \emph{BelongsToMandelbrot} function checks if the number is part of the Mandelbrot set (Lst. \ref{lst:SeqMandelbrot}).
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential Mandelbrot algorithm}, label={lst:SeqMandelbrot}]
+private Action<BitmapData, byte[]> DrawingStrategy()
+  => (bitmapData, pixels) =>
+  {
+    for (var column = 0; column < Columns; column++) 
+    {
+      for (var row = 0; row < Rows; row++) 
+      {
+        var x = Center.ComputeRow(row, Width, Columns); 
+        var y = Center.ComputeColumn(column, Height, Rows); 
+        var c = new ComplexNumber(x, y);
+        var color = BelongsToMandelbrot(c, 100) ? Color.Black : Color.White; 
+        var offset = (column * bitmapData.Stride) + (3 * row);
+        pixels.WriteColors(offset, color);
+      }
+    }
+  };
+
+private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
+{
+  var zNumber = new ComplexNumber(0.0f, 0.0f);
+  var accumulator = 0;
+  while (accumulator < iterations && zNumber.Magnitude() < 2.0)
+  {
+    zNumber = zNumber.MultiplyWith(zNumber).AddTo(number);
+    ++accumulator;
+  }
+
+  return accumulator == iterations;
+}
+\end{lstlisting}
+
+\subsubsection{Parallel implementation}
+Parallel version was implemented using Fork/Join (TODO: Add reference) pattern. TPL (TODO: Add Reference) enables us to easily apply this pattern with multiple parallelization constructs, in this case the \emph{Parallel.For} replacement for sequential loops. (Lst. \ref{lst:ParMandelbrot})
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel Mandelbrot algorithm}, label={lst:ParMandelbrot}]
+private Action<BitmapData, byte[]> DrawingStrategy()
+  => (bitmapData, pixels) =>
+    Parallel.For(0, Columns - 1, column =>
+    {
+      for (var row = 0; row < Rows; row++)
+      {
+        var x = Center.ComputeRow(row, Width, Columns);
+        var y = Center.ComputeColumn(column, Height, Rows);
+        var c = new ComplexNumber(x, y);
+        var color = BelongsToMandelbrot(c, 100) ? Color.Black : Color.White;
+        var offset = (column * bitmapData.Stride) + (3 * row);
+        pixels.WriteColors(offset, color);
+      }
+    });
+
+private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
+{
+  var zNumber = new ComplexNumber(0.0f, 0.0f);
+  var accumulator = 0;
+  while (accumulator < iterations && zNumber.Magnitude() < 2.0)
+  {
+    zNumber = zNumber.MultiplyWith(zNumber).AddTo(number);
+    ++accumulator;
+  }
+  return accumulator == iterations;
+}
+\end{lstlisting}
+
+\subsubsection{Double parallel implementation}
+This version replaced both sequential loops with TPL's \emph{Parallel.For} construct. It will be useful to examine how oversaturation impacts the algorithm performance (Lst. \ref{lst:DoubleParMandelbrot})
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Double parallel Mandelbrot algorithm}, label={lst:DoubleParMandelbrot}]
+private Action<BitmapData, byte[]> DrawingStrategy()
+  => (bitmapData, pixels) =>
+    Parallel.For(0, Columns - 1, column =>
+    {
+      Parallel.For(0, Rows - 1, row =>
+      {
+        var x = Center.ComputeRow(row, Width, Columns);
+        var y = Center.ComputeColumn(column, Height, Rows);
+        var c = new ComplexNumber(x, y);
+        var color = BelongsToMandelbrot(c, 100) ? Color.Black : Color.White;
+        var offset = (column * bitmapData.Stride) + (3 * row);
+        pixels.WriteColors(offset, color);
+      });
+    });
+
+private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
+{
+  var zNumber = new ComplexNumber(0.0f, 0.0f);
+  var accumulator = 0;
+  while (accumulator < iterations && zNumber.Magnitude() < 2.0)
+  {
+    zNumber = zNumber.MultiplyWith(zNumber).AddTo(number);
+    ++accumulator;
+  }
+  return accumulator == iterations;
+}
+\end{lstlisting}
+
+\subsubsection{Parallel implementation using value types}
+
+In some cases .NET's Garbage Collector can be the bottleneck of the application. Reference type objects are allocated on the heap and are very cheap to use as a function argument since only the pointer is copied. These objects though have a memory overhead and may heavily tax the GC which will stop the execution of the program until cleanup is done. Contrary to that, value type objects are allocated on the stack and will never cause GC to pause the program. This version uses \emph{ComplexNumberStruct} objects which are identical to previous versions except they are value type instead of reference type.  (Lst. \ref{lst:ParStructMandelbrot})
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel Mandelbrot algorithm using value types}, label={lst:ParStructMandelbrot}]
+
+private Action<BitmapData, byte[]> DrawingStrategy()
+  => (bitmapData, pixels) =>
+    Parallel.For(0, Columns - 1, column =>
+    {
+      for (var row = 0; row < Rows; row++)
+      {
+        var x = Center.ComputeRow(row, Width, Columns);
+        var y = Center.ComputeColumn(column, Height, Rows);
+        var c = new ComplexNumberStruct(x, y);
+        var color = BelongsToMandelbrot(c, 100) ? Color.Black : Color.White;
+        var offset = (column * bitmapData.Stride) + (3 * row);
+        pixels.WriteColors(offset, color);
+      }
+    });
+
+
+private static bool BelongsToMandelbrot(ComplexNumberStruct number, int iterations)
+{
+  var zNumber = new ComplexNumberStruct(0.0f, 0.0f);
+  var accumulator = 0;
+  while (accumulator < iterations && zNumber.Magnitude() < 2.0)
+  {
+    zNumber = zNumber.MultiplyWith(zNumber).AddTo(number);
+    ++accumulator;
+  }
+  return accumulator == iterations;
+}
+
+\end{lstlisting}
+

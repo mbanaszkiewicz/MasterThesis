@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {}
+    "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {
+    "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
+        "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
         "projectName": "NugetDownloader",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
+        "projectPath": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\obj\\",
+        "outputPath": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -73,7 +73,7 @@
             },
             "FSharp.Core": {
               "target": "Package",
-              "version": "[5.0.0, )",
+              "version": "[4.3.4, )",
               "generatePathProperty": true
             },
             "FSharp.Data": {

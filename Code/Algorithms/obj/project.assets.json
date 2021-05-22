@@ -412,11 +412,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+      "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
       "projectName": "Algorithms",
-      "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+      "projectPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
       "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
+      "outputPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [

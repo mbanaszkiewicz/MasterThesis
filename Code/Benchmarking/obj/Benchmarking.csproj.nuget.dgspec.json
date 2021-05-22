@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj": {}
+    "D:\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
+    "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+        "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
         "projectName": "Algorithms",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
+        "projectPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
+        "outputPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -88,14 +88,14 @@
         }
       }
     },
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj": {
+    "D:\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj",
+        "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj",
         "projectName": "Benchmarking",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj",
+        "projectPath": "D:\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Benchmarking\\obj\\",
+        "outputPath": "D:\\Master\\MasterThesis\\Code\\Benchmarking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vithar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -112,11 +112,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
-                "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj"
+              "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj": {
+                "projectPath": "D:\\Master\\MasterThesis\\Code\\Algorithms\\Algorithms.csproj"
               },
-              "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {
-                "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj"
+              "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {
+                "projectPath": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj"
               }
             }
           }
@@ -430,14 +430,14 @@
         }
       }
     },
-    "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {
+    "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
+        "projectUniqueName": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
         "projectName": "NugetDownloader",
-        "projectPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
+        "projectPath": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
         "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vithar\\Desktop\\Master\\MasterThesis\\Code\\NugetDownloader\\obj\\",
+        "outputPath": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -499,7 +499,7 @@
             },
             "FSharp.Core": {
               "target": "Package",
-              "version": "[5.0.0, )",
+              "version": "[4.3.4, )",
               "generatePathProperty": true
             },
             "FSharp.Data": {
