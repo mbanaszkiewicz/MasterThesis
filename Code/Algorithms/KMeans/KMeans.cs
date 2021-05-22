@@ -1,11 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Algorithms.KMeans
 {
   public static class KMeans
   {
-    public static double[][] Run(ICentroidsStrategy strategy, double[][] initialCentroids)
+    public static double[][] LoadDataSet()
+    {
+      var lines = File.ReadAllLines("KMeans\\winequality-red.csv").Skip(1).Select(a => a.Split(';'));
+      var csv = from line in lines
+        select (from piece in line
+          select double.Parse(piece));
+
+     return csv.Select(x => x.ToArray()).ToArray();
+    }
+
+    public static IEnumerable<double[]> GetRandomCentroid(double[][] dataset, int seed, int n)
+    {
+      var random = new Random(seed);
+
+      return Enumerable
+        .Range(0, n)
+        .Select(x => dataset[random.Next(dataset.Length)]);
+    }
+    public static double[][] ComputeCentroids(ICentroidsStrategy strategy, double[][] initialCentroids)
     {
       var centroids = initialCentroids;
 

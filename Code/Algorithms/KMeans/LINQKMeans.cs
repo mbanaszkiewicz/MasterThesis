@@ -28,13 +28,20 @@ namespace Algorithms.KMeans
           .ToArray();
 
 
-      Array.Sort(result, (a, b) => {
+      SortCentroids(result);
+
+      return result;
+    }
+
+    private void SortCentroids(double[][] result)
+    {
+      Array.Sort(result, (a, b) =>
+      {
         for (var i = 0; i < N; i++)
           if (a[i] != b[i])
             return a[i].CompareTo(b[i]);
         return 0;
       });
-      return result;
     }
   }
 }
