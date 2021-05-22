@@ -1,47 +1,35 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
+using DataSet = System.Collections.Immutable.ImmutableList<System.Collections.Immutable.ImmutableList<double>>;
 
 namespace Algorithms.KMeans
 {
-  public class LINQKMeans : ICentroidsStrategy
+  public class LINQKMeans
   {
-    private int N { get; }
-    private double[][] Source { get; }
+    private int RowLength { get; }
+    private DataSet Source { get; }
 
-    public LINQKMeans(double[][] source)
+    public LINQKMeans(DataSet source)
     {
       Source = source;
-      N = source[0].Length;
+      RowLength = source[0].Count;
     }
 
-    public double[][] UpdateCentroids(double[][] centroids)
-    {
-      var result =
+    public DataSet ComputeCentroids(DataSet initialCentroids)
+      => KMeans.ComputeCentroids(UpdateCentroids(), initialCentroids, RowLength);
+
+    private Func<DataSet, DataSet> UpdateCentroids()
+      => centroids =>
         Source
-          .GroupBy(u => KMeans.GetNearestCentroid(centroids, u))
-          .Select(points =>
-            points
-              .Aggregate(new double[N], //#D
-                (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
-              .Select(items => items / points.Count())
-              .ToArray())
-          .ToArray();
+          .GroupBy(row => KMeans.GetNearestCentroid(centroids, row))
+          .Select(CalculateCenter)
+          .ToImmutableList();
 
-
-      SortCentroids(result);
-
-      return result;
-    }
-
-    private void SortCentroids(double[][] result)
-    {
-      Array.Sort(result, (a, b) =>
-      {
-        for (var i = 0; i < N; i++)
-          if (a[i] != b[i])
-            return a[i].CompareTo(b[i]);
-        return 0;
-      });
-    }
+    private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, ImmutableList<double>> points) 
+      => points
+        .Aggregate(new double[RowLength], (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
+        .Select(items => items / points.Count())
+        .ToImmutableList();
   }
 }

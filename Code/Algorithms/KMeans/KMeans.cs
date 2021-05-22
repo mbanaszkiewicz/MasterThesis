@@ -1,66 +1,88 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using DataSet = System.Collections.Immutable.ImmutableList<System.Collections.Immutable.ImmutableList<double>>;
 
 namespace Algorithms.KMeans
 {
   public static class KMeans
   {
-    public static double[][] LoadDataSet()
+    public static DataSet LoadDataSet()
     {
       var lines = File.ReadAllLines("KMeans\\winequality-red.csv").Skip(1).Select(a => a.Split(';'));
+
       var csv = from line in lines
         select (from piece in line
           select double.Parse(piece));
 
-     return csv.Select(x => x.ToArray()).ToArray();
+      return csv.Select(x => x.ToImmutableList()).ToImmutableList();
     }
 
-    public static IEnumerable<double[]> GetRandomCentroid(double[][] dataset, int seed, int n)
+    public static DataSet GetRandomCentroids(DataSet dataSet, int seed, int n)
     {
       var random = new Random(seed);
 
       return Enumerable
         .Range(0, n)
-        .Select(x => dataset[random.Next(dataset.Length)]);
+        .Select(x => dataSet[random.Next(dataSet.Count)].ToImmutableList())
+        .ToImmutableList();
     }
-    public static double[][] ComputeCentroids(ICentroidsStrategy strategy, double[][] initialCentroids)
-    {
-      var centroids = initialCentroids;
 
-      for (int i = 0; i <= 1000; i++)
+    public static DataSet ComputeCentroids(Func<DataSet, DataSet> updateCentroids, DataSet centroids,
+      int rowLength)
+    {
+      for (var i = 0; i <= 1000; i++)
       {
-        var newCentroids = strategy.UpdateCentroids(centroids);
-        var error = double.MaxValue;
-        if (centroids.Length == newCentroids.Length)
+        var (newCentroids, error) = GetNewCentroidsAndError(updateCentroids, rowLength, centroids);
+
+        if (error < 1e-9)
         {
-          error = 0;
-          for (var j = 0; j < centroids.Length; j++)
-            error += Dist(centroids[j], newCentroids[j]);
-        }
-        if (error < 1e-8)
-        {
+          Console.WriteLine("Iteration" + i);
           return newCentroids;
         }
+          
+        
         centroids = newCentroids;
       }
+      Console.WriteLine("Iteration" + 1000);
       return centroids;
     }
 
-    public static double[] GetNearestCentroid(double[][] centroids, double[] center)
+    private static (DataSet, double) GetNewCentroidsAndError(Func<DataSet, DataSet> updateCentroids, int rowLength, DataSet centroids)
     {
-      return centroids.Aggregate((centroid1, centroid2) => //#A
-        Dist(center, centroid2) < Dist(center, centroid1)
-          ? centroid2
-          : centroid1);
+      var newCentroids = updateCentroids(centroids).SortCentroids(rowLength);
+      var error = double.MaxValue;
+
+      if (centroids.Count == newCentroids.Count)
+        error = centroids.Select((t, j) => DistanceTo(t, newCentroids[j])).Sum();
+
+      return (newCentroids, error);
     }
 
-    private static double Dist(double[] u, double[] v)
+
+    private static DataSet SortCentroids(this DataSet result, int RowLength)
+      => result.Sort((a, b) =>
+      {
+        for (var i = 0; i < RowLength; i++)
+          if (a[i] != b[i])
+            return a[i].CompareTo(b[i]);
+        return 0;
+      });
+
+
+    public static ImmutableList<double> GetNearestCentroid(DataSet centroids, ImmutableList<double> center) 
+      => centroids.Aggregate((centroid1, centroid2) => 
+        centroid2.DistanceTo(center) < centroid1.DistanceTo(center)
+          ? centroid2
+          : centroid1);
+
+    private static double DistanceTo(this ImmutableList<double> @from, ImmutableList<double> to)
     {
-      double results = 0.0;
-      for (var i = 0; i < u.Length; i++)
-        results += Math.Pow(u[i] - v[i], 2.0);
+      var results = 0.0;
+      for (var i = 0; i < @from.Count; i++)
+        results += Math.Pow(@from[i] - to[i], 2.0);
       return results;
     }
   }

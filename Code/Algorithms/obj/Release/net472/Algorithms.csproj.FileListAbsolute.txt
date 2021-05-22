@@ -28,3 +28,4 @@ D:\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Algorithms.csproj.Core
 D:\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Algorithms.csproj.CopyComplete
 D:\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Algorithms.dll
 D:\Master\MasterThesis\Code\Algorithms\obj\Release\net472\Algorithms.pdb
+D:\Master\MasterThesis\Code\Algorithms\bin\Release\net472\KMeans\winequality-red.csv

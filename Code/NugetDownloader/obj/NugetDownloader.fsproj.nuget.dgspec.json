@@ -73,7 +73,7 @@
             },
             "FSharp.Core": {
               "target": "Package",
-              "version": "[4.3.4, )",
+              "version": "[5.0.0, )",
               "generatePathProperty": true
             },
             "FSharp.Data": {

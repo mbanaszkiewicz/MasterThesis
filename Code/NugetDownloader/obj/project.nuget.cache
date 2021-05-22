@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HQ4CpHGj/Ra8hK7w0NwXq3r3TjzztMcbfjLI+Y5WtXmgnhzd1/XR/z4fX7J5jXsUkHJwwfYexJGgMqdF5SMtwg==",
+  "dgSpecHash": "2S/CwyitqDem3DEABWt4gEVTEV+CgvYF269QSu6nzhzFD4GAif1g6zrWZWLQkPMKDgt+EWNFBfUbOOmiTG9C3w==",
   "success": true,
   "projectFilePath": "D:\\Master\\MasterThesis\\Code\\NugetDownloader\\NugetDownloader.fsproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\Vithar\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.charting\\2.1.0\\fsharp.charting.2.1.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.collections.parallelseq\\1.0.2\\fsharp.collections.parallelseq.1.0.2.nupkg.sha512",
-    "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.core\\4.3.4\\fsharp.core.4.3.4.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.data\\2.3.2\\fsharp.data.2.3.2.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fspickler\\5.3.2\\fspickler.5.3.2.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

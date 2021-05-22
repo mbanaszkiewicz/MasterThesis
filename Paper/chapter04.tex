@@ -24,6 +24,146 @@ PARTITION(A, p, r)
 
 
 \clearpage
+\section{K-means clustering}
+k-means, otherwise commonly know as Lloyd's algorithm, is an unsupervised machine learning algorithm which is used to process a data set into clusters.
+They represent a geometric shape with a mass center, a centroid.
+Each of the clusters has its own centroid which is the sum of points divided by number of total points. 
+
+The algorithm is an iterative process which repeats until it reaches a convergence point or exceeds the limit (sometimes it does not converge).
+Each of the iterations updates the centroids to produce better clusters.
+The iteration involves these steps:
+\begin{enumerate}
+	\item Sum up points in each cluster.
+	\item Divide each sum by the number of points in respective cluster.
+	\item Reassign all points to a closest centroid, distance is calculated through Euclidean distance function.
+	\item Repeat until locations stabilize.
+\end{enumerate}
+
+In the following subsections 3 implementations of centroid recalculation algorithm will be presented. Each of the them is injected into k-means algorithm (Lst. \ref{lst:KMeans}) during performance benchmarking.
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={K-means centroid computation}, label={lst:KMeans}]
+//For clarity
+using DataSet = System.Collections.Immutable.ImmutableList<System.Collections.Immutable.ImmutableList<double>>;
+
+public static DataSet ComputeCentroids(Func<DataSet, DataSet> updateCentroids, DataSet centroids,
+  int rowLength)
+{
+  for (var i = 0; i <= 1000; i++)
+  {
+    var (newCentroids, error) = GetNewCentroidsAndError(updateCentroids, rowLength, centroids);
+
+    if (error < 1e-9)
+      return newCentroids;
+    
+    centroids = newCentroids;
+  }
+
+  return centroids;
+}
+
+private static (DataSet, double) GetNewCentroidsAndError(Func<DataSet, DataSet> updateCentroids, int rowLength, DataSet centroids)
+{
+  var newCentroids = updateCentroids(centroids).SortCentroids(rowLength);
+  var error = double.MaxValue;
+
+  if (centroids.Count == newCentroids.Count)
+    error = centroids.Select((t, j) => DistanceTo(t, newCentroids[j])).Sum();
+
+  return (newCentroids, error);
+}
+
+
+private static DataSet SortCentroids(this DataSet result, int RowLength)
+  => result.Sort((a, b) =>
+  {
+    for (var i = 0; i < RowLength; i++)
+      if (a[i] != b[i])
+        return a[i].CompareTo(b[i]);
+    return 0;
+  });
+
+
+public static ImmutableList<double> GetNearestCentroid(DataSet centroids, ImmutableList<double> center) 
+  => centroids.Aggregate((centroid1, centroid2) => 
+    centroid2.DistanceTo(center) < centroid1.DistanceTo(center)
+      ? centroid2
+      : centroid1);
+
+private static double DistanceTo(this ImmutableList<double> @from, ImmutableList<double> to)
+{
+  var results = 0.0;
+  for (var i = 0; i < @from.Count; i++)
+    results += Math.Pow(@from[i] - to[i], 2.0);
+  return results;
+
+}
+\end{lstlisting}
+
+\subsubsection{Sequential implementation}
+
+\emph{UpdateCentroids} evaluates each cluster and reassigns centroids to newly calculated centers in two steps. In the first one \emph{GroupBy} function is used to aggregate the points using the \emph{GetNearestCentroid} function as a key. In the next one, each point grouping is used to calculate new centers for each given point. This step is achieved via local accumulator in \emph{Aggregate} function and collection combining in \emph{Zip} function which threads centroids and accumulator sequences. Finally, each center is determined through dividing with number of points in the cluster (Lst. \ref{lst:SeqKMeans}).
+
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential k-means algorithm}, label={lst:SeqKMeans}]
+private Func<DataSet, DataSet> UpdateCentroids()
+  => centroids =>
+    Source
+      .GroupBy(row => KMeans.GetNearestCentroid(centroids, row))
+      .Select(CalculateCenter)
+      .ToImmutableList();
+
+private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, ImmutableList<double>> points) 
+  => points
+    .Aggregate(new double[RowLength], (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
+    .Select(items => items / points.Count())
+    .ToImmutableList();
+\end{lstlisting}
+
+\subsubsection{Parallel implementation}
+
+This  implementation uses PLINQ (TODO: Add reference) which easily transforms sequential LINQ query into a parallel one with 2 lines of code.
+This was enabled by using \emph{Aggregate}, LINQ's equivalent of functional sequence transforming function: \emph{Seq.Fold}. Force parallelism execution mode is used to make sure that PLINQ internal mechanism won't transform the query into a sequential one.
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel k-means algorithm}, label={lst:ParKMeans}]
+private Func<DataSet, DataSet> UpdateCentroids()
+  => centroids =>
+    Source
+      .AsParallel()
+      .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+      .GroupBy(u => KMeans.GetNearestCentroid(centroids, u))
+      .Select(CalculateCenter)
+      .ToImmutableList();
+
+private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, ImmutableList<double>> points)
+  => points
+    .Aggregate(new double[RowLength], (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
+    .Select(items => items / points.Count())
+    .ToImmutableList();
+\end{lstlisting}
+
+\subsubsection{Parallel implementation with data partitioner}
+
+To further boost the parallel implementation, data partitioner was used to load balance the data between threads (TODO: Add reference) (Lst. \ref{lst:PartParKMeans}). 
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel k-means algorithm with partitioner}, label={lst:PartParKMeans}]
+private Func<DataSet, DataSet> UpdateCentroids()
+  => centroids 
+    => Partitioner
+    .Create(Source, loadalBalance: true)
+    .AsParallel()
+    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+    .GroupBy(u => KMeans.GetNearestCentroid(centroids, u))
+    .Select(CalculateCenter)
+    .ToImmutableList();
+
+private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, ImmutableList<double>> points) 
+  => points
+    .Aggregate(new double[RowLength], (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
+    .Select(items => items / points.Count())
+    .ToImmutableList();
+\end{lstlisting}
+
+\clearpage
 \section{Mandelbrot}
 
 Mandelbrot set images are made by sampling complex numbers and testing for each sample point whether the orbit of the critical point z = 0 under iteration of the quadratic map remains bounded (eq.\ref{eq:Mandelbrot}) \cite{MandelbrotExplorer}. Images of the Mandelbrot set display an elaborate boundary that reveals complex structure arising from the application of simple rules. It's one of the best-known examples of mathematical visualization. It was named in the tribute of a pioneer of fractal geometry, Benoit Mandelbrot, by Adrien Douady. \cite{Douady}
