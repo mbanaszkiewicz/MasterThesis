@@ -41,7 +41,7 @@ The iteration involves these steps:
 
 In the following subsections 3 implementations of centroid recalculation algorithm will be presented. Each of the them is injected into k-means algorithm (Lst. \ref{lst:KMeans}) during performance benchmarking.
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={K-means centroid computation}, label={lst:KMeans}]
+\begin{lstlisting}[style=sharpcstyle, caption={K-means centroid computation}, label={lst:KMeans}]
 //For clarity
 using DataSet = System.Collections.Immutable.ImmutableList<System.Collections.Immutable.ImmutableList<double>>;
 
@@ -104,7 +104,7 @@ private static double DistanceTo(this ImmutableList<double> @from, ImmutableList
 \emph{UpdateCentroids} evaluates each cluster and reassigns centroids to newly calculated centers in two steps. In the first one \emph{GroupBy} function is used to aggregate the points using the \emph{GetNearestCentroid} function as a key. In the next one, each point grouping is used to calculate new centers for each given point. This step is achieved via local accumulator in \emph{Aggregate} function and collection combining in \emph{Zip} function which threads centroids and accumulator sequences. Finally, each center is determined through dividing with number of points in the cluster (Lst. \ref{lst:SeqKMeans}).
 
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential k-means algorithm}, label={lst:SeqKMeans}]
+\begin{lstlisting}[style=sharpcstyle, caption={Sequential k-means algorithm}, label={lst:SeqKMeans}]
 private Func<DataSet, DataSet> UpdateCentroids()
   => centroids =>
     Source
@@ -124,7 +124,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 This  implementation uses PLINQ (TODO: Add reference) which easily transforms sequential LINQ query into a parallel one with 2 lines of code.
 This was enabled by using \emph{Aggregate}, LINQ's equivalent of functional sequence transforming function: \emph{Seq.Fold}. Force parallelism execution mode is used to make sure that PLINQ internal mechanism won't transform the query into a sequential one.
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel k-means algorithm}, label={lst:ParKMeans}]
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel k-means algorithm}, label={lst:ParKMeans}]
 private Func<DataSet, DataSet> UpdateCentroids()
   => centroids =>
     Source
@@ -145,7 +145,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 
 To further boost the parallel implementation, data partitioner was used to load balance the data between threads (TODO: Add reference) (Lst. \ref{lst:PartParKMeans}). 
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel k-means algorithm with partitioner}, label={lst:PartParKMeans}]
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel k-means algorithm with partitioner}, label={lst:PartParKMeans}]
 private Func<DataSet, DataSet> UpdateCentroids()
   => centroids 
     => Partitioner
@@ -176,7 +176,7 @@ z_n + 1 = z_n^2 + c
 
 In the following subsections 3 implementations of Mandelbrot set drawing algorithms will be presented. Each of the them is injected into bitmap generating code (Lst. \ref{lst:Bitmap}) during performance benchmarking. Example visualization made during the experiments is presented on Fig. \ref{fig:MandelbrotVis}.
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Mandelbrot bitmap generation}, label={lst:Bitmap}]
+\begin{lstlisting}[style=sharpcstyle, caption={Mandelbrot bitmap generation}, label={lst:Bitmap}]
 public static Bitmap DrawMandelbrotBitmap(Action<BitmapData, byte[]> mandelbrotDrawingStrategy, int rows, int columns)
 {
   var bitmap = new Bitmap(rows, columns, PixelFormat.Format24bppRgb);
@@ -218,7 +218,7 @@ private static void UnlockBitmap(Bitmap bitmap, BitmapData bitmapData)
 This implementation consists of two nested loops. The outer one iterates over the columns of the bitmap while the inner one iterates over its rows. 
 Pixel coordinates are translated into real and imaginary parts of a complex number by using the \emph{ComputeColumn} and \emph{ComputeRow} functions. Afterwards \emph{BelongsToMandelbrot} function checks if the number is part of the Mandelbrot set (Lst. \ref{lst:SeqMandelbrot}).
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential Mandelbrot algorithm}, label={lst:SeqMandelbrot}]
+\begin{lstlisting}[style=sharpcstyle, caption={Sequential Mandelbrot algorithm}, label={lst:SeqMandelbrot}]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
   {
@@ -253,7 +253,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \subsubsection{Parallel implementation}
 Parallel version was implemented using Fork/Join (TODO: Add reference) pattern. TPL (TODO: Add Reference) enables us to easily apply this pattern with multiple parallelization constructs, in this case the \emph{Parallel.For} replacement for sequential loops. (Lst. \ref{lst:ParMandelbrot})
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel Mandelbrot algorithm}, label={lst:ParMandelbrot}]
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel Mandelbrot algorithm}, label={lst:ParMandelbrot}]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
     Parallel.For(0, Columns - 1, column =>
@@ -285,7 +285,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \subsubsection{Double parallel implementation}
 This version replaced both sequential loops with TPL's \emph{Parallel.For} construct. It will be useful to examine how oversaturation impacts the algorithm performance (Lst. \ref{lst:DoubleParMandelbrot})
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Double parallel Mandelbrot algorithm}, label={lst:DoubleParMandelbrot}]
+\begin{lstlisting}[style=sharpcstyle, caption={Double parallel Mandelbrot algorithm}, label={lst:DoubleParMandelbrot}]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
     Parallel.For(0, Columns - 1, column =>
@@ -318,8 +318,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 
 In some cases .NET's Garbage Collector can be the bottleneck of the application. Reference type objects are allocated on the heap and are very cheap to use as a function argument since only the pointer is copied. These objects though have a memory overhead and may heavily tax the GC which will stop the execution of the program until cleanup is done. Contrary to that, value type objects are allocated on the stack and will never cause GC to pause the program. This version uses \emph{ComplexNumberStruct} objects which are identical to previous versions except they are value type instead of reference type.  (Lst. \ref{lst:ParStructMandelbrot})
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel Mandelbrot algorithm using value types}, label={lst:ParStructMandelbrot}]
-
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel Mandelbrot algorithm using value types}, label={lst:ParStructMandelbrot}]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
     Parallel.For(0, Columns - 1, column =>

@@ -13,7 +13,7 @@ Sequential version of the algorithm had a MET  $\approx 5.6s$ . Parallel counter
     \begin{tabular}{p{3cm}p{3cm}}
 			\toprule
 			\bfseries Name 	&
-			\bfseries Value &
+			\bfseries Value \\
 			\midrule
 			Width & 2.5 \\
 			Height & 2.5 \\
@@ -23,39 +23,40 @@ Sequential version of the algorithm had a MET  $\approx 5.6s$ . Parallel counter
     \end{tabular}
 \end{table}
 
-\begin{figure}[!ht]
+\begin{figure}[htb]
 \centering
-\begin{tikzpicture}
-\begin{axis}[ symbolic x coords={
-			Sequential, 
-			Parallel, 
-			DoubleParallel, 
-			ValueTypeParallel, 
-			DUMMY},
-    xtick=data, 
-		ylabel=Seconds,
-    ybar interval=.7,
-    enlargelimits=0.05]
-    \addplot  coordinates {
-      (Sequential, 5.576)
-      (Parallel, 2.120)
-      (DoubleParallel, 2.684)
-      (ValueTypeParallel,1.903)
-      (DUMMY, 0)
-    };
-     \legend{Mean estimated time}
-\end{axis}
-\end{tikzpicture}
+\includegraphics[width=.8\linewidth]{figures04/Fig41.pdf}
+%%\begin{tikzpicture}
+%%\begin{axis}[ symbolic x coords={
+			%%Sequential, 
+			%%Parallel, 
+			%%DoubleParallel, 
+			%%ValueTypeParallel, 
+			%%DUMMY},
+    %%xtick=data, 
+		%%ylabel=Seconds,
+    %%ybar interval=.7,
+    %%enlargelimits=0.05]
+    %%\addplot  coordinates {
+      %%(Sequential, 5.576)
+      %%(Parallel, 2.120)
+      %%(DoubleParallel, 2.684)
+      %%(ValueTypeParallel,1.903)
+      %%(DUMMY, 0)
+    %%};
+     %%\legend{Mean estimated time}
+%%\end{axis}
+%%\end{tikzpicture}
 \caption{Mandelbrot algorithm performance}
 \label{fig: MandelbrotPerformance}
 \end{figure}
 
-\begin{sidewaystable}[!ht]
+
+\begin{table}[ht]%\small
     \centering
     \caption{Mandelbrot benchmarking results}
 		\label{tab: MandelbrotBenchmarking}
-    \begin{tabular}{lp{3cm}p{1.5cm}p{1.5cm}p{2cm}p{2cm}p{2cm}p{2cm}}
-			\toprule
+    \begin{tabularx}{\linewidth}{Xrrrrrrr} \toprule
 			\bfseries Version 	&
 			\bfseries Mean    	&
 			\bfseries Error	    &
@@ -63,15 +64,14 @@ Sequential version of the algorithm had a MET  $\approx 5.6s$ . Parallel counter
 			\bfseries Gen 0	    &
 			\bfseries Gen 1	    &
 			\bfseries Gen 2	    &
-			\bfseries Allocated &
-			\midrule 
+			\bfseries Allocated \\ \midrule
 			Sequential & 5.576 s & 0.0564 s & 0.0528 s & 2483000 & 1000 & 1000 & 19851 MB \\ 
 			Parallel & 2.120 s & 0.0458 s & 0.1350 s & 2485000 & 6000 & 1000 & 19843 MB \\ 
 			DoubleParallel & 2.684 s & 0.0553 s & 0.1632 s & 2487000 & 39000 & 2000 & 19852 MB \\ 
 			ValueTypeParallel & 1.903 s & 0.0137 s & 0.0128 s & 0 & 0 & 0 & 46 MB \\ 
 			\bottomrule
-    \end{tabular}
-\end{sidewaystable}
+	\end{tabularx}
+\end{table}
 
 \clearpage
 \section{K-means clustering}
@@ -127,12 +127,11 @@ K-means clustering algorithm experiments were conducted using \emph{White wine q
 \label{fig: KMeansMemory}
 \end{figure}
 
-\begin{sidewaystable}[!ht]
+\begin{table}[ht]%\small
     \centering
     \caption{K-means clustering benchmarking results}
 		\label{tab: KMeansBenchmarking}
-    \begin{tabular}{lp{3cm}p{1.5cm}p{1.5cm}p{2cm}p{2cm}p{2cm}p{2cm}}
-			\toprule
+    \begin{tabularx}{\linewidth}{Xrrrrrrr} \toprule
 			\bfseries Version 	&
 			\bfseries Mean    	&
 			\bfseries Error	    &
@@ -140,11 +139,11 @@ K-means clustering algorithm experiments were conducted using \emph{White wine q
 			\bfseries Gen 0	    &
 			\bfseries Gen 1	    &
 			\bfseries Gen 2	    &
-			\bfseries Allocated &
+			\bfseries Allocated \\ 
 			\midrule 
 Sequential & 2,453.7 ms	& 25.01ms	& 20.89ms	& 18000 & 	2000 & 	0 & 151 MB \\
 Parallel & 509.6 ms	& 8.28 ms	& 8.50 ms	& 23000 & 	9000 & 	0 & 183 MB \\ 
 PartitionerParallel & 434.5 ms	& 2.69 ms	& 2.52 ms	& 23000 & 	8000 & 	0 & 184 MB \\
 			\bottomrule
-    \end{tabular}
-\end{sidewaystable}
+    \end{tabularx}
+\end{table}

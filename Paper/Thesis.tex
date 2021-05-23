@@ -281,6 +281,8 @@ captionpos=t
 \definecolor{smagenta}{RGB}{211,54,130}
 
 
+
+\newcommand\symbolstyle{\color{black}}
 \newcommand\digitstyle{\color{smagenta}}
 \makeatletter
 \newcommand{\ProcessDigit}[1]
@@ -311,50 +313,59 @@ framexbottommargin=4pt,
 morecomment=[l]{//}, %use comment-line-style!
 morecomment=[s]{/*}{*/}, %for multiline comments
 showstringspaces=false, 
-morekeywords={  abstract, event, new, struct,
-                as, explicit, null, switch,
-                base, extern, object, this,
-                bool, false, operator, throw,
-                break, finally, out, true,
-                byte, fixed, override, try,
-                case, float, params, typeof,
-                catch, for, private, uint,
-                char, foreach, protected, ulong,
-                checked, goto, public, unchecked,
-                class, if, readonly, unsafe,
-                const, implicit, ref, ushort,
-                continue, in, return, using,
-                decimal, int, sbyte, virtual,
-                default, interface, sealed, volatile,
-                delegate, internal, short, void,
-                do, is, sizeof, while,
-                double, lock, stackalloc,
-                else, long, static,
-                enum, namespace, string},
+morekeywords={partial, var, value, get, set},
+emph={int,char,double,float,unsigned,void,bool},
+emphstyle={\color{sblue}},
+%%morekeywords={  abstract, event, new, struct,
+                %%as, explicit, null, switch,
+                %%base, extern, object, this,
+                %%bool, false, operator, throw,
+                %%break, finally, out, true,
+                %%byte, fixed, override, try,
+                %%case, float, params, typeof,
+                %%catch, for, private, uint,
+                %%char, foreach, protected, ulong,
+                %%checked, goto, public, unchecked,
+                %%class, if, readonly, unsafe,
+                %%const, implicit, ref, ushort,
+                %%continue, in, return, using,
+                %%decimal, int, sbyte, virtual,
+                %%default, interface, sealed, volatile,
+                %%delegate, internal, short, void,
+                %%do, is, sizeof, while,
+                %%double, lock, stackalloc,
+                %%else, long, static,
+                %%enum, namespace, string},
   commentstyle=\color{greencomments},
   keywordstyle=\color{bluekeywords},
   stringstyle=\color{redstrings},
   extendedchars=true,
-  literate=
-    {0}{{{\ProcessDigit{0}}}}1
-    {1}{{{\ProcessDigit{1}}}}1
-    {2}{{{\ProcessDigit{2}}}}1
-    {3}{{{\ProcessDigit{3}}}}1
-    {4}{{{\ProcessDigit{4}}}}1
-    {5}{{{\ProcessDigit{5}}}}1
-    {6}{{{\ProcessDigit{6}}}}1
-    {7}{{{\ProcessDigit{7}}}}1
-    {8}{{{\ProcessDigit{8}}}}1
-    {9}{{{\ProcessDigit{9}}}}1
-    {\}}{{\symbolstyle{\}}}}1
-    {\{}{{\symbolstyle{\{}}}1
-    {(}{{\symbolstyle{(}}}1
-    {)}{{\symbolstyle{)}}}1
-    {=}{{\symbolstyle{$=$}}}1
-    {;}{{\symbolstyle{$;$}}}1
-    {>}{{\symbolstyle{$>$}}}1
-    {<}{{\symbolstyle{$<$}}}1
-    {\%}{{\symbolstyle{$\%$}}}1,
+	%
+	%%classoffset=1, % starting new class
+  %%otherkeywords={>,<,.,;,-,!,=,~},
+  %%morekeywords={>,<,.,;,-,!,=,~},
+  %%keywordstyle=\color{weborange},
+  %%classoffset=0,
+	literate=
+    %%%{0}{{{\ProcessDigit{0}}}}1
+    %%%{1}{{{\ProcessDigit{1}}}}1
+    %%%{2}{{{\ProcessDigit{2}}}}1
+    %%%{3}{{{\ProcessDigit{3}}}}1
+    %%%{4}{{{\ProcessDigit{4}}}}1
+    %%%{5}{{{\ProcessDigit{5}}}}1
+    %%%{6}{{{\ProcessDigit{6}}}}1
+    %%%{7}{{{\ProcessDigit{7}}}}1
+    %%%{8}{{{\ProcessDigit{8}}}}1
+    %%%{9}{{{\ProcessDigit{9}}}}1
+    {\}}{{{\symbolstyle{\}}}}}1
+    {\{}{{{\symbolstyle{\{}}}}1
+    {(}{{{\symbolstyle{(}}}}1
+    {)}{{{\symbolstyle{)}}}}1
+    {=}{{{\symbolstyle{$=$}}}}1
+    {;}{{{\symbolstyle{$;$}}}}1
+    {>}{{{\symbolstyle{$>$}}}}1
+    {<}{{{\symbolstyle{$<$}}}}1
+    {\%}{{{\symbolstyle{$\%$}}}}1,
 }
 
 
@@ -862,23 +873,6 @@ SPECIALIZATION: & \@specjalnosc\\
 \pdfbookmark[0]{Title}{Tytul.1}
 \maketitle
 \clearpage
-<<<<<<< HEAD
-=======
-%% The information about licence given below can be safely commented out when editing the thesis (the licence covers the text with instructions on how to use the template, but not the template itself).
-%%%\thispagestyle{empty}
-%%%\mbox{}\vfill
-%%%\noindent\begin{tabular}{@{}ll} Opracowa³: & Tomasz Kubik \texttt{<tomasz.kubik@pwr.edu.pl>}\\
- %%%Data: & luty 2021 
- %%%\end{tabular}\\[15mm]
-%%%\noindent\includegraphics[width=3cm]{by-nc-sa}\newline
-%%%{\normalfont 
-%%%Tekst zawarty w niniejszym szablonie jest udostêpniany na licencji Creative Commons: \emph{Uznanie autorstwa -- U¿ycie niekomercyjne -- Na tych samych warunkach, 3.0 Polska}, Wroc³aw 2021. \\[2pt]
-%%%Oznacza to, ¿e wszystkie przekazane treœci mo¿na kopiowaæ i  wykorzystywaæ do celów niekomercyjnych, a tak¿e tworzyæ na ich podstawie utwory zale¿ne pod warunkiem podania autora i~nazwy licencjodawcy oraz udzielania na utwory zale¿ne takiej samej licencji. Tekst licencji jest dostêpny pod adresem: \url{http://creativecommons.org/licenses/by-nc-sa/3.0/pl/}.\\[2pt]
-%%%Podczas redakcji pracy dyplomowej stronê tê mo¿na usun¹æ. Licencja dotyczy bowiem zredagowanego opisu, a nie samego latexowego szablonu. Latexowy szablon mo¿na wykorzystywaæ bez wzmiankowania o jego autorze. 
-%%%}
-%%%\clearpage
-
->>>>>>> 789aba4d6abf214414f6e647c09cb191f5c80198
 
 %\chapterstyle{noNumbered} 
 % Below there are declarations of various lists. Please comment out those which are too short (the list should contain at least 5 items)
