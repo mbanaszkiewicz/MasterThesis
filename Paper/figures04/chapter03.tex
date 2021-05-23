@@ -1,0 +1,32 @@
+\chapter{Test Environment} 
+
+\clearpage
+\section{Hardware and software} 
+Each machine is different in it's own way, it is imperative to use the same hardware for all experiments to accurately benchmark tested software. One cannot expect same results presented later on this paper on their own environment. Specification of the machine used for development and benchmarking is presented in Tab. \ref{tab: HardSpec}. It's a middle-range (for 2021) machine for personal use.
+
+\begin{table}[!ht]
+    \centering
+    \caption{Machine specification}
+		\label{tab: HardSpec}
+    \begin{tabular}{p{3cm}p{10cm}}
+			\toprule
+			CPU  & AMD Ryzen 5 3600 3.95 GHz 6 Cores 12 Logical Processors \\
+			RAM  & Patriot 16GB 3000MHz CL16 \\
+			MB   & Asus Prime X470 - Pro \\ 
+			Disk & Samsung SSD 970 EVO Plus \\
+			GPU  & AMD Radeon RX 5700 XT \\ 
+			OS   & Windows 10 x64 Pro Build 19042 \\ 
+			BIOS & American Megatrends 5406
+			\bottomrule
+    \end{tabular}
+\end{table}
+
+AMD Ryzen 5 3600 is built using Zen2 architecture,  the successor of AMD's Zen and Zen+ microarchitectures. From the most notable features it enables 2threads per physical core (SMT) and optimized processor caches: L1 cache with 32 kB  per core and 8-way associative input and output, L2 with 512 kB per core and L3 cache with 16MB per core. Fig. \ref{fig:Zen} showcases microarchitecutre overview of Zen2 processors. \cite{Zen}
+
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=0.8/textwidth{figures03/Zen.PNG}
+	\caption{Zen2 microarchitecture}
+	\label{fig:Zen}
+\end{figure}
+
