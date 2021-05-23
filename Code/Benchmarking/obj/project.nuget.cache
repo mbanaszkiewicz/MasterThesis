@@ -1,22 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "ejpIXCNMsbOo5dWfsNE2X9OfrmCxRnDHkKgyvwWBNB5kxAj6HT6/4o6rB/hR27S5RwRyig3S4J4tyWEKYvu6bQ==",
+  "dgSpecHash": "9dv01jZ4xIbO9KGE3XGWMqPohWuvP/s2dddV9wPtK5QfHrFhosgj4WV0ySfhYJ+UWFcknTReWtL1O1QNuuKhHA==",
   "success": true,
   "projectFilePath": "D:\\Master\\MasterThesis\\Code\\Benchmarking\\Benchmarking.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Vithar\\.nuget\\packages\\accord\\3.8.0\\accord.3.8.0.nupkg.sha512",
-    "C:\\Users\\Vithar\\.nuget\\packages\\accord.math\\3.8.0\\accord.math.3.8.0.nupkg.sha512",
-    "C:\\Users\\Vithar\\.nuget\\packages\\accord.statistics\\3.8.0\\accord.statistics.3.8.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\benchmarkdotnet\\0.13.0\\benchmarkdotnet.0.13.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\benchmarkdotnet.annotations\\0.13.0\\benchmarkdotnet.annotations.0.13.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\benchmarkdotnet.diagnostics.windows\\0.13.0\\benchmarkdotnet.diagnostics.windows.0.13.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\commandlineparser\\2.4.3\\commandlineparser.2.4.3.nupkg.sha512",
-    "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.charting\\2.1.0\\fsharp.charting.2.1.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.collections.parallelseq\\1.0.2\\fsharp.collections.parallelseq.1.0.2.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.core\\4.3.4\\fsharp.core.4.3.4.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.data\\2.3.2\\fsharp.data.2.3.2.nupkg.sha512",
-    "C:\\Users\\Vithar\\.nuget\\packages\\fspickler\\5.3.2\\fspickler.5.3.2.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\fspickler\\3.2.0\\fspickler.3.2.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\iced\\1.8.0\\iced.1.8.0.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\2.6.1\\microsoft.codeanalysis.analyzers.2.6.1.nupkg.sha512",
     "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.codeanalysis.common\\2.10.0\\microsoft.codeanalysis.common.2.10.0.nupkg.sha512",
@@ -124,16 +120,6 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'FSharp.Charting 2.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "FSharp.Charting",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'FSharp.Collections.ParallelSeq 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "FSharp.Collections.ParallelSeq",
       "targetGraphs": [
@@ -146,6 +132,16 @@
       "warningLevel": 1,
       "message": "Package 'FSharp.Data 2.3.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "FSharp.Data",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FsPickler 3.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "FsPickler",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]

@@ -8,7 +8,8 @@ using BenchmarkDotNet.Jobs;
 
 namespace Net47Benchmarking
 {
-  [SimpleJob(RuntimeMoniker.Net472, baseline: true)]
+  [SimpleJob(RuntimeMoniker.Net472)]
+  [SimpleJob(RuntimeMoniker.NetCoreApp31)]
   [MemoryDiagnoser]
   [RPlotExporter]
   [CsvMeasurementsExporter]
@@ -28,7 +29,7 @@ namespace Net47Benchmarking
     public int[] Data;
 
     // ReSharper disable once MemberCanBePrivate.Global
-    [Params(10000, 1000000)] public int N;
+    [Params(10000, 100000, 1000000, 10000000)] public int N;
 
     [GlobalSetup]
     public void Setup()

@@ -6,7 +6,6 @@ open System.IO.Compression
 open MBrace.FsPickler
 open Paket
 
-
 type AutoComplete =
     JsonProvider< """{"@context":{"@vocab":"http://schema.nuget.org/schema#"},"totalHits":59717,"lastReopen":"2016-10-05T12:05:37.4829982Z","index":"v3-lucene0-v2v3-20161003","data":["ABCFramework.Wpf","44nwodhterag"]}""" >
 
@@ -38,16 +37,19 @@ let fetchPackageIds () =
 
 let downloadPackageMetadata packageId =
   async {
+    printfn "Processing package '%s' ..." packageId
     let packageData = Domain.PackageName(packageId)
     let! versioning =
         NuGetV2.tryGetPackageVersionsViaJson(None, NuGetV2URL, packageData)
         |> Async.Catch
+    printfn "Versions received for '%s'." packageId
     match versioning with
     | Choice1Of2(Some(versions)) when versions.Length > 0 ->
         let latest = SemVer.Parse(versions.[versions.Length-1])
         let! metadata =
             NuGetV2.getDetailsFromNuGetViaODataFast None NuGetV2URL packageData latest
             |> Async.Catch
+        printfn "Done with package '%s'." packageId
         return
             match metadata with
             | Choice1Of2(data) -> Some(data)

@@ -24,12 +24,13 @@ namespace Algorithms.KMeans
         Source.AsParallel()
           .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
           .GroupBy(u => KMeans.GetNearestCentroid(centroids, u))
-          .Select(points =>
-            points
-              .Aggregate(new double[RowLength],
-                (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
-              .Select(items => items / points.Count())
-              .ToImmutableList())
+          .Select(CalculateCenter)
           .ToImmutableList();
+
+    private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, ImmutableList<double>> points)
+      => points
+        .Aggregate(new double[RowLength], (acc, item) => acc.Zip(item, (a, b) => a + b).ToArray())
+        .Select(items => items / points.Count())
+        .ToImmutableList();
   }
 }

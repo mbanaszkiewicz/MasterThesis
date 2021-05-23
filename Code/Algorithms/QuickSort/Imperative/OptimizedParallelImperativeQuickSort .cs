@@ -8,80 +8,62 @@ namespace Algorithms.QuickSort.Imperative
   public class OptimizedParallelImperativeQuickSort : ISorter
   {
     private int _depth;
+
     public OptimizedParallelImperativeQuickSort(int depth)
     {
       _depth = depth;
     }
+
     public Task<ImmutableList<int>> Sort(IEnumerable<int> source)
     {
       var arr = source.ToArray();
-       Sort(arr, 0, arr.Length - 1, _depth);
+      Sort(arr, 0, arr.Length - 1, _depth);
 
       return Task.FromResult(arr.ToImmutableList());
     }
 
-    private static  void Sort(int[] arr, int left, int right, int depth)
+    private static void Sort(int[] source, int left, int right, int depth)
     {
       if (left >= right) return;
 
-      var pivot = Partition(arr, left, right);
+      var pivot = Partition(source, left, right);
       if (depth > 0)
       {
-        if (pivot > 1)
-        {
-           Task.Run(() => Sort(arr, left, pivot - 1, depth -1)).Wait();
-        }
-
-        if (pivot + 1 < right)
-        {
-          Task.Run(() => Sort(arr, pivot + 1, right, depth - 1)).Wait();
-        }
+        Parallel.Invoke(
+          () => Sort(source, left, pivot, depth--),
+          () => Sort(source, pivot + 1, right, depth--));
       }
 
       else
       {
-        if (pivot > 1)
-        {
-          Sort(arr, left, pivot - 1, 0);
-        }
-
-        if (pivot + 1 < right)
-        {
-          Sort(arr, pivot + 1, right, 0);
-        }
-
+        Sort(source, left, pivot, depth);
+        Sort(source, pivot + 1, right, depth);
       }
-
     }
 
-    private static int Partition(int[] arr, int left, int right)
+    private static int Partition(int[] source, int left, int right)
     {
-      int pivot = arr[left];
-      while (true)
+      var pivot = (right + left) / 2;
+      var pivotInt = source[pivot];
+
+      Swap(ref source[right - 1], ref source[pivot]);
+      var store = left;
+      for (var i = left; i < right - 1; ++i)
       {
-        while (arr[left] < pivot)
-        {
-          left++;
-        }
-
-        while (arr[right] > pivot)
-        {
-          right--;
-        }
-
-        if (left < right)
-        {
-          if (arr[left] == arr[right]) return right;
-
-          int temp = arr[left];
-          arr[left] = arr[right];
-          arr[right] = temp;
-        }
-        else
-        {
-          return right;
-        }
+        if (source[i].CompareTo(pivotInt) >= 0) continue;
+        Swap(ref source[i], ref source[store]);
+        ++store;
       }
+
+      Swap(ref source[right - 1], ref source[store]);
+      return store;
+    }
+
+    private static void Swap(ref int a, ref int b)
+    {
+      var temp = a;
+      a = b;
+      b = temp;
     }
   }
 }

@@ -1,7 +1,6 @@
 \chapter{Algorithms and software}
 \section{Quicksort}
-
-Quicksort pseudocode (shown in Lst. \ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms} \cite{Cormen2009}.
+Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer , are a great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in Lst. \ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms} \cite{Cormen2009}.
 
 \begin{lstlisting}[basicstyle=\ttfamily, caption={Sequential Quicksort pseudocode}, label={lst:PseudoQuickSort}]
 
@@ -21,6 +20,150 @@ PARTITION(A, p, r)
 	exchange A[i + 1] with A[r]
 	return i + 1
 \end{lstlisting}
+
+\subsubsection{Imperative sequential implementation}
+This version is a "traditional" implementation of the algorithm. It is written in imperative style and quite lengthy (Lst. \ref{lst:ImpSeqQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative sequential quicksort implementation}, label={lst:ImpSeqQuickSort}]
+private static void Sort(int[] source, int left, int right)
+{
+  if (left >= right) return;
+  var pivot = Partition(source, left, right);
+  Sort(source, left, pivot);
+  Sort(source, pivot + 1, right);
+}
+
+private static int Partition(int[] source, int left, int right)
+{
+  var pivot = (right + left) / 2;
+  var pivotInt = source[pivot];
+
+  Swap(ref source[right - 1], ref source[pivot]);
+  var store = left;
+  for (var i = left; i < right - 1; ++i)
+  {
+    if (source[i].CompareTo(pivotInt) >= 0) continue;
+    Swap(ref source[i], ref source[store]);
+    ++store;
+  }
+
+  Swap(ref source[right - 1], ref source[store]);
+  return store;
+}
+
+private static void Swap(ref int a, ref int b)
+{
+  var temp = a;
+  a = b;
+  b = temp;
+}
+\end{lstlisting}
+
+\subsubsection{Imperative parallel implementation}
+Parallel version was implemented in a manner in which somebody who is not well versed in .NET's parallelism would implement it. Many developers know async-await state machine because is often used in projects with asynchronous operations . On top of that no precautions for thread oversaturation were taken (Lst. \ref{lst:ImpParQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative parallel quicksort}, label={lst:ImpParQuickSort}]
+private static async Task Sort(int[] source, int left, int right)
+{
+  if (left >= right) return;
+
+  var pivot = Partition(source, left, right);
+
+  await Task.Run(() => Sort(source, left, pivot));
+  await Task.Run(() => Sort(source, pivot + 1, right));
+}
+\end{lstlisting}
+
+\subsubsection{Imperative optimized implementation}
+Optimized version uses depth control and removes the use of async-await state machine.
+(Lst. \ref{lst:ImpOptQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative optimized quicksort}, label={lst:ImpOptQuickSort}]
+private static void Sort(int[] source, int left, int right, int depth)
+{
+  if (left >= right) return;
+
+  var pivot = Partition(source, left, right);
+  if (depth > 0)
+  {
+    Parallel.Invoke(
+      () => Sort(source, left, pivot, depth--),
+      () => Sort(source, pivot + 1, right, depth--));
+  }
+
+  else
+  {
+    Sort(source, left, pivot, depth);
+    Sort(source, pivot + 1, right, depth);
+  }
+}
+\end{lstlisting}
+
+\subsubsection{Functional sequential implementation}
+This version of the algorithm was implemented using LINQ in a functional, declarative manner. It is conspicuous that this version is more concise and easier to read. (Lst. \ref{lst:FunSeqQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional sequential quicksort implementation}, label={lst:FunSeqQuickSort}]
+private static ImmutableList<int> Sort(ImmutableList<int> source)
+{
+  if (!source.Any()) return source;
+
+  var first = source.First();
+  var (left, right) = source
+    .Skip(1)
+    .Partition(x => x <= first);
+  var leftSorted = Sort(left);
+  var rightSorted = Sort(right);
+
+  return leftSorted
+    .Add(first)
+    .AddRange(rightSorted);
+}
+\end{lstlisting}
+
+\subsubsection{Functional parallel implementation}
+Parallel implementation was achieved in the same way, using \emph{Task.Run} and async-await state machine. 
+(Lst. \ref{lst:FunParQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional parallel quicksort}, label={lst:FunParQuickSort}]
+private async Task<ImmutableList<int>> Sort(ImmutableList<int> source)
+{
+  if (source.None()) return source;
+
+  var first = source.First();
+  
+  var (left, right) = source
+    .Skip(1)
+    .Partition(x => x <= first);
+  var leftSorted = await Task.Run(() => Sort(left));
+  var rightSorted = await Task.Run(() => Sort(right));
+
+  return leftSorted
+    .Add(first)
+    .AddRange(rightSorted);
+}
+\end{lstlisting}
+
+\subsubsection{Functional optimized implementation}
+Optimized version uses depth control and removes the use of async-await state machine.
+(Lst. \ref{lst:FunOptQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional optimized quicksort}, label={lst:FunOptQuickSort}]
+private static Task<ImmutableList<int>> Sort(ImmutableList<int> source, int depth)
+{
+  if (source.None()) return Task.FromResult(source);
+
+  var first = source.First();
+  var (left, right) = source
+    .Skip(1)
+    .Partition(x => x <= first);
+  var leftSorted = ParallelizeUnlessDepthIsReached(x => Sort(left, x), depth);
+  var rightSorted = ParallelizeUnlessDepthIsReached(x => Sort(right, x), depth);
+
+  return Task.FromResult(leftSorted.Result
+    .Add(first)
+    .AddRange(rightSorted.Result));
+}
+
+private static Task<T> ParallelizeUnlessDepthIsReached<T>(Func<int, Task<T>> func, int depth)
+{
+  return depth > 0 ? Task.Run(() => func(depth - 1)) : func(0);
+}
+\end{lstlisting}
+
 
 
 \clearpage
@@ -141,7 +284,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
     .ToImmutableList();
 \end{lstlisting}
 
-\subsubsection{Parallel implementation with data partitioner}
+\subsubsection{Parallel implementation with partitioner}
 
 To further boost the parallel implementation, data partitioner was used to load balance the data between threads (TODO: Add reference) (Lst. \ref{lst:PartParKMeans}). 
 
@@ -350,3 +493,100 @@ private static bool BelongsToMandelbrot(ComplexNumberStruct number, int iteratio
 
 \end{lstlisting}
 
+\clearpage
+\section{NuGet package ranking}
+NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (TODO: Add refrence).
+
+Methods used in package ranking are defined in Lst. \ref{lst:NugetPackageRanking}. These functions will be later plugged into multiple, generic implementations of MapReduce pattern. \emph{Map} function is responsible for extracting key-value tuples from NuGet packages. Key represents the package name and float it's score, which will be later computed into the overall score of the package in the \emph{Reduce} function.
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Nuget package ranking functions}, label={lst:NugetPackageRanking}]
+private static IEnumerable<(string, float score)> Map(NuGet.NuGetPackageCache package,
+  ImmutableList<(string, float)> packages)
+  => package.Dependencies.Select(x => (Domain.PackageName(x.Item1.Item1).Item1, GetScore(package, packages)));
+
+private static float GetRanking(string packageName, ImmutableList<(string, float)> packages)
+  => packages.Any(x => x.First() == packageName)
+    ? packages.First(x => x.First() == packageName).Second()
+    : 1.0f;
+
+private static float GetScore(NuGet.NuGetPackageCache package, ImmutableList<(string, float)> packages)
+  => GetRanking(package.PackageName, packages) / package.Dependencies.Length;
+
+private static (string packageName, float) Reduce(string packageName, IEnumerable<float> values)
+  => (packageName, values.Sum());
+\end{lstlisting}
+
+\subsubsection{Sequential implementation}
+MapReduce pattern is described in detail in (TODO: Add reference). 
+In simple terms \emph{Map} function is responsible for mapping objects into collections of key-value pairs. In this case it will transform \emph{NuGetPackage} objects into collection of packageName-score tuples. \empg{Reduce} function receives collection of values grouped by pairs, in this case groups of scores grouped by the name of the package. The pattern was implemented using LINQ, with eager materialization in both \emph{Map} and \emph{Reduce} to avoid multiple evaluation of the same sequence (Lst. \ref{lst:SeqMapReduce}).
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential MapReduce implementation}, label={lst:SeqMapReduce}]
+public static IEnumerable<TReduced> MapReduce<TIn, TOutKey, TOutValue, TReduced>(
+  this IEnumerable<TIn> source,
+  Func<TIn, IEnumerable<(TOutKey, TOutValue)>> map,
+  Func<TOutKey, IEnumerable<TOutValue>, TReduced> reduce)
+  => source
+    .Map(map)
+    .Reduce(reduce);
+
+private static IEnumerable<IGrouping<TOutKey, (TOutKey, TOutValue)>> Map<TIn, TOutKey, TOutValue>(
+  this IEnumerable<TIn> source,
+  Func<TIn, IEnumerable<(TOutKey, TOutValue)>> map)
+  => source
+    .SelectMany(map)
+    .GroupBy(Tuple.First)
+    .ToImmutableList();
+
+private static IEnumerable<TReduced> Reduce<TKey, TValue, TReduced>
+(this IEnumerable<IGrouping<TKey, (TKey, TValue)>> source,
+  Func<TKey, IEnumerable<TValue>, TReduced> reduce)
+  => source
+    .Select(x => reduce(x.Key, x.Select(Tuple.Second)))
+    .ToImmutableList();
+
+\end{lstlisting}
+
+\subsubsection{Parallel implementation}
+Parallel implementation adds additional paramater which controls the degree of parallelism to avoid oversaturation. This version was also implemented using PLINQ in a very intuitive and readable way, thanks to the use of MapReduce pattern (Lst. \ref{lst:ParMapReduce}).
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel MapReduce implementation}, label={lst:ParMapReduce}]
+private static ParallelQuery<TSource> ToParallel<TSource>(this IEnumerable<TSource> source, int degreeOfParallelism)
+  => source
+    .AsParallel()
+    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+    .WithDegreeOfParallelism(degreeOfParallelism);
+
+private static IEnumerable<TReduced> MapReduce<TIn, TOutKey, TOutValue, TReduced>(
+  this IEnumerable<TIn> source,
+  Func<TIn, IEnumerable<(TOutKey, TOutValue)>> map,
+  Func<TOutKey, IEnumerable<TOutValue>, TReduced> reduce, int mDOR, int rDOR)
+  => source
+    .ToParallel(mDOR)
+    .Map(map)
+    .ToParallel(rDOR)
+    .Reduce(reduce)
+    .ToImmutableList();
+\end{lstlisting}
+
+\subsubsection{Parallel implementation with partitioner}
+In the last version load balancing partitioner was used to try to evenly spread the work between the threads (Lst. \ref{lst:PartParMapReduce}).
+
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel MapReduce implementation with partitioner}, label={lst:PartParMapReduce}]
+private static ParallelQuery<TSource> ToParallel<TSource>(this OrderablePartitioner<TSource> source, int degreeOfParallelism)
+  => source
+    .AsParallel()
+    .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+    .WithDegreeOfParallelism(degreeOfParallelism);
+
+private static IEnumerable<TReduced> PartitionerMapReduce<TIn, TOutKey, TOutValue, TReduced>(
+  this IList<TIn> source,
+  Func<TIn, IEnumerable<(TOutKey, TOutValue)>> map,
+  Func<TOutKey, IEnumerable<TOutValue>, TReduced> reduce, int mDOR, int rDOR)
+  => Partitioner
+    .Create(source, true)
+    .ToParallel(mDOR)
+    .Map(map)
+    .ToParallel(rDOR)
+    .Reduce(reduce)
+    .ToImmutableList();
+\end{lstlisting}

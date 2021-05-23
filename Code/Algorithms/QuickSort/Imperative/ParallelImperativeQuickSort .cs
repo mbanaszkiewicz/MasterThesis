@@ -15,54 +15,39 @@ namespace Algorithms.QuickSort.Imperative
       return arr.ToImmutableList();
     }
 
-    private static async Task Sort(int[] arr, int left, int right)
+    private static async Task Sort(int[] source, int left, int right)
     {
       if (left >= right) return;
 
-      var pivot = Partition(arr, left, right);
+      var pivot = Partition(source, left, right);
 
-      if (pivot > 1)
-      {
-        await Task.Run(() => Sort(arr, left, pivot - 1));
-      }
-
-      if (pivot + 1 < right)
-      {
-        await Task.Run(() => Sort(arr, pivot + 1, right));
-      }
+      await Task.Run(() => Sort(source, left, pivot));
+      await Task.Run(() => Sort(source, pivot + 1, right));
     }
 
-    private static int Partition(int[] arr, int left, int right)
+    private static int Partition(int[] source, int left, int right)
     {
-      int pivot = arr[left];
-      while (true)
+      var pivot = (right + left) / 2;
+      var pivotInt = source[pivot];
+
+      Swap(ref source[right - 1], ref source[pivot]);
+      var store = left;
+      for (var i = left; i < right - 1; ++i)
       {
-        while (arr[left] < pivot)
-        {
-          left++;
-        }
-
-        while (arr[right] > pivot)
-        {
-          right--;
-        }
-
-        if (left < right)
-        {
-          if (arr[left] == arr[right]) return right;
-
-          lock (arr)
-          {
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-          }
-        }
-        else
-        {
-          return right;
-        }
+        if (source[i].CompareTo(pivotInt) >= 0) continue;
+        Swap(ref source[i], ref source[store]);
+        ++store;
       }
+
+      Swap(ref source[right - 1], ref source[store]);
+      return store;
+    }
+
+    private static void Swap(ref int a, ref int b)
+    {
+      var temp = a;
+      a = b;
+      b = temp;
     }
   }
 }

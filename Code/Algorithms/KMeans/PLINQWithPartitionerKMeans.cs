@@ -21,16 +21,14 @@ namespace Algorithms.KMeans
       => KMeans.ComputeCentroids(UpdateCentroids(), initialCentroids, RowLength);
 
     private Func<DataSet, DataSet> UpdateCentroids()
-      => centroids =>
-      {
-        var partitioner = Partitioner.Create(Source, true);
-
-        return partitioner.AsParallel()
-          .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
-          .GroupBy(u => KMeans.GetNearestCentroid(centroids, u))
-          .Select(CalculateCenter)
-          .ToImmutableList();
-      };
+      => centroids 
+      => Partitioner
+        .Create(Source, true)
+        .AsParallel()
+        .WithExecutionMode(ParallelExecutionMode.ForceParallelism)
+        .GroupBy(u => KMeans.GetNearestCentroid(centroids, u))
+        .Select(CalculateCenter)
+        .ToImmutableList();
 
     private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, ImmutableList<double>> points)
       => points

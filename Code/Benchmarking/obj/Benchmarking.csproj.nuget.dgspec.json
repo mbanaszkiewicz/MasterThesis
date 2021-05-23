@@ -37,6 +37,9 @@
           }
         },
         "warningProperties": {
+          "noWarn": [
+            "NU1605"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -46,6 +49,34 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Chessie": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "FSharp.Collections.ParallelSeq": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[2.3.2, )"
+            },
+            "FsPickler": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Paket.Core": {
+              "target": "Package",
+              "version": "[3.27.0, )"
+            },
             "System.Collections.Immutable": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -75,6 +106,34 @@
         "net472": {
           "targetAlias": "net472",
           "dependencies": {
+            "Chessie": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "FSharp.Collections.ParallelSeq": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[2.3.2, )"
+            },
+            "FsPickler": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Paket.Core": {
+              "target": "Package",
+              "version": "[3.27.0, )"
+            },
             "System.Collections.Immutable": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -134,18 +193,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Accord": {
-              "target": "Package",
-              "version": "[3.8.0, )"
-            },
-            "Accord.Math": {
-              "target": "Package",
-              "version": "[3.8.0, )"
-            },
-            "Accord.Statistics": {
-              "target": "Package",
-              "version": "[3.8.0, )"
-            },
             "BenchmarkDotNet": {
               "target": "Package",
               "version": "[0.13.0, )"
@@ -157,10 +204,6 @@
             "Chessie": {
               "target": "Package",
               "version": "[0.6.0, )"
-            },
-            "FSharp.Charting": {
-              "target": "Package",
-              "version": "[2.1.0, )"
             },
             "FSharp.Collections.ParallelSeq": {
               "target": "Package",
@@ -176,7 +219,7 @@
             },
             "FsPickler": {
               "target": "Package",
-              "version": "[5.3.2, )"
+              "version": "[3.2.0, )"
             },
             "Microsoft.NETCore.Platforms": {
               "target": "Package",
@@ -467,29 +510,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Accord": {
-              "target": "Package",
-              "version": "[3.8.0, )",
-              "generatePathProperty": true
-            },
-            "Accord.Math": {
-              "target": "Package",
-              "version": "[3.8.0, )",
-              "generatePathProperty": true
-            },
-            "Accord.Statistics": {
-              "target": "Package",
-              "version": "[3.8.0, )",
-              "generatePathProperty": true
-            },
             "Chessie": {
               "target": "Package",
               "version": "[0.6.0, )",
-              "generatePathProperty": true
-            },
-            "FSharp.Charting": {
-              "target": "Package",
-              "version": "[2.1.0, )",
               "generatePathProperty": true
             },
             "FSharp.Collections.ParallelSeq": {
@@ -499,7 +522,7 @@
             },
             "FSharp.Core": {
               "target": "Package",
-              "version": "[5.0.0, )",
+              "version": "[4.3.4, )",
               "generatePathProperty": true
             },
             "FSharp.Data": {
@@ -509,7 +532,7 @@
             },
             "FsPickler": {
               "target": "Package",
-              "version": "[5.3.2, )",
+              "version": "[3.2.0, )",
               "generatePathProperty": true
             },
             "Microsoft.NETCore.Platforms": {
