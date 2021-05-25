@@ -76,6 +76,14 @@ C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\n
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CopyComplete
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe
 C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.pdb
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csprojAssemblyReference.cache
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe.config
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfoInputs.cache
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfo.cs
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CoreCompileInputs.cache
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\TraceReloggerLib.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Dia2Lib.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\OSExtensions.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.Win61.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\msdia140.dll
@@ -86,9 +94,6 @@ D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\msdia140.
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\msvcp140.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140_1.dll
-D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\TraceReloggerLib.dll
-D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Dia2Lib.dll
-D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\OSExtensions.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\KMeans\winequality-red.csv
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe.config
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe
@@ -170,11 +175,6 @@ D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microso
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Algorithms.dll
 D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Algorithms.pdb
-D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csprojAssemblyReference.cache
-D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe.config
-D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfoInputs.cache
-D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfo.cs
-D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CoreCompileInputs.cache
 D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CopyComplete
 D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe
 D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.pdb

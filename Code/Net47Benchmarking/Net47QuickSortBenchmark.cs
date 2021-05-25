@@ -29,7 +29,7 @@ namespace Net47Benchmarking
     public int[] Data;
 
     // ReSharper disable once MemberCanBePrivate.Global
-    [Params(10000, 100000, 1000000, 10000000)] public int N;
+    [Params(10000, 100000, 1000000)] public int N;
 
     [GlobalSetup]
     public void Setup()

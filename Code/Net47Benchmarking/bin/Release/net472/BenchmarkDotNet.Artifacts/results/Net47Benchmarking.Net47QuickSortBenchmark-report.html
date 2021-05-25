@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Net47Benchmarking.Net47QuickSortBenchmark-20210523-212923</title>
+<title>Net47Benchmarking.Net47QuickSortBenchmark-20210523-222005</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -18,30 +18,59 @@ AMD Ryzen 5 3600, 1 CPU, 12 logical and 6 physical cores
   [Host]               : .NET Framework 4.8 (4.8.4341.0), X64 RyuJIT
   .NET Framework 4.7.2 : .NET Framework 4.8 (4.8.4341.0), X64 RyuJIT
 </code></pre>
-<pre><code>Job=.NET Framework 4.7.2  Runtime=.NET Framework 4.7.2  
-</code></pre>
+<pre><code></code></pre>
 
 <table>
-<thead><tr><th>                        Method</th><th>N</th><th>     Mean</th><th>  Error</th><th> StdDev</th><th>Ratio</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+<thead><tr><th>                        Method</th><th>           Job</th><th>       Runtime</th><th> N</th><th>      Mean</th><th>    Error</th><th>    StdDev</th><th> Gen 0</th><th> Gen 1</th><th>Gen 2</th><th> Allocated</th>
 </tr>
-</thead><tbody><tr><td>SequentialFunctionalQuickSort</td><td>10000</td><td>31,825.0 &mu;s</td><td>110.88 &mu;s</td><td>98.30 &mu;s</td><td>1.00</td><td>2937.5000</td><td>625.0000</td><td>312.5000</td><td>17,262 KB</td>
-</tr><tr><td>ParallelFunctionalQuickSort</td><td>10000</td><td>87,714.7 &mu;s</td><td>1,688.77 &mu;s</td><td>2,135.75 &mu;s</td><td>1.00</td><td>4333.3333</td><td>500.0000</td><td>166.6667</td><td>25,940 KB</td>
-</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>10000</td><td>22,047.1 &mu;s</td><td>437.27 &mu;s</td><td>568.58 &mu;s</td><td>1.00</td><td>4000.0000</td><td>1000.0000</td><td>-</td><td>21,998 KB</td>
-</tr><tr><td>SequentialImperativeQuickSort</td><td>10000</td><td>864.8 &mu;s</td><td>4.48 &mu;s</td><td>3.74 &mu;s</td><td>1.00</td><td>83.0078</td><td>41.0156</td><td>-</td><td>509 KB</td>
-</tr><tr><td>ParallelImperativeQuickSort</td><td>10000</td><td>50,164.9 &mu;s</td><td>542.60 &mu;s</td><td>481.00 &mu;s</td><td>1.00</td><td>2400.0000</td><td>300.0000</td><td>-</td><td>8,331 KB</td>
-</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>10000</td><td>1,911.1 &mu;s</td><td>13.33 &mu;s</td><td>12.47 &mu;s</td><td>1.00</td><td>410.1563</td><td>203.1250</td><td>-</td><td>2,510 KB</td>
-</tr><tr><td>SequentialFunctionalQuickSort</td><td>100000</td><td>430,687.6 &mu;s</td><td>7,048.28 &mu;s</td><td>7,238.06 &mu;s</td><td>1.00</td><td>35000.0000</td><td>9000.0000</td><td>2000.0000</td><td>200,696 KB</td>
-</tr><tr><td>ParallelFunctionalQuickSort</td><td>100000</td><td>962,152.1 &mu;s</td><td>9,038.19 &mu;s</td><td>8,454.33 &mu;s</td><td>1.00</td><td>51000.0000</td><td>11000.0000</td><td>2000.0000</td><td>287,456 KB</td>
-</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>100000</td><td>302,886.7 &mu;s</td><td>6,034.56 &mu;s</td><td>16,002.78 &mu;s</td><td>1.00</td><td>40000.0000</td><td>10000.0000</td><td>1000.0000</td><td>241,963 KB</td>
-</tr><tr><td>SequentialImperativeQuickSort</td><td>100000</td><td>14,411.5 &mu;s</td><td>86.55 &mu;s</td><td>80.96 &mu;s</td><td>1.00</td><td>843.7500</td><td>375.0000</td><td>140.6250</td><td>5,092 KB</td>
-</tr><tr><td>ParallelImperativeQuickSort</td><td>100000</td><td>502,411.0 &mu;s</td><td>9,306.22 &mu;s</td><td>8,705.04 &mu;s</td><td>1.00</td><td>49000.0000</td><td>-</td><td>-</td><td>84,262 KB</td>
-</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>100000</td><td>23,296.1 &mu;s</td><td>451.88 &mu;s</td><td>603.25 &mu;s</td><td>1.00</td><td>6093.7500</td><td>750.0000</td><td>218.7500</td><td>18,815 KB</td>
-</tr><tr><td>SequentialFunctionalQuickSort</td><td>1000000</td><td>5,546,154.8 &mu;s</td><td>68,627.73 &mu;s</td><td>64,194.43 &mu;s</td><td>1.00</td><td>367000.0000</td><td>78000.0000</td><td>6000.0000</td><td>2,268,002 KB</td>
-</tr><tr><td>ParallelFunctionalQuickSort</td><td>1000000</td><td>10,861,608.2 &mu;s</td><td>215,781.21 &mu;s</td><td>201,841.88 &mu;s</td><td>1.00</td><td>530000.0000</td><td>93000.0000</td><td>4000.0000</td><td>3,135,242 KB</td>
-</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>1000000</td><td>4,154,003.1 &mu;s</td><td>82,569.18 &mu;s</td><td>130,963.46 &mu;s</td><td>1.00</td><td>426000.0000</td><td>97000.0000</td><td>4000.0000</td><td>2,664,875 KB</td>
-</tr><tr><td>SequentialImperativeQuickSort</td><td>1000000</td><td>221,115.3 &mu;s</td><td>2,997.96 &mu;s</td><td>2,804.29 &mu;s</td><td>1.00</td><td>8666.6667</td><td>3666.6667</td><td>1000.0000</td><td>50,922 KB</td>
-</tr><tr><td>ParallelImperativeQuickSort</td><td>1000000</td><td>5,085,664.0 &mu;s</td><td>69,986.93 &mu;s</td><td>62,041.59 &mu;s</td><td>1.00</td><td>496000.0000</td><td>3000.0000</td><td>-</td><td>842,826 KB</td>
-</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>1000000</td><td>234,247.7 &mu;s</td><td>4,600.52 &mu;s</td><td>9,500.87 &mu;s</td><td>1.00</td><td>66666.6667</td><td>4333.3333</td><td>1000.0000</td><td>149,349 KB</td>
+</thead><tbody><tr><td>SequentialFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000</td><td>32,984.9 &mu;s</td><td>605.62 &mu;s</td><td>868.57 &mu;s</td><td>2937.5000</td><td>625.0000</td><td>312.5000</td><td>17,675,968 B</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000</td><td>89,309.1 &mu;s</td><td>1,561.47 &mu;s</td><td>1,384.20 &mu;s</td><td>4500.0000</td><td>500.0000</td><td>166.6667</td><td>26,553,197 B</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000</td><td>23,614.3 &mu;s</td><td>466.01 &mu;s</td><td>930.68 &mu;s</td><td>4000.0000</td><td>1000.0000</td><td>-</td><td>22,615,680 B</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000</td><td>876.6 &mu;s</td><td>15.23 &mu;s</td><td>13.51 &mu;s</td><td>83.0078</td><td>41.0156</td><td>-</td><td>521,595 B</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000</td><td>51,871.8 &mu;s</td><td>989.77 &mu;s</td><td>1,059.05 &mu;s</td><td>2200.0000</td><td>200.0000</td><td>-</td><td>8,526,438 B</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000</td><td>1,989.0 &mu;s</td><td>38.83 &mu;s</td><td>47.69 &mu;s</td><td>410.1563</td><td>203.1250</td><td>-</td><td>2,568,062 B</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>100000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>100000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>100000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>100000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>100000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>100000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>100000</td><td>453,121.0 &mu;s</td><td>8,697.94 &mu;s</td><td>9,306.69 &mu;s</td><td>35000.0000</td><td>8000.0000</td><td>2000.0000</td><td>205,550,544 B</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>100000</td><td>987,531.4 &mu;s</td><td>18,253.37 &mu;s</td><td>16,181.14 &mu;s</td><td>52000.0000</td><td>11000.0000</td><td>2000.0000</td><td>294,496,224 B</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>100000</td><td>317,582.3 &mu;s</td><td>6,348.45 &mu;s</td><td>18,316.74 &mu;s</td><td>40000.0000</td><td>10000.0000</td><td>1000.0000</td><td>247,586,368 B</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>100000</td><td>14,839.5 &mu;s</td><td>295.17 &mu;s</td><td>362.49 &mu;s</td><td>843.7500</td><td>375.0000</td><td>140.6250</td><td>5,214,412 B</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>100000</td><td>520,526.3 &mu;s</td><td>10,140.27 &mu;s</td><td>10,413.31 &mu;s</td><td>50000.0000</td><td>1000.0000</td><td>-</td><td>86,386,160 B</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>100000</td><td>23,543.2 &mu;s</td><td>469.41 &mu;s</td><td>716.84 &mu;s</td><td>6000.0000</td><td>718.7500</td><td>218.7500</td><td>19,195,859 B</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>1000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>1000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>1000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>1000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>1000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>1000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>1000000</td><td>5,519,318.0 &mu;s</td><td>79,943.79 &mu;s</td><td>74,779.47 &mu;s</td><td>366000.0000</td><td>76000.0000</td><td>6000.0000</td><td>2,322,463,384 B</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>1000000</td><td>10,967,941.6 &mu;s</td><td>192,665.48 &mu;s</td><td>206,149.91 &mu;s</td><td>529000.0000</td><td>93000.0000</td><td>4000.0000</td><td>3,210,781,856 B</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>1000000</td><td>4,056,224.0 &mu;s</td><td>79,738.79 &mu;s</td><td>143,785.49 &mu;s</td><td>426000.0000</td><td>98000.0000</td><td>3000.0000</td><td>2,729,082,816 B</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>1000000</td><td>217,608.7 &mu;s</td><td>1,314.75 &mu;s</td><td>1,097.87 &mu;s</td><td>8666.6667</td><td>3666.6667</td><td>1000.0000</td><td>52,144,051 B</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>1000000</td><td>5,059,685.6 &mu;s</td><td>94,854.78 &mu;s</td><td>93,160.08 &mu;s</td><td>496000.0000</td><td>3000.0000</td><td>-</td><td>862,896,312 B</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>1000000</td><td>238,602.1 &mu;s</td><td>4,771.93 &mu;s</td><td>12,232.28 &mu;s</td><td>66666.6667</td><td>4333.3333</td><td>1000.0000</td><td>152,776,928 B</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Core 3.1</td><td>.NET Core 3.1</td><td>10000000</td><td>NA</td><td>NA</td><td>NA</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SequentialFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000000</td><td>64,975,371.5 &mu;s</td><td>803,709.49 &mu;s</td><td>712,467.53 &mu;s</td><td>3981000.0000</td><td>842000.0000</td><td>11000.0000</td><td>25,936,793,336 B</td>
+</tr><tr><td>ParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000000</td><td>122,799,627.0 &mu;s</td><td>2,024,817.07 &mu;s</td><td>1,894,015.14 &mu;s</td><td>5626000.0000</td><td>938000.0000</td><td>7000.0000</td><td>34,816,886,744 B</td>
+</tr><tr><td>OptimizedParallelFunctionalQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000000</td><td>89,672,039.9 &mu;s</td><td>6,002,839.60 &mu;s</td><td>17,699,508.00 &mu;s</td><td>4592000.0000</td><td>1080000.0000</td><td>6000.0000</td><td>29,965,293,376 B</td>
+</tr><tr><td>SequentialImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000000</td><td>2,225,040.1 &mu;s</td><td>4,275.01 &mu;s</td><td>3,569.82 &mu;s</td><td>78000.0000</td><td>27000.0000</td><td>1000.0000</td><td>521,420,752 B</td>
+</tr><tr><td>ParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000000</td><td>50,735,922.3 &mu;s</td><td>248,177.87 &mu;s</td><td>232,145.73 &mu;s</td><td>4960000.0000</td><td>33000.0000</td><td>1000.0000</td><td>8,627,295,888 B</td>
+</tr><tr><td>OptimizedParallelImperativeQuickSort</td><td>.NET Framework 4.7.2</td><td>.NET Framework 4.7.2</td><td>10000000</td><td>2,456,713.4 &mu;s</td><td>41,301.48 &mu;s</td><td>70,133.06 &mu;s</td><td>600000.0000</td><td>29000.0000</td><td>1000.0000</td><td>1,389,444,552 B</td>
 </tr></tbody></table>
 </body>
 </html>
