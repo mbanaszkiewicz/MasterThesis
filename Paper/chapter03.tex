@@ -5,7 +5,7 @@ This chapter contains information about the test environment used in next chapte
 \section{Benchmarking}
 Tests performed in this paper will be constructed and executed using .NET benchmarking tool, \emph{BenchmarkDotNet}. It is an open source library which helps in transforming methods into benchmarks and producing reproducible experiments. The results are guaranteed to be reliable and precise by the usage of \emph{perfolizer} statistical engine. \\ 
 
-The tool is well equiped for the topic of this paper. It measures performance as a mean estimated time (as opposed to average), removes outlier data, calculates error ranges and standard deviation. Additionaly, \emph{MemoryDiagnoser} tracks GC generations and memory allocations which is important when testing parallel programs. Lst. \ref{lst:QSBenchClass} showcases one of the benchmarks which will be used during the experiments.
+The tool is well equiped for the topic of this paper. It measures performance as mean estimated time, removes outlier data, calculates error ranges and standard deviation. Additionaly, \emph{MemoryDiagnoser} tracks GC generations and memory allocations which is important when testing parallel programs. Lst. \ref{lst:QSBenchClass} showcases one of the benchmarks which will be used during the experiments.
 These benchmarks were developed with the use of \emph{Pro .NET benchmarking: the art of performance measurement} by Andrey Akinshin \cite{Akinshin2019}
 
 
