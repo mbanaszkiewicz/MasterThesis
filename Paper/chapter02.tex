@@ -83,7 +83,7 @@ completed by yielding control to other tasks
 Most operating systems designed in the last decade have provided preemptive multitasking.
 Multitasking is useful for UI responsiveness to help avoid freezing the UI
 during long operations.
-\subsection{Multithreading}
+\subsubsection{Multithreading}
 Multithreading is an extension of the concept of multitasking, aiming to improve
 the performance of a program by maximizing and optimizing computer resources.
 Multithreading is a form of concurrency that uses multiple threads of execution.
@@ -108,6 +108,9 @@ of multithreading. You could use multithreading to parallelize a program by shar
 resources in the same process, for example, but you could also parallelize a program by
 executing the computation in multiple processes or even
 
+\subsubsection(Task vs data parallelism}
+
+\clearpage
 \section{Concurrency and threads in .NET}
 This section will introduce .NET, the subject platform of this thesis. While in-depth understanding of it's vast inner workings may be helpful, it is not necessary for comprehension of this paper. Thus only a brief overview of .NET and Common Language Runtime (CLR) will be presented, reserving most space for explanation of .NET's threading and parallel execution tools. For readers desiring deeper knowledge and insights into CLR concepts I highly recommend exhaustive book \emph{CLR via C\#} by Jefrrey Richter \cite{richter}.
 
@@ -200,9 +203,10 @@ However, it is important to know that the CLR uses Hill Climbing (HC algorithm (
 	\label{fig:hc}
 \end{figure}
 
-\subsubsection{Synchronization primitives}
 
-\subsubsection{Concurrent collections}
+\subsubsection{TPL}
 
-\subsubsection{Parallel stuff}
+\subsubsection{Fork/Join}
+
+\subsubsection{MapReduce}
 
