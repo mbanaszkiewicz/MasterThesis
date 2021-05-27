@@ -56,7 +56,7 @@ Memory consumption increased in both versions. Functional parallel version consu
 \label{fig:FuncVsImp1000000}
 \end{figure}
 
-\begin{table}
+\begin{table}\footnotesize
     \centering
     \caption{Quicksort benchmarking results}
 		\label{tab: QuicksortBenchmarking}
@@ -65,13 +65,22 @@ Memory consumption increased in both versions. Functional parallel version consu
 			\toprule
 			\bfseries Version 		&
 			\bfseries N    	    	& 
-			\bfseries Mean (ms) 	&
-			\bfseries Error (ms)    &
-			\bfseries StdDev (ms)	  &
+			\bfseries Mean 	      &
+			\bfseries Error       &
+			\bfseries StdDev 	    &
 			\bfseries Gen 0	    	&
 			\bfseries Gen 1	    	&
 			\bfseries Gen 2	    	&
-			\bfseries Alloc. (MB) & \\ 
+			\bfseries Alloc.      \\ 
+			&
+			&
+			\bfseries {[}ms{]} &
+			\bfseries {[}ms{]} &
+			\bfseries {[}ms{]} &
+			&
+			&
+			&
+			\bfseries{[}MB{]} \\			
 			\midrule 
 			\multicolumn{9}{c}{.NET Framework 4.7} \\ 
 			\midrule 
@@ -256,7 +265,7 @@ consumption of $\approx 14\%$ (Fig. \ref{fig: NugetMemory}) (Tab. \ref{tab: Nuge
     \begin{tabular}{p{5cm}p{3cm}}
 			\toprule
 			\bfseries Name 	&
-			\bfseries Value &
+			\bfseries Value \\
 			\midrule
 			\emph{Map} degree of parallelism & 10 \\
 			\emph{Reduce} degree of parallelism & 10 \\
@@ -309,7 +318,7 @@ consumption of $\approx 14\%$ (Fig. \ref{fig: NugetMemory}) (Tab. \ref{tab: Nuge
 			\bfseries Gen 0	    &
 			\bfseries Gen 1	    &
 			\bfseries Gen 2	    &
-			\bfseries Allocated &
+			\bfseries Allocated \\
 			\midrule 
 			\multicolumn{8}{c}{Small dataset} \\ 
 			\midrule
