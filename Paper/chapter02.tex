@@ -49,10 +49,15 @@ Timing is the qualifying factor for parallelism. It may be achieved by dividing 
 	\label{fig:seqvspar}
 \end{figure}
 
+\subsubsection{CPU vs GPU computing}
+With the advent of general-purpose computing on graphics processing units one may ask why even bother with CPU parallel programming. Is is true that GPGPU has many advantages over CPU computing, but there two major drawbacks: branching and varying instructions. GPGPU as a technique is very good at dealing with single instructions applied to large amount of data. When branching which is switching instructions during execution happens, GPGPU tends to be outperformed by CPU computing. Thus, for general software development, full of boolean logic and if statements, CPU computing is still the standard way of proceeding \cite{Tarditi2006}.
+
 \subsubsection{Amdahl's Law}
 TODO: Add description
+
 \subsubsection{Task vs data parallelism}
 TODO: Add description
+
 \clearpage
 \section{Concurrency and threads in .NET}
 This section will introduce .NET, the subject platform of this thesis. While in-depth understanding of it's vast inner workings may be helpful, it is not necessary for comprehension of this paper. Thus only a brief overview of .NET and Common Language Runtime (CLR) will be presented, reserving most space for explanation of .NET's threading and parallel execution tools. For readers desiring deeper knowledge and insights into CLR concepts I highly recommend exhaustive book \emph{CLR via C\#} by Jefrrey Richter \cite{richter}.
@@ -141,6 +146,7 @@ However, it is important to know that the CLR uses Hill Climbing algorithm and s
 
 
 \subsubsection{TPL}
+\label{sec: TPL}
 Task Parallel Library (TPL) is a library for .NET that
 makes it easy to take advantage of potential parallelism in
 a program. The library relies heavily on generics and delegate
@@ -151,14 +157,17 @@ The TPL abstracts many low-level details like state management, cancellation, pa
 It also dynamically scales the degree of parallelism to optimize usage of available processors. Starting with .NET Framework 4, the TPL is the preferred way to write multithreaded and parallel code. \cite{Leijen2009}
 
 \subsubsection{PLINQ}
+\label{sec: PLINQ}
 Language Integrated Query (or LINQ as it is commonly called) is a query execution engine which features a unified model for querying any enumerable data source in a type-safe manner. Parallel LINQ (PLINQ) is a parallel execution engine that can be used to execute LINQ queries on multi-core systems. PLINQ provides excellent support for implementing declarative data parallelism in applications using the \emph{ParallelEnumerable} and \emph{ParallelQuery} classes which can be found in \emph{System.Linq} namespace.
 Most important methods of \emph{ParallelQuery} class are called \emph{.AsParallel()} and \emph{.AsSequential()}. These enable easy conversion of sequential queries into parallel ones and vice versa.
 
 \subsubsection{Partitioners}
+\label{sec: Partitioners}
 Data source needs to be partitioned into multiples sections before parallelizing an operation on it. Only then these sections can be accessed concurrently my multiple threads. PLINQ and the TPL provide default partitioners which do not use load balancing. Custom partitioners can be provided to change that. Overloads of the \emph{Partitioner.Create} method
  enable developer's to specify whether it should attempt load balance data between threads. It uses chunk partitioning in which the elements are passed in small chunks to each task when they request it. This approach helps ensure that work is spread evenly throughout all working tasks until the entire query is completed. \cite{Partitioners}
 
 \subsubsection{Fork/Join}
+\label{sec: ForkJoin}
 TODO: Add description
 \begin{figure}[htb]
 	\centering
@@ -168,6 +177,7 @@ TODO: Add description
 \end{figure}
 
 \subsubsection{MapReduce}
+\label{sec: MapReduce}
 TODO: Add description
 \begin{figure}[htb]
 	\centering

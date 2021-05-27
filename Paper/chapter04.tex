@@ -268,7 +268,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 
 \subsubsection{Parallel implementation}
 
-This  implementation uses PLINQ (TODO: Add reference) which easily transforms sequential LINQ query into a parallel one with 2 lines of code.
+This implementation uses PLINQ (Sec. \ref{sec: PLINQ}) which easily transforms sequential LINQ query into a parallel one with 2 lines of code.
 This was enabled by using \emph{Aggregate}, LINQ's equivalent of functional sequence transforming function: \emph{Seq.Fold}. Force parallelism execution mode is used to make sure that PLINQ internal mechanism won't transform the query into a sequential one.
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel k-means algorithm}, label={lst:ParKMeans}]
@@ -290,7 +290,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 
 \subsubsection{Parallel implementation with partitioner}
 
-To further boost the parallel implementation, data partitioner was used to load balance the data between threads (TODO: Add reference) (Lst. \ref{lst:PartParKMeans}). 
+To further boost the parallel implementation, data partitioner was used to load balance the data between threads (Sec. \ref{sec: Partitioners}) (Lst. \ref{lst:PartParKMeans}). 
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel k-means algorithm with partitioner}, label={lst:PartParKMeans}]
 private Func<DataSet, DataSet> UpdateCentroids()
@@ -399,7 +399,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \end{lstlisting}
 
 \subsubsection{Parallel implementation}
-Parallel version was implemented using Fork/Join (TODO: Add reference) pattern. TPL (TODO: Add Reference) enables us to easily apply this pattern with multiple parallelization constructs, in this case the \emph{Parallel.For} replacement for sequential loops. (Lst. \ref{lst:ParMandelbrot})
+Parallel version was implemented using Fork/Join (Sec. \ref{sec: ForkJoin}) pattern. TPL ((Sec. \ref{sec: TPL})  enables us to easily apply this pattern with multiple parallelization constructs, in this case the \emph{Parallel.For} replacement for sequential loops. (Lst. \ref{lst:ParMandelbrot})
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel Mandelbrot algorithm}, label={lst:ParMandelbrot}]
 private Action<BitmapData, byte[]> DrawingStrategy()
@@ -500,7 +500,7 @@ private static bool BelongsToMandelbrot(ComplexNumberStruct number, int iteratio
 \clearpage
 \section{NuGet package ranking}
 \label{sec: NuGetImp}
-NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (TODO: Add refrence).
+NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (Sec. \ref{sec: MapReduce}) 
 
 Methods used in package ranking are defined in Lst. \ref{lst:NugetPackageRanking}. These functions will be later plugged into multiple, generic implementations of MapReduce pattern. \emph{Map} function is responsible for extracting key-value tuples from NuGet packages. Key represents the package name and float it's score, which will be later computed into the overall score of the package in the \emph{Reduce} function.
 
@@ -522,7 +522,7 @@ private static (string packageName, float) Reduce(string packageName, IEnumerabl
 \end{lstlisting}
 
 \subsubsection{Sequential implementation}
-MapReduce pattern is described in detail in (TODO: Add reference). 
+MapReduce pattern is described in detail in Sec. \ref{sec: MapReduce} . 
 In simple terms \emph{Map} function is responsible for mapping objects into collections of key-value pairs. In this case it will transform \emph{NuGetPackage} objects into collection of packageName-score tuples. \emph{Reduce} function receives collection of values grouped by pairs, in this case groups of scores grouped by the name of the package. The pattern was implemented using LINQ, with eager materialization in both \emph{Map} and \emph{Reduce} to avoid multiple evaluation of the same sequence (Lst. \ref{lst:SeqMapReduce}).
 
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential MapReduce implementation}, label={lst:SeqMapReduce}]
