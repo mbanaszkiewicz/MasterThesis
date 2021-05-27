@@ -1,5 +1,5 @@
 \chapter{Concurrency and Threads in .NET}
-TODO: Chapter introduction
+This chapter serves as an overall introduction to the reader to concurrency in .NET. Common terminology used in parallel computing will be presented together with .NET specific tools and technologies. 
 
 \section{Concurrency terminology}
 This section defines common terminology used in this thesis. These terms are often used in the same context, but even though they are similar, they have different meanings. It is imperative to be aware of these distinctions in order to be able to reason clearly about software and multithreading.
@@ -9,10 +9,10 @@ This section defines common terminology used in this thesis. These terms are oft
 The disadvantage of performing operations this way is that the thread must wait during parts of the process, being effectively blocked. Blocking threads and singular instructions make poor use of device resources.
 To reiterate, sequential programming is a set of consecutive, progressively ordered instruction execution in linear fashion (fig. \ref{fig:seq}).
 
-\begin{figure}[ht!]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[width=\columnwidth]{figures02/seq.png}
-	\caption{Sequential programming involves executing progressively ordered set of instructions}
+		\includegraphics[scale=1.0]{figures02/seq.png}
+	\caption{Sequential programming as a progressive set of instructions}
 	\label{fig:seq}
 \end{figure}
 
@@ -26,10 +26,10 @@ As an example let's examine an online video streamer. The program downloads data
 Concurrency gives the impression that all of these parts of the program are executing simultaneously, an illusion of parallelism is created. 
 But in a single-core environment, the execution of one thread is temporarily paused and switched to another thread, this is called context switching, as shown in fig. \ref{fig:convspar}
 
-\begin{figure}[ht!]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[width=\columnwidth]{figures02/convspar.png}
-	\caption{Difference between concurrent and parallel models, both may look identical to the user}
+		\includegraphics[scale=1.0]{figures02/convspar.png}
+	\caption{Comparison of concurrent and parallel models}
 	\label{fig:convspar}
 \end{figure}
 
@@ -42,74 +42,17 @@ Parallel execution is constrained by the runtime environment of the program, dev
 \\ \\ 
 Timing is the qualifying factor for parallelism. It may be achieved by dividing a single task into multiple, self-contained subtasks. When they are run simultaneously on available cores and their execution overlaps in time then the program is parallel (fig. \ref{fig:seqvspar}).
 
-\begin{figure}[ht!]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[width=\columnwidth]{figures02/seqvspar.png}
+		\includegraphics[scale=1.0]{figures02/seqvspar.png}
 		\caption{Comparison of sequential and parallel models}
 	\label{fig:seqvspar}
 \end{figure}
 
-\subsubsection{Multitasking}
-
-
-Multitasking is the concept of performing multiple tasks over a period of time by executing
-them concurrently. We’re familiar with this idea because we multitask all the
-time in our daily lives. For example, while waiting for the barista to prepare our cappuccino,
-we use our smartphone to check our emails or scan a news story. We’re doing
-two things at one time: waiting and using a smartphone.
-Computer multitasking was designed in the days when computers had a single CPU
-to concurrently perform many tasks while sharing the same computing resources. Initially,
-only one task could be executed at a time through time slicing of the CPU. (Time
-slice refers to a sophisticated scheduling logic that coordinates execution between multiple
-threads.) The amount of time the schedule allows a thread to run before scheduling
-a different thread is called thread quantum. The CPU is time sliced so that each
-thread gets to perform one operation before the execution context is switched to
-another thread. Context switching is a procedure handled by the operating system to
-Let’s start with terminology 11
-multitask for optimized performance (figure 1.7). But in a single-core computer, it’s
-possible that multitasking can slow down the performance of a program by introducing
-extra overhead for context switching between threads.
-Context switching on
-a single-core machine
-Figure 1.7 Each task has a different shade, indicating that the context switch in a single-core machine
-gives the illusion that multiple tasks run in parallel, but only one task is processed at a time.
-There are two kinds of multitasking operating systems:
-? Cooperative multitasking systems, where the scheduler lets each task run until it finishes
-or explicitly yields execution control back to the scheduler
-? Preemptive multitasking systems (such as Microsoft Windows), where the scheduler
-prioritizes the execution of tasks, and the underlying system, considering the priority
-of the tasks, switches the execution sequence once the time allocation is
-completed by yielding control to other tasks
-Most operating systems designed in the last decade have provided preemptive multitasking.
-Multitasking is useful for UI responsiveness to help avoid freezing the UI
-during long operations.
-\subsubsection{Multithreading}
-Multithreading is an extension of the concept of multitasking, aiming to improve
-the performance of a program by maximizing and optimizing computer resources.
-Multithreading is a form of concurrency that uses multiple threads of execution.
-Multithreading implies concurrency, but concurrency doesn’t necessarily imply multithreading.
-Multithreading enables an application to explicitly subdivide specific tasks
-into individual threads that run in parallel within the same process.
-NOTE A process is an instance of a program running within a computer system.
-Each process has one or more threads of execution, and no thread can exist
-outside a process.
-A thread is a unit of computation (an independent set of programming instructions
-designed to achieve a particular result), which the operating system scheduler independently
-executes and manages. Multithreading differs from multitasking: unlike
-multitasking, with multithreading the threads share resources. But this “sharing
-resources” design presents more programming challenges than multitasking does. We
-discuss the problem of sharing variables between threads later in this chapter in section
-1.4.1.
-12 chapter 1 Functional concurrency foundations
-The concepts of parallel and multithreading programming are closely related. But
-in contrast to parallelism, multithreading is hardware-agnostic, which means that it can
-be performed regardless of the number of cores. Parallel programming is a superset
-of multithreading. You could use multithreading to parallelize a program by sharing
-resources in the same process, for example, but you could also parallelize a program by
-executing the computation in multiple processes or even
-
-\subsubsection(Task vs data parallelism}
-
+\subsubsection{Amdahl's Law}
+TODO: Add description
+\subsubsection{Task vs data parallelism}
+TODO: Add description
 \clearpage
 \section{Concurrency and threads in .NET}
 This section will introduce .NET, the subject platform of this thesis. While in-depth understanding of it's vast inner workings may be helpful, it is not necessary for comprehension of this paper. Thus only a brief overview of .NET and Common Language Runtime (CLR) will be presented, reserving most space for explanation of .NET's threading and parallel execution tools. For readers desiring deeper knowledge and insights into CLR concepts I highly recommend exhaustive book \emph{CLR via C\#} by Jefrrey Richter \cite{richter}.
@@ -130,9 +73,9 @@ All applications have access to the same runtime, APIs and class library which a
 The managed execution process starts with choosing one of Commong Language Specification (CLS) compliant compilers, most popular being C\#, F\# and Visual Basic. The compiler translates source code into Microsoft Intermediate Language (MSIL). In this form code is CPU-independent and before it is run it must be converted to native code, usually by just-in-time (JIT) compiler. This process is performed on demand at application run time, when the contents of an assembly are loaded and executed \cite{ManagedExecution}.
 CLR execution model is presented on fig. \ref{fig:clr}.
 
-\begin{figure}[ht!]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[width=0.8\columnwidth]{figures02/clr.png}
+		\includegraphics[scale=1.0]{figures02/clr.png}
 	\caption{CLR execution model}
 	\label{fig:clr}
 \end{figure}
@@ -185,28 +128,52 @@ Context switches are needed to provide end users with responsive experience, but
 \subsubsection{ThreadPool in CLR} 
 To improve the resource consumption situation, the CLR contains code to manage its own ThreadPool. Instead of creating and deleting threads for every request, it maintains a set of threads for reuse. Tasks from operation queue are dispatched to threads existing in the pool. When the task is completed, thread is returned to the pool instead of being deleted (fig. \ref{fig:threadpool}).
 
-\begin{figure}[!ht]
+\begin{figure}[htb]
 	\centering
-		\includegraphics[width=0.8\columnwidth]{figures02/threadpool.png}
-		\caption{Thread pool decreases resource consumption associated with creating and deleting threads}
+		\includegraphics[scale=1.0]{figures02/threadpool.png}
+		\caption{Thread pool reuses threads to decrease resource consumption}
 		\label{fig:threadpool}
 \end{figure}
 
 
 CLR's ThreadPool saw many advancements in .NET 4.0 release, facilitating concurrent and parallel execution on multi-core architectures. Two major points were considered during development, quick work dispatch and throttling the degree of parallelism. While the former one is very important, it has relatively low impact on the topic of this paper. 
-However, it is important to know that the CLR uses Hill Climbing (HC algorithm (fig. \ref{fig:hc}) and signal processing techniques to throttle the amount of threads spawned in the ThreadPool. These can, in specific and rare situations, be manually adjusted for further performance increases \cite{Fuentes2010}.
-
-\begin{figure}[!ht]
-	\centering
-		\includegraphics[width=0.8\columnwidth]{figures02/hc.PNG}
-	\caption{Comparison of the old concurrency controller and .NET 4.0 HC concurrency controller \cite{Hellerstein2008}}
-	\label{fig:hc}
-\end{figure}
+However, it is important to know that the CLR uses Hill Climbing algorithm and signal processing techniques to throttle the amount of threads spawned in the ThreadPool. These can, in specific and rare situations, be manually adjusted for further performance increases \cite{Fuentes2010}.
 
 
 \subsubsection{TPL}
+Task Parallel Library (TPL) is a library for .NET that
+makes it easy to take advantage of potential parallelism in
+a program. The library relies heavily on generics and delegate
+expressions to provide custom control structures expressing
+structured parallelism such as map-reduce in user
+programs. Types and APIs of TPL are available in the System.Threading and System.Threading.Tasks namespaces.
+The TPL abstracts many low-level details like state management, cancellation, partitioning of work or scheduling threads on the ThreadPool.
+It also dynamically scales the degree of parallelism to optimize usage of available processors. Starting with .NET Framework 4, the TPL is the preferred way to write multithreaded and parallel code. \cite{Leijen2009}
+
+\subsubsection{PLINQ}
+Language Integrated Query (or LINQ as it is commonly called) is a query execution engine which features a unified model for querying any enumerable data source in a type-safe manner. Parallel LINQ (PLINQ) is a parallel execution engine that can be used to execute LINQ queries on multi-core systems. PLINQ provides excellent support for implementing declarative data parallelism in applications using the \emph{ParallelEnumerable} and \emph{ParallelQuery} classes which can be found in \emph{System.Linq} namespace.
+Most important methods of \emph{ParallelQuery} class are called \emph{.AsParallel()} and \emph{.AsSequential()}. These enable easy conversion of sequential queries into parallel ones and vice versa.
+
+\subsubsection{Partitioners}
+Data source needs to be partitioned into multiples sections before parallelizing an operation on it. Only then these sections can be accessed concurrently my multiple threads. PLINQ and the TPL provide default partitioners which do not use load balancing. Custom partitioners can be provided to change that. Overloads of the \emph{Partitioner.Create} method
+ enable developer's to specify whether it should attempt load balance data between threads. It uses chunk partitioning in which the elements are passed in small chunks to each task when they request it. This approach helps ensure that work is spread evenly throughout all working tasks until the entire query is completed. \cite{Partitioners}
 
 \subsubsection{Fork/Join}
+TODO: Add description
+\begin{figure}[htb]
+	\centering
+		\includegraphics[scale=1.0]{figures02/forkjoin.png}
+		\caption{Data parallelism Fork/Join pattern}
+		\label{fig:ForkJoin}
+\end{figure}
 
 \subsubsection{MapReduce}
+TODO: Add description
+\begin{figure}[htb]
+	\centering
+		\includegraphics[scale=1.0]{figures02/mapreduce.png}
+		\caption{Data parallelism MapReduce pattern}
+		\label{fig:MapReduce}
+\end{figure}
 
+Having explained .NET parallelism tools and concepts used in the thesis, next chapter will present the test environment in which experiments will be conducted. 
