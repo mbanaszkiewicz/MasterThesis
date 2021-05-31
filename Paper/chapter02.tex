@@ -52,11 +52,84 @@ Timing is the qualifying factor for parallelism. It may be achieved by dividing 
 \subsubsection{CPU vs GPU computing}
 With the advent of general-purpose computing on graphics processing units one may ask why even bother with CPU parallel programming. Is is true that GPGPU has many advantages over CPU computing, but there two major drawbacks: branching and varying instructions. GPGPU as a technique is very good at dealing with single instructions applied to large amount of data. When branching which is switching instructions during execution happens, GPGPU tends to be outperformed by CPU computing. Thus, for general software development, full of boolean logic and if statements, CPU computing is still the standard way of proceeding \cite{Tarditi2006}.
 
+\pagebreak
 \subsubsection{Amdahl's Law}
-TODO: Add description
+Gene Amdahl made several insights about parallel programming in his 1967 paper. \cite{Amdahl1967} One of these insights would later be formulated into Amdahl's law:
+\\ \\ 
+"...the effort expended on achieving high parallel processing rates is wasted unless it is accompanied by achievements in sequential processing rates of very nearly the same magnitude."
+\\ \\
+Amdahl's law is a formula which attempts to describe the potential speedup of a parallel program with sequential parts: 
+\begin{equation}
+T_N = \frac{1}{(1 - P) + \frac{P}{N}}
+\end{equation}
+where
+\begin{itemize}
+	\item $T_N$ is the theoretical speedup of execution
+	\item P is percentage of parallel code
+	\item N is available number of cores
+\end{itemize}
 
+This equation emphasizes reducing the amount of sequential code but it makes many simplifying assumptions which make it fit only few very specific scenarios. It doesn't take into account performance saturation, thread overhead or overlapping of serial and parallel code \cite{Popov2010}.
+John L. Gustafson in his article named \emph{"Reevaluating Amdahl's Law"} \cite{Gustafson1988} examined the theoretical speedup in a different and more contemporary perspective, which includes distributed systems and cloud computing. His formula is as follows: 
+\begin{equation}
+T = S + (N*P)
+\end{equation}
+where
+\begin{itemize}
+	\item T is the theoretical speedup of execution
+	\item S are the sequential units of work
+	\item P are the units of work that can be executed in parallel
+	\item N is the number of available cores
+\end{itemize}
 \subsubsection{Task vs data parallelism}
-TODO: Add description
+The goal of data parallelism is decomposing a given data set and generating a sufficient number of tasks to maximize the use of CPU resources. In addition, each task shouldbe scheduled to compute enough operations to guarantee a faster execution time.
+his is in contrast to context switching, which could introduce negative overhead.
+Data parallelism comes in two flavors:
+¡ Task parallelism targets the execution of computer programs across multiple processors,
+where each thread is responsible for performing a different operation
+at the same time. It is the simultaneous execution of many different functions
+across the same or different data sets on multiple cores.
+¡ Data parallelism targets the distribution of a given data set into smaller partitions
+across multiple tasks, where each task performs the same instruction in parallel.
+For example, data parallelism could refer to an image-processing algorithm,
+where each image or pixel is updated in parallel by independent tasks. Conversely,
+task parallelism would compute in parallel a set of images, applying a
+different operation for each image. See figure 4.2.
+100 chapter 4 The basics of processing big data: data parallelism, part 1
+Data
+Parallelism set
+Data
+set
+Task 2
+Task 3
+Task 4
+Task 5
+Task 6
+Data
+Parallelism set
+Data parallelism Task parallelism
+Task 1
+1N 1/6
+Data
+set
+Task 2
+2N 1/6
+Task 3
+3N 1/6
+Task 4
+4N 1/6
+Task 5
+5N 1/6
+Task 6
+6N 1/6
+Task 1
+Figure 4.2 Data parallelism is the simultaneous execution of the same function across the elements
+of a data set. Task parallelism is the simultaneous execution of multiple different functions across the
+same or different data sets.
+Is summary, task parallelism focuses on executing multiple functions (tasks), and aims
+to reduce the overall time of computation by running these tasks simultaneously. Data
+parallelism reduces the time it takes to process a data set by splitting the same algorithm
+computation among multiple CPUs to be performed in parallel.
 
 \clearpage
 \section{Concurrency and threads in .NET}
@@ -168,7 +241,8 @@ Data source needs to be partitioned into multiples sections before parallelizing
 
 \subsubsection{Fork/Join}
 \label{sec: ForkJoin}
-TODO: Add description
+The Fork/Join pattern is built from two primary steps. First a single thread splits a given task into a series of subtasks designated to run in parallel. Afterwards the thread waits for the parallel operations to complete so that it can merge the results into the final output Fig. \ref{fig:ForkJoin}. When applied recursively, Fork/Join achieves the divide-and-conquer paradigm.
+
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=1.0]{figures02/forkjoin.png}
@@ -178,7 +252,18 @@ TODO: Add description
 
 \subsubsection{MapReduce}
 \label{sec: MapReduce}
-TODO: Add description
+
+MapReduce pattern, introduced in \emph{MapReduce: Simplified
+Data Processing on Large Clusters} \cite{MapReduce} paper provides solution for big data analysis. It's designed to enable scalable computations on multiple machines. It has found great use in domains requiring operations on massive datasets like machine learning, image processing or data mining.
+\emph{map} and \emph{reduce} combinators used in fuctional paradigm were the source of inspiration for the MapReduce model (Fig. \ref{fig:MapReduce}). This style of programming can be used without knowledge of concurrent programming, all low-level details can be handled by the actual runtime (TPL in case of .NET).
+The overarching idea of this pattern is to query streams of data by various maps and reductions. \emph{Map} operations are the ones that preserve the number of elements but transform them into a different format. Afterwards the elements are reduced by filtering or aggregating. 
+\\ \\
+In this thesis MapReduce will be implemented in a generic fashion with two main phases:
+\begin{itemize}
+	\item \emph{Map} receives the input and is responsible for mapping objects into collections of key-value pairs. The values are grouped by the key value and passed to the second phase.
+\item \emph{Reduce} aggregates the results from \empg{Map} by applying a function to values with the same key, with goal of reducing the amount of data. From there more functions can be composed into the chain.
+\end{itemize}
+
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=1.0]{figures02/mapreduce.png}
