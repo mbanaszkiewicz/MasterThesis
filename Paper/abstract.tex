@@ -12,20 +12,27 @@
 %%%Nam id nulla a adipiscing tortor, dictum ut, lobortis urna. Donec non dui. Cras tempus orci ipsum, molestie quis, lacinia varius nunc, rhoncus purus, consectetuer congue risus. 
 %\mbox{}\vspace{2cm} % can be shifted depending on the length of the abstract 
 \begin{abstract}
-Lorem ipsum dolor sit amet eleifend et, congue arcu. Morbi tellus sit amet, massa. Vivamus est id risus. Sed sit amet, libero. Aenean ac ipsum. Mauris vel lectus. 
-
-Nam id nulla a adipiscing tortor, dictum ut, lobortis urna. Donec non dui. Cras tempus orci ipsum, molestie quis, lacinia varius nunc, rhoncus purus, consectetuer congue risus. 
+Ever increasing demand for computing power makes parallel programming
+an invaluable tool for every software engineer. To fully reap the rewards of this paradigm, programmers need to make proper decisions at every step of software design. This thesis aims to alleviate this process with data driven recommendations for developers working on the .NET platform.
+\\ \\ 
+To arrive at the set of guidelines multiple versions of algorithms and software were implemented. .NET's Task Parallel Library, 
+PLINQ, MapReduce and Fork/Join patterns and load balancing partitioners were used in the process. Each of the implementations was subjected to exhaustive tests using BenchmarkDotNet benchmarking library,
+\\ \\ 
+The results showed that theoretically sound parallel algorithm implemented poorly may even be slower than the unchanged sequential versions. Using functional programming concepts helped creating maintainable and readable solutions, decreasing the change of errors during implementation. Memory thread overhead did not show to be a major issue. Benchmarking at all stages of development proved to be imperative when programming for performance. 
 \end{abstract}
-\mykeywords{one, two, three, four}
+\mykeywords{.NET, Task Parallel Library, parallelism, multithreading, benchmarking}
 % It would be good to copy the keywords to the metadata of the pdf document (in the file Thesis.tex)
 % Unfortunately, the implemented macro does not do it automatically, so the manual copy remains. 
 
 {
 \selectlanguage{polish}
 \begin{abstract}
-Lorem ipsum dolor sit amet eleifend et, congue arcu. Morbi tellus sit amet, massa. Vivamus est id risus. Sed sit amet, libero. Aenean ac ipsum. Mauris vel lectus. 
+Wciąż rosnący popyt na moc obliczeniową sprawia, że programowanie równoległe to nieocenione narzędzie dla każdego inżyniera oprogramowania. By w pełni czerpać z zysków oferowanych przez ten paradygmat, programiści muszą podejmować odpowiednia decyzje na każdym etapie projektowania aplikacji. Ta praca ma na celu ułatwienie tego procesu dla inżynierów pracujących na platformie .NET poprzez przedstawienie rekomendacji opartych na danych.
+\\ \\ 
+Algorytmy oraz oprogramowanie zostało wielokrotnie zaimplementowane na różne sposoby jako baza dla zestawu zaleceń. Wykorzystano przy tym Task Parallel Library, PLINQ, wzorce MapReduce oraz Fork/Join i równoważenie obciążenia danych. Każda z implementacji została poddana wyczerpujący testom przy użyciu biblioteki BenchmarkDotNet.
+\\ \\ 
+Wyniki pokazały, że teoretycznie poprawne równoległe algorytmy zaimplementowane w wątpliwy sposób mogą być wolniejsze niż niezmienione wersje sekwencyjne. Użycie pojęc pochodzących z programowania funkcyjnego pozwoliło na opracowanie czytelnych i utrzymywalnych rozwiązań, zmniejszających ryzyko popełnienia błedu przy implementacji. Koszty związane z zarządzniem wątkami były znikome. Analiza porównawcza okazała się być konieczna jako integralna część każdego etapu projektowania rozwiązań optymalnych wydajnościowo.
 
-Nam id nulla a adipiscing tortor, dictum ut, lobortis urna. Donec non dui. Cras tempus orci ipsum, molestie quis, lacinia varius nunc, rhoncus purus, consectetuer congue risus. 
 \end{abstract}
-\mykeywords{raz, dwa, trzy, cztery}\\ 
+\mykeywords{.NET, Task Parallel Library, programowanie równoległe, wielowątkowość, analiza porównawcza}\\ 
 }

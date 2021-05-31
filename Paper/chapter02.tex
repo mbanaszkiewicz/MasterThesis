@@ -81,55 +81,6 @@ where
 	\item P are the units of work that can be executed in parallel
 	\item N is the number of available cores
 \end{itemize}
-\subsubsection{Task vs data parallelism}
-The goal of data parallelism is decomposing a given data set and generating a sufficient number of tasks to maximize the use of CPU resources. In addition, each task shouldbe scheduled to compute enough operations to guarantee a faster execution time.
-his is in contrast to context switching, which could introduce negative overhead.
-Data parallelism comes in two flavors:
-¡ Task parallelism targets the execution of computer programs across multiple processors,
-where each thread is responsible for performing a different operation
-at the same time. It is the simultaneous execution of many different functions
-across the same or different data sets on multiple cores.
-¡ Data parallelism targets the distribution of a given data set into smaller partitions
-across multiple tasks, where each task performs the same instruction in parallel.
-For example, data parallelism could refer to an image-processing algorithm,
-where each image or pixel is updated in parallel by independent tasks. Conversely,
-task parallelism would compute in parallel a set of images, applying a
-different operation for each image. See figure 4.2.
-100 chapter 4 The basics of processing big data: data parallelism, part 1
-Data
-Parallelism set
-Data
-set
-Task 2
-Task 3
-Task 4
-Task 5
-Task 6
-Data
-Parallelism set
-Data parallelism Task parallelism
-Task 1
-1N 1/6
-Data
-set
-Task 2
-2N 1/6
-Task 3
-3N 1/6
-Task 4
-4N 1/6
-Task 5
-5N 1/6
-Task 6
-6N 1/6
-Task 1
-Figure 4.2 Data parallelism is the simultaneous execution of the same function across the elements
-of a data set. Task parallelism is the simultaneous execution of multiple different functions across the
-same or different data sets.
-Is summary, task parallelism focuses on executing multiple functions (tasks), and aims
-to reduce the overall time of computation by running these tasks simultaneously. Data
-parallelism reduces the time it takes to process a data set by splitting the same algorithm
-computation among multiple CPUs to be performed in parallel.
 
 \clearpage
 \section{Concurrency and threads in .NET}
