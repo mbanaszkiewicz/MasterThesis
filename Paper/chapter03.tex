@@ -1,14 +1,12 @@
 \chapter{Test Environment} 
-
+\label{chap:3}
 This chapter contains information about the test environment used in next chapters including description of benchmarking method and specification of hardware and software used in experiments. These parameters would be required if one set out to reproduce the collected data or to compare experiments conducted on different hardware or software.
 
 \section{Benchmarking}
-Tests performed in this paper will be constructed and executed using .NET benchmarking tool, \emph{BenchmarkDotNet}. It is an open source library which helps in transforming methods into benchmarks and producing reproducible experiments. The results are guaranteed to be reliable and precise by the usage of \emph{perfolizer} statistical engine. \\ 
+Tests performed in this paper will be constructed and executed using .NET benchmarking tool, \emph{BenchmarkDotNet}. It is an open source library which helps in transforming methods into benchmarks and producing reproducible experiments. The results are guaranteed to be reliable and precise by the usage of \emph{perfolizer} statistical engine. 
 
-The tool is well equiped for the topic of this paper. It measures performance as mean estimated time, removes outlier data, calculates error ranges and standard deviation. Additionaly, \emph{MemoryDiagnoser} tracks GC generations and memory allocations which is important when testing parallel programs. Lst. \ref{lst:QSBenchClass} showcases one of the benchmarks which will be used during the experiments.
-These benchmarks were developed with the use of \emph{Pro .NET benchmarking: the art of performance measurement} by Andrey Akinshin \cite{Akinshin2019}
-
-
+The tool is well equiped for the topic of this paper. It measures performance as mean estimated time, removes outlier data, calculates error ranges and standard deviation. Additionaly, \emph{MemoryDiagnoser} tracks GC generations and memory allocations which is important when testing parallel programs. Listing~\ref{lst:QSBenchClass} showcases one of the benchmarks which will be used during the experiments.
+These benchmarks were developed with the use of \emph{Pro .NET benchmarking: the art of performance measurement} by Andrey Akinshin~\cite{Akinshin2019}.
 
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Quicksort benchmark class}, label={lst:QSBenchClass}]
 namespace Net47Benchmarking
@@ -78,13 +76,12 @@ namespace Net47Benchmarking
 
 \clearpage
 \section{Hardware and software} 
-Each machine is different in it's own way, it is imperative to use the same hardware for all experiments to accurately benchmark tested software. One cannot expect same results presented later on this paper on their own environment. Specification of the machine used for development and benchmarking is presented in Tab. \ref{tab: HardSpec}. It's a middle-range (for 2021) machine for personal use.
-
+Each machine is different in it's own way, it is imperative to use the same hardware for all experiments to accurately benchmark tested software. Thus one cannot expect to receive the same results when conducting testing as presented later on this paper but in different settings. Specification of the machine used for development and benchmarking is presented in tab.~\ref{tab:HardSpec}. It's a middle-range (for 2021) machine for personal use.
 \begin{table}[!ht]
     \centering
     \caption{Machine specification}
-		\label{tab: HardSpec}
-    \begin{tabular}{p{1.5cm}p{6.5cm}}
+		\label{tab:HardSpec}
+    \begin{tabular}{ll}
 			\toprule
 			CPU  & AMD Ryzen 5 3600 3.95 GHz 6 Cores 12 Logical Processors \\
 			RAM  & Patriot 16GB 3000MHz CL16 \\ 
@@ -97,7 +94,7 @@ Each machine is different in it's own way, it is imperative to use the same hard
     \end{tabular}
 \end{table}
 
-AMD Ryzen 5 3600 is built using Zen2 architecture,  the successor of AMD's Zen and Zen+ microarchitectures. From the most notable features it enables 2 threads per physical core (SMT) and optimized processor caches: L1 cache with 32 kB  per core and 8-way associative input and output, L2 with 512 kB per core and L3 cache with 16MB per core. Fig. \ref{fig:Zen} showcases microarchitecutre overview of Zen2 processors. \cite{Zen}
+AMD Ryzen 5 3600 is built using Zen2 architecture,  the successor of AMD's Zen and Zen+ microarchitectures. From the most notable features it enables 2 threads per physical core (SMT) and optimized processor caches: L1 cache with 32 kB  per core and 8-way associative input and output, L2 with 512 kB per core and L3 cache with 16MB per core. Fig.~\ref{fig:Zen} showcases microarchitecutre overview of Zen2 processors~\cite{Zen}.
 
 \begin{figure}[!ht]
 	\centering
