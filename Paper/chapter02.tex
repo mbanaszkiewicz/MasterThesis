@@ -169,14 +169,14 @@ Task Parallel Library (TPL) is a library for .NET that makes it easy to take adv
 The TPL abstracts many low-level details like state management, cancellation, partitioning of work or scheduling threads on the ThreadPool. It also dynamically scales the degree of parallelism to optimize usage of available processors. Starting with .NET Framework 4, the TPL is the preferred way to write multithreaded and parallel code~\cite{Leijen2009}.
 
 \subsubsection{PLINQ}
-\label{sec:PLINQ} % TO DO: all code examples should be written in typewriter font (\texttt or \verb or \lstlisting with proper options)
+\label{sec:PLINQ}
 Language Integrated Query (or LINQ as it is commonly called) is a query execution engine which features a unified model for querying any enumerable data source in a type-safe manner. Parallel LINQ (PLINQ) is a parallel execution engine that can be used to execute LINQ queries on multi-core systems. PLINQ provides excellent support for implementing declarative data parallelism in applications using the \texttt{ParallelEnumerable} and \texttt{ParallelQuery} classes which can be found in \texttt{System.Linq} namespace.
 
 Most important methods of \texttt{ParallelQuery} class are called \texttt{.AsParallel()} and \texttt{.AsSequential()}. These enable easy conversion of sequential queries into parallel ones and vice versa.
 
 \subsubsection{Partitioners}
 \label{sec:Partitioners}
-Data source needs to be partitioned into multiples sections before parallelizing an operation on it. Only then these sections can be accessed concurrently my multiple threads. PLINQ and the TPL provide default partitioners which do not use load balancing. Custom partitioners can be provided to change that. Overloads of the \emph{Partitioner.Create} method enable developer's to specify whether it should attempt load balance data between threads. It uses chunk partitioning in which the elements are passed in small chunks to each task when they request it. This approach helps ensure that work is spread evenly throughout all working tasks until the entire query is completed~\cite{Partitioners}.
+Data source needs to be partitioned into multiples sections before parallelizing an operation on it. Only then these sections can be accessed concurrently my multiple threads. PLINQ and the TPL provide default partitioners which do not use load balancing. Custom partitioners can be provided to change that. Overloads of the \texttt{Partitioner.Create} method enable developer's to specify whether it should attempt load balance data between threads. It uses chunk partitioning in which the elements are passed in small chunks to each task when they request it. This approach helps ensure that work is spread evenly throughout all working tasks until the entire query is completed~\cite{Partitioners}.
 
 \subsubsection{Fork/Join}
 \label{sec:ForkJoin}

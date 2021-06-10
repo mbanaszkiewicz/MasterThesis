@@ -2,7 +2,7 @@
 \label{chap:4}
 This chapter contains information about algorithms and software which are used as subjects of this paper. Each subject will be presented with a detailed description of its behaviour alongside multiple implementations with the usage of parallel techniques like Fork/Join and MapReduce materialized using TPL and PLINQ.
 
-\section{Quicksort} % TO DO: use fig.~\ref{}, listing~\ref{}, tab.~\ref{}
+\section{Quicksort}
 \label{sec: QuickSortImp}
 Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer , are a great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}.
 
