@@ -1,0 +1,282 @@
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\TraceReloggerLib.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Dia2Lib.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\OSExtensions.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.Win61.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\msdia140.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\msvcp140.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\vcruntime140.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\KernelTraceControl.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\msdia140.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\msvcp140.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140_1.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe.config
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.pdb
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.Annotations.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.Diagnostics.Windows.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\CommandLine.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Iced.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.CodeAnalysis.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.NETCore.Client.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.Runtime.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.FastSerialization.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.Tracing.TraceEvent.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Win32.Registry.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Perfolizer.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Buffers.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Collections.Immutable.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Drawing.Common.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Memory.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Numerics.Vectors.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Reflection.Metadata.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Security.AccessControl.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Security.Principal.Windows.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Text.Encoding.CodePages.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Threading.Tasks.Extensions.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.ValueTuple.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Algorithms.dll
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Algorithms.pdb
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csprojAssemblyReference.cache
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe.config
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfoInputs.cache
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfo.cs
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CoreCompileInputs.cache
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CopyComplete
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe
+C:\Users\Vithar\Desktop\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.pdb
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csprojAssemblyReference.cache
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe.config
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfoInputs.cache
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfo.cs
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CoreCompileInputs.cache
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\TraceReloggerLib.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Dia2Lib.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\OSExtensions.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.Win61.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\msdia140.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\msvcp140.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\x86\vcruntime140.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\KernelTraceControl.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\msdia140.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\msvcp140.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140_1.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\KMeans\winequality-red.csv
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe.config
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.pdb
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.Annotations.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.Diagnostics.Windows.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Chessie.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\CommandLine.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\FSharp.Collections.ParallelSeq.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\FSharp.Core.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\FSharp.Data.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\FsPickler.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Iced.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.CodeAnalysis.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.CodeAnalysis.CSharp.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.NETCore.Client.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.Runtime.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.FastSerialization.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.Tracing.TraceEvent.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Microsoft.Win32.Registry.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Mono.Cecil.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Newtonsoft.Json.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Paket.Core.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Perfolizer.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Buffers.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Collections.Immutable.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Diagnostics.DiagnosticSource.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Drawing.Common.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Memory.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Numerics.Vectors.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Reflection.Metadata.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Runtime.CompilerServices.Unsafe.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Security.AccessControl.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Security.Principal.Windows.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Text.Encoding.CodePages.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.Threading.Tasks.Extensions.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\System.ValueTuple.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\cs\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\de\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\en\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\es\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\fr\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\it\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ja\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ko\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pl\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pt-BR\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ru\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\tr\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hans\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hant\FSharp.Core.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\de\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\es\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\it\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Algorithms.dll
+D:\Master\MasterThesis\Code\Net47Benchmarking\bin\Release\net472\Algorithms.pdb
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CopyComplete
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe
+D:\Master\MasterThesis\Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.pdb
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\x86\KernelTraceControl.Win61.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\x86\msdia140.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\x86\msvcp140.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\x86\vcruntime140.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\amd64\KernelTraceControl.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\amd64\msdia140.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\amd64\msvcp140.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\amd64\vcruntime140_1.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\TraceReloggerLib.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Dia2Lib.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\OSExtensions.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\KMeans\winequality-red.csv
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe.config
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.exe
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Net47Benchmarking.pdb
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.Annotations.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\BenchmarkDotNet.Diagnostics.Windows.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Chessie.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\CommandLine.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\FSharp.Collections.ParallelSeq.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\FSharp.Core.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\FSharp.Data.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\FsPickler.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Iced.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.CodeAnalysis.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.CodeAnalysis.CSharp.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.NETCore.Client.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.Runtime.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.FastSerialization.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.Diagnostics.Tracing.TraceEvent.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Microsoft.Win32.Registry.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Mono.Cecil.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Newtonsoft.Json.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Paket.Core.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Perfolizer.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Buffers.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Collections.Immutable.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Diagnostics.DiagnosticSource.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Drawing.Common.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Memory.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Numerics.Vectors.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Reflection.Metadata.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Runtime.CompilerServices.Unsafe.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Security.AccessControl.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Security.Principal.Windows.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Text.Encoding.CodePages.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.Threading.Tasks.Extensions.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\System.ValueTuple.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\cs\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\de\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\en\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\es\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\fr\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\it\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ja\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ko\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\pl\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\pt-BR\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ru\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\tr\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\zh-Hans\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\zh-Hant\FSharp.Core.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\de\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\es\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\it\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Algorithms.dll
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\bin\Release\net472\Algorithms.pdb
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csprojAssemblyReference.cache
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe.config
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfoInputs.cache
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.AssemblyInfo.cs
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CoreCompileInputs.cache
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.csproj.CopyComplete
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.exe
+D:\Master\MasterThesis\CD Content\Source Code\Net47Benchmarking\obj\Release\net472\Net47Benchmarking.pdb

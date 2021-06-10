@@ -1,0 +1,849 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Benchmarking\\Benchmarking.csproj": {}
+  },
+  "projects": {
+    "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Algorithms\\Algorithms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Algorithms\\Algorithms.csproj",
+        "projectName": "Algorithms",
+        "projectPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Algorithms\\Algorithms.csproj",
+        "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
+        "outputPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Algorithms\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\Vithar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472",
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          },
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1605"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Chessie": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "FSharp.Collections.ParallelSeq": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[2.3.2, )"
+            },
+            "FsPickler": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Paket.Core": {
+              "target": "Package",
+              "version": "[3.27.0, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        },
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Chessie": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "FSharp.Collections.ParallelSeq": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[2.3.2, )"
+            },
+            "FsPickler": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Paket.Core": {
+              "target": "Package",
+              "version": "[3.27.0, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Benchmarking\\Benchmarking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Benchmarking\\Benchmarking.csproj",
+        "projectName": "Benchmarking",
+        "projectPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Benchmarking\\Benchmarking.csproj",
+        "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
+        "outputPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Benchmarking\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Vithar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Algorithms\\Algorithms.csproj": {
+                "projectPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Algorithms\\Algorithms.csproj"
+              },
+              "D:\\Master\\MasterThesis\\CD Content\\Source Code\\NugetDownloader\\NugetDownloader.fsproj": {
+                "projectPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\NugetDownloader\\NugetDownloader.fsproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1605"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.13.0, )"
+            },
+            "BenchmarkDotNet.Diagnostics.Windows": {
+              "target": "Package",
+              "version": "[0.13.0, )"
+            },
+            "Chessie": {
+              "target": "Package",
+              "version": "[0.6.0, )"
+            },
+            "FSharp.Collections.ParallelSeq": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[2.3.2, )"
+            },
+            "FsPickler": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Microsoft.NETCore.Platforms": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Microsoft.Win32.Primitives": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "Mono.Cecil": {
+              "target": "Package",
+              "version": "[0.9.6.4, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Paket.Core": {
+              "target": "Package",
+              "version": "[3.27.0, )"
+            },
+            "System.AppContext": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Collections.Concurrent": {
+              "target": "Package",
+              "version": "[4.0.12, )"
+            },
+            "System.Console": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Diagnostics.Debug": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Diagnostics.DiagnosticSource": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Diagnostics.FileVersionInfo": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Diagnostics.Process": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Diagnostics.Tools": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Diagnostics.TraceSource": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Diagnostics.Tracing": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Globalization": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Globalization.Calendars": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.IO": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.IO.Compression": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.IO.Compression.ZipFile": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.IO.FileSystem": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.IO.FileSystem.Primitives": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Net.Primitives": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Net.Sockets": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.ObjectModel": {
+              "target": "Package",
+              "version": "[4.0.12, )"
+            },
+            "System.Reflection": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Reflection.Extensions": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Reflection.Primitives": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Resources.ResourceManager": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Runtime.Extensions": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Runtime.Handles": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Runtime.InteropServices": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Runtime.InteropServices.RuntimeInformation": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "System.Security.Cryptography.Encoding": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Security.Cryptography.Primitives": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Security.Cryptography.ProtectedData": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Security.Cryptography.X509Certificates": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Text.Encoding.Extensions": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "System.Threading": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Threading.Tasks": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Threading.Timer": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Xml.ReaderWriter": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Xml.XDocument": {
+              "target": "Package",
+              "version": "[4.0.11, )"
+            },
+            "System.Xml.XPath": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Xml.XPath.XDocument": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Xml.XPath.XmlDocument": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "System.Xml.XmlDocument": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Master\\MasterThesis\\CD Content\\Source Code\\NugetDownloader\\NugetDownloader.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\NugetDownloader\\NugetDownloader.fsproj",
+        "projectName": "NugetDownloader",
+        "projectPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\NugetDownloader\\NugetDownloader.fsproj",
+        "packagesPath": "C:\\Users\\Vithar\\.nuget\\packages\\",
+        "outputPath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\NugetDownloader\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\Vithar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "noWarn": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Chessie": {
+              "target": "Package",
+              "version": "[0.6.0, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Collections.ParallelSeq": {
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "generatePathProperty": true
+            },
+            "FSharp.Data": {
+              "target": "Package",
+              "version": "[2.3.2, )",
+              "generatePathProperty": true
+            },
+            "FsPickler": {
+              "target": "Package",
+              "version": "[3.2.0, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.NETCore.Platforms": {
+              "target": "Package",
+              "version": "[1.0.1, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.Win32.Primitives": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "Mono.Cecil": {
+              "target": "Package",
+              "version": "[0.9.6.4, )",
+              "generatePathProperty": true
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[1.6.0, )",
+              "generatePathProperty": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )",
+              "generatePathProperty": true
+            },
+            "Paket.Core": {
+              "target": "Package",
+              "version": "[3.27.0, )",
+              "generatePathProperty": true
+            },
+            "System.AppContext": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Collections.Concurrent": {
+              "target": "Package",
+              "version": "[4.0.12, )",
+              "generatePathProperty": true
+            },
+            "System.Console": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.Debug": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.DiagnosticSource": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.FileVersionInfo": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.Process": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.Tools": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.TraceSource": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Diagnostics.Tracing": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Globalization": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Globalization.Calendars": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.IO": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.IO.Compression": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.IO.Compression.ZipFile": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.IO.FileSystem": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.IO.FileSystem.Primitives": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Net.Primitives": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Net.Sockets": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.ObjectModel": {
+              "target": "Package",
+              "version": "[4.0.12, )",
+              "generatePathProperty": true
+            },
+            "System.Reflection": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Reflection.Extensions": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Reflection.Primitives": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Resources.ResourceManager": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Runtime.Extensions": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Runtime.Handles": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Runtime.InteropServices": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Runtime.InteropServices.RuntimeInformation": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.2.0, )",
+              "generatePathProperty": true
+            },
+            "System.Security.Cryptography.Encoding": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Security.Cryptography.Primitives": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Security.Cryptography.ProtectedData": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Security.Cryptography.X509Certificates": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Text.Encoding": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Text.Encoding.Extensions": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.1.0, )",
+              "generatePathProperty": true
+            },
+            "System.Threading": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Threading.Tasks": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Threading.Timer": {
+              "target": "Package",
+              "version": "[4.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
+            },
+            "System.Xml.ReaderWriter": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Xml.XDocument": {
+              "target": "Package",
+              "version": "[4.0.11, )",
+              "generatePathProperty": true
+            },
+            "System.Xml.XPath": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Xml.XPath.XDocument": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Xml.XPath.XmlDocument": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            },
+            "System.Xml.XmlDocument": {
+              "target": "Package",
+              "version": "[4.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

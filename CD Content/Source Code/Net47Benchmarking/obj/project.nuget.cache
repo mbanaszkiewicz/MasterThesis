@@ -1,0 +1,552 @@
+{
+  "version": 2,
+  "dgSpecHash": "i7rjIBrlqIEONl7WlefE62m0FbyaWVNVcoVkVf/t7SwtIxYyuc5VYOk+20mRiKYRn43Rd5eWAdtTbpf9LyXDmw==",
+  "success": true,
+  "projectFilePath": "D:\\Master\\MasterThesis\\CD Content\\Source Code\\Net47Benchmarking\\Net47Benchmarking.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vithar\\.nuget\\packages\\benchmarkdotnet\\0.13.0\\benchmarkdotnet.0.13.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\benchmarkdotnet.annotations\\0.13.0\\benchmarkdotnet.annotations.0.13.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\benchmarkdotnet.diagnostics.windows\\0.13.0\\benchmarkdotnet.diagnostics.windows.0.13.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\commandlineparser\\2.4.3\\commandlineparser.2.4.3.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.collections.parallelseq\\1.0.2\\fsharp.collections.parallelseq.1.0.2.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.core\\4.3.4\\fsharp.core.4.3.4.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\fsharp.data\\2.3.2\\fsharp.data.2.3.2.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\fspickler\\3.2.0\\fspickler.3.2.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\iced\\1.8.0\\iced.1.8.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\2.6.1\\microsoft.codeanalysis.analyzers.2.6.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.codeanalysis.common\\2.10.0\\microsoft.codeanalysis.common.2.10.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.codeanalysis.csharp\\2.10.0\\microsoft.codeanalysis.csharp.2.10.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.diagnostics.netcore.client\\0.2.61701\\microsoft.diagnostics.netcore.client.0.2.61701.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.diagnostics.runtime\\1.1.126102\\microsoft.diagnostics.runtime.1.1.126102.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.diagnostics.tracing.traceevent\\2.0.61\\microsoft.diagnostics.tracing.traceevent.2.0.61.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.1.0\\microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\mono.cecil\\0.9.4\\mono.cecil.0.9.4.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\paket.core\\3.27.0\\paket.core.3.27.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\perfolizer\\0.2.1\\perfolizer.0.2.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.3.0\\runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.globalization\\4.3.0\\runtime.any.system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.globalization.calendars\\4.3.0\\runtime.any.system.globalization.calendars.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.io\\4.3.0\\runtime.any.system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.reflection\\4.3.0\\runtime.any.system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.reflection.extensions\\4.3.0\\runtime.any.system.reflection.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.reflection.primitives\\4.3.0\\runtime.any.system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.resources.resourcemanager\\4.3.0\\runtime.any.system.resources.resourcemanager.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.runtime.handles\\4.3.0\\runtime.any.system.runtime.handles.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.runtime.interopservices\\4.3.0\\runtime.any.system.runtime.interopservices.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.text.encoding\\4.3.0\\runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.text.encoding.extensions\\4.3.0\\runtime.any.system.text.encoding.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.threading.tasks\\4.3.0\\runtime.any.system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.any.system.threading.timer\\4.3.0\\runtime.any.system.threading.timer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.native.system.io.compression\\4.3.0\\runtime.native.system.io.compression.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.native.system.net.http\\4.3.0\\runtime.native.system.net.http.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.native.system.security.cryptography.apple\\4.3.0\\runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.opensuse.13.2-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.opensuse.42.1-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple\\4.3.0\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.osx.10.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.rhel.7-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.microsoft.win32.primitives\\4.3.0\\runtime.win.microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.system.console\\4.3.0\\runtime.win.system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.system.diagnostics.debug\\4.3.0\\runtime.win.system.diagnostics.debug.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.system.io.filesystem\\4.3.0\\runtime.win.system.io.filesystem.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.system.net.primitives\\4.3.0\\runtime.win.system.net.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.system.net.sockets\\4.3.0\\runtime.win.system.net.sockets.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win7-x86.runtime.native.system.io.compression\\4.3.0\\runtime.win7-x86.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\runtime.win7.system.private.uri\\4.3.0\\runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.codedom\\4.5.0\\system.codedom.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.0.0\\system.diagnostics.diagnosticsource.4.0.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.fileversioninfo\\4.3.0\\system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.process\\4.0.0-beta-22231\\system.diagnostics.process.4.0.0-beta-22231.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.stacktrace\\4.3.0\\system.diagnostics.stacktrace.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.tracesource\\4.0.0-beta-22231\\system.diagnostics.tracesource.4.0.0-beta-22231.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.tracing\\4.1.0\\system.diagnostics.tracing.4.1.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.globalization.calendars\\4.0.1\\system.globalization.calendars.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.globalization.extensions\\4.0.1\\system.globalization.extensions.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.io.compression\\4.3.0\\system.io.compression.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.io.compression.zipfile\\4.0.1\\system.io.compression.zipfile.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.management\\4.5.0\\system.management.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.net.http\\4.1.0\\system.net.http.4.1.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.net.primitives\\4.0.11\\system.net.primitives.4.0.11.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.net.sockets\\4.1.0\\system.net.sockets.4.1.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.objectmodel\\4.0.12\\system.objectmodel.4.0.12.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.extensions\\4.0.1\\system.reflection.extensions.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.primitives\\4.0.1\\system.reflection.primitives.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.handles\\4.0.1\\system.runtime.handles.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.interopservices.runtimeinformation\\4.0.0\\system.runtime.interopservices.runtimeinformation.4.0.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.runtime.serialization.primitives\\4.1.1\\system.runtime.serialization.primitives.4.1.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.cng\\4.3.0\\system.security.cryptography.cng.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.csp\\4.3.0\\system.security.cryptography.csp.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.encoding\\4.3.0\\system.security.cryptography.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.openssl\\4.3.0\\system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.protecteddata\\0.0.1-alpha\\system.security.cryptography.protecteddata.0.0.1-alpha.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.text.encoding.codepages\\4.3.0\\system.text.encoding.codepages.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.text.regularexpressions\\4.1.0\\system.text.regularexpressions.4.1.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading.overlapped\\4.3.0\\system.threading.overlapped.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading.tasks.parallel\\4.3.0\\system.threading.tasks.parallel.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading.thread\\4.3.0\\system.threading.thread.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.threading.timer\\4.0.1\\system.threading.timer.4.0.1.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.xml.xpath\\4.3.0\\system.xml.xpath.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Vithar\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.0-beta-22231\\system.xml.xpath.xmldocument.4.0.0-beta-22231.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on Mono.Cecil (>= 0.0.0-prerelease) but Mono.Cecil 0.0.0-prerelease was not found. An approximate best match of Mono.Cecil 0.9.4 was resolved.",
+      "libraryId": "Mono.Cecil",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Diagnostics.FileVersionInfo (>= 0.0.0-prerelease) but System.Diagnostics.FileVersionInfo 0.0.0-prerelease was not found. An approximate best match of System.Diagnostics.FileVersionInfo 4.0.0-beta-22231 was resolved.",
+      "libraryId": "System.Diagnostics.FileVersionInfo",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Diagnostics.Process (>= 0.0.0-prerelease) but System.Diagnostics.Process 0.0.0-prerelease was not found. An approximate best match of System.Diagnostics.Process 4.0.0-beta-22231 was resolved.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Diagnostics.TraceSource (>= 0.0.0-prerelease) but System.Diagnostics.TraceSource 0.0.0-prerelease was not found. An approximate best match of System.Diagnostics.TraceSource 4.0.0-beta-22231 was resolved.",
+      "libraryId": "System.Diagnostics.TraceSource",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Diagnostics.Process 4.0.0-beta-22231 depends on System.IO (>= 4.0.0-beta-22231) but System.IO 4.0.0-beta-22231 was not found. An approximate best match of System.IO 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XDocument 4.0.0-beta-22231 depends on System.IO (>= 4.0.0-beta-22231) but System.IO 4.0.0-beta-22231 was not found. An approximate best match of System.IO 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XmlDocument 4.0.0-beta-22231 depends on System.IO (>= 4.0.0-beta-22231) but System.IO 4.0.0-beta-22231 was not found. An approximate best match of System.IO 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XPath 4.0.0-beta-22231 depends on System.IO (>= 4.0.0-beta-22231) but System.IO 4.0.0-beta-22231 was not found. An approximate best match of System.IO 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.IO",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Diagnostics.FileVersionInfo 4.0.0-beta-22231 depends on System.Runtime (>= 4.0.0-beta-22231) but System.Runtime 4.0.0-beta-22231 was not found. An approximate best match of System.Runtime 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Runtime",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Diagnostics.Process 4.0.0-beta-22231 depends on System.Runtime (>= 4.0.0-beta-22231) but System.Runtime 4.0.0-beta-22231 was not found. An approximate best match of System.Runtime 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Runtime",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Diagnostics.TraceSource 4.0.0-beta-22231 depends on System.Runtime (>= 4.0.0-beta-22231) but System.Runtime 4.0.0-beta-22231 was not found. An approximate best match of System.Runtime 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Runtime",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XDocument 4.0.0-beta-22231 depends on System.Runtime (>= 4.0.0-beta-22231) but System.Runtime 4.0.0-beta-22231 was not found. An approximate best match of System.Runtime 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Runtime",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XPath.XDocument 4.0.0-beta-22231 depends on System.Runtime (>= 4.0.0-beta-22231) but System.Runtime 4.0.0-beta-22231 was not found. An approximate best match of System.Runtime 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Runtime",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XPath.XmlDocument 4.0.0-beta-22231 depends on System.Runtime (>= 4.0.0-beta-22231) but System.Runtime 4.0.0-beta-22231 was not found. An approximate best match of System.Runtime 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Runtime",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Security.Cryptography.Algorithms (>= 0.0.0-prerelease) but System.Security.Cryptography.Algorithms 0.0.0-prerelease was not found. An approximate best match of System.Security.Cryptography.Algorithms 4.0.0-beta-23225 was resolved.",
+      "libraryId": "System.Security.Cryptography.Algorithms",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Security.Cryptography.ProtectedData (>= 0.0.0-prerelease) but System.Security.Cryptography.ProtectedData 0.0.0-prerelease was not found. An approximate best match of System.Security.Cryptography.ProtectedData 0.0.1-alpha was resolved.",
+      "libraryId": "System.Security.Cryptography.ProtectedData",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Diagnostics.Process 4.0.0-beta-22231 depends on System.Text.Encoding (>= 4.0.0-beta-22231) but System.Text.Encoding 4.0.0-beta-22231 was not found. An approximate best match of System.Text.Encoding 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Text.Encoding",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XDocument 4.0.0-beta-22231 depends on System.Xml.ReaderWriter (>= 4.0.0-beta-22231) but System.Xml.ReaderWriter 4.0.0-beta-22231 was not found. An approximate best match of System.Xml.ReaderWriter 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Xml.ReaderWriter",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XPath.XDocument 4.0.0-beta-22231 depends on System.Xml.ReaderWriter (>= 4.0.0-beta-22231) but System.Xml.ReaderWriter 4.0.0-beta-22231 was not found. An approximate best match of System.Xml.ReaderWriter 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Xml.ReaderWriter",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "System.Xml.XPath.XmlDocument 4.0.0-beta-22231 depends on System.Xml.ReaderWriter (>= 4.0.0-beta-22231) but System.Xml.ReaderWriter 4.0.0-beta-22231 was not found. An approximate best match of System.Xml.ReaderWriter 4.0.0-beta-23019 was resolved.",
+      "libraryId": "System.Xml.ReaderWriter",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Xml.XDocument (>= 0.0.0-prerelease) but System.Xml.XDocument 0.0.0-prerelease was not found. An approximate best match of System.Xml.XDocument 4.0.0-beta-22231 was resolved.",
+      "libraryId": "System.Xml.XDocument",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Xml.XPath.XDocument (>= 0.0.0-prerelease) but System.Xml.XPath.XDocument 0.0.0-prerelease was not found. An approximate best match of System.Xml.XPath.XDocument 4.0.0-beta-22231 was resolved.",
+      "libraryId": "System.Xml.XPath.XDocument",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Paket.Core 3.27.0 depends on System.Xml.XPath.XmlDocument (>= 0.0.0-prerelease) but System.Xml.XPath.XmlDocument 0.0.0-prerelease was not found. An approximate best match of System.Xml.XPath.XmlDocument 4.0.0-beta-22231 was resolved.",
+      "libraryId": "System.Xml.XPath.XmlDocument",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/win7-x86",
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win7-x86"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharp.Collections.ParallelSeq 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharp.Collections.ParallelSeq",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharp.Data 2.3.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharp.Data",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FsPickler 3.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "FsPickler",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Mono.Cecil 0.9.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Mono.Cecil",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Paket.Core 3.27.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Paket.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Diagnostics.Process 4.0.0-beta-22231' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Diagnostics.Process",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Diagnostics.TraceSource 4.0.0-beta-22231' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Diagnostics.TraceSource",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Xml.XPath.XmlDocument 4.0.0-beta-22231' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Xml.XPath.XmlDocument",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
