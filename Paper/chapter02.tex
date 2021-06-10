@@ -96,7 +96,7 @@ All applications have access to the same runtime, APIs and class library which a
 \emph{CLR} is the foundational virtual machine component of .NET which implements the Virtual Execution System (VES) defined by Microsoft's Common Language Infrastructure (CLI). The runtime is an agent that provides a managed execution environment, supporting core services such as memory management, thread management, and remoting, while also enforcing strict type safety and other forms of code accuracy that promote security and robustness~\cite{IntroductionToNet}.\\
 
 The managed execution process starts with choosing one of Commong Language Specification (CLS) compliant compilers, most popular being C\#, F\# and Visual Basic. The compiler translates source code into Microsoft Intermediate Language (MSIL). In this form code is CPU-independent and before it is run it must be converted to native code, usually by just-in-time (JIT) compiler. This process is performed on demand at application run time, when the contents of an assembly are loaded and executed \cite{ManagedExecution}.
-CLR execution model is presented on fig.~\ref{fig:clr}.
+CLR execution model is presented in fig.~\ref{fig:clr}.
 
 \begin{figure}[htb]
 	\centering

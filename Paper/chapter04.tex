@@ -4,7 +4,7 @@ This chapter contains information about algorithms and software which are used a
 
 \section{Quicksort}
 \label{sec: QuickSortImp}
-Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer , are a great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}.
+Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer , are a great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}. The algorithm takes O(n log n) comparisons to sort n items on average.
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, caption={Sequential Quicksort pseudocode}, label={lst:PseudoQuickSort}]
 
@@ -27,7 +27,7 @@ PARTITION(A, p, r)
 
 \subsubsection{Imperative sequential implementation}
 This version is a "traditional" implementation of the algorithm. It is written in imperative style and quite lengthy (listing~\ref{lst:ImpSeqQuickSort}).
-% TO DO: if line numbering is not needed, then remove it
+
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative sequential quicksort implementation}, label={lst:ImpSeqQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static void Sort(int[] source, int left, int right)
@@ -180,7 +180,12 @@ private static Task<T> ParallelizeUnlessDepthIsReached<T>(Func<int, Task<T>> fun
 \label{sec: KMeansImp}
 K-means, otherwise commonly know as Lloyd's algorithm, is an unsupervised machine learning algorithm which is used to process a data set into clusters.
 They represent a geometric shape with a mass center, a centroid.
-Each of the clusters has its own centroid which is the sum of points divided by number of total points. 
+Each of the clusters has its own centroid which is the sum of points divided by number of total points. Finding a solution for Lloyd's algorithm is a NP-hard problem even for two clusters. It's complexity can be expressed as O(nkdi) where:
+\begin{itemize}
+	\item \emph{n} is the number of vectors with d-dimensions
+	\item \emph{k} is the number of cluster
+	\item \emph{i} is the number of iterations required for the convergence
+\end{itemize}
 
 The algorithm is an iterative process which repeats until it reaches a convergence point or exceeds the limit (sometimes it does not converge).
 Each of the iterations updates the centroids to produce better clusters.
@@ -323,6 +328,12 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 \section{Mandelbrot}
 \label{sec: MandelbrotImp}
 Mandelbrot set images are made by sampling complex numbers and testing for each sample point whether the orbit of the critical point $z = 0$ under iteration of the quadratic map remains bounded (eq.~\ref{eq:Mandelbrot})~\cite{MandelbrotExplorer}. Images of the Mandelbrot set display an elaborate boundary that reveals complex structure arising from the application of simple rules. It's one of the best-known examples of mathematical visualization. It was named in the tribute of a pioneer of fractal geometry, Benoit Mandelbrot, by Adrien Douady~\cite{Douady}.
+It's complexity can be expressed as O(rci) where:
+\begin{itemize}
+	\item \emph{r} is the number of rows in the map
+	\item \emph{c} is the number of columns in the map
+	\item \emph{i} is the number of maximum iterations
+	\end{itemize}
 
 \begin{equation}
 \centering 
@@ -330,8 +341,7 @@ z_n + 1 = z_n^2 + c
 \label{eq:Mandelbrot}
 \end{equation}
 
-% TO DO: check which is correct: "on figure" or "in figure"
-In the following subsections 3 implementations of Mandelbrot set drawing algorithms will be presented. Each of the them is injected into bitmap generating code (listing~\ref{lst:Bitmap}) during performance benchmarking. Example visualization made during the experiments is presented on fig.~\ref{fig:MandelbrotVis}.
+In the following subsections 3 implementations of Mandelbrot set drawing algorithms will be presented. Each of the them is injected into bitmap generating code (listing~\ref{lst:Bitmap}) during performance benchmarking. Example visualization made during the experiments is presented in fig.~\ref{fig:MandelbrotVis}.
 
 \begin{lstlisting}[style=sharpcstyle, caption={Mandelbrot bitmap generation}, label={lst:Bitmap},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -514,7 +524,7 @@ private static bool BelongsToMandelbrot(ComplexNumberStruct number, int iteratio
 
 \section{NuGet package ranking} 
 \label{sec:NuGetImp}
-NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (section~\ref{sec:MapReduce}) 
+NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (section~\ref{sec:MapReduce}). Software has estimated complexity of O($i*nlog_n$), i being the number of operations and n being the amount of packages. 
 
 Methods used in package ranking are defined in listing~\ref{lst:NugetPackageRanking}. These functions will be later plugged into multiple, generic implementations of MapReduce pattern. \texttt{Map} function is responsible for extracting key-value tuples from NuGet packages. Key represents the package name and float it's score, which will be later computed into the overall score of the package in the  \texttt{Reduce} function.
 
