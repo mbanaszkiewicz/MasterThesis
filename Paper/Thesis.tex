@@ -669,11 +669,10 @@ Listing \thelstlisting: #1\hfill%\hfill%
 \renewcommand{\abstractnamefont}{\normalfont\Large\bfseries}
 \renewcommand{\abstracttextfont}{\normalfont}
 
-\newcommand\mykeywords[1]{\hspace{\absleftindent}
-       \iflanguage{polish}{
-			\textbf{S³owa kluczowe:} #1}{%
-			  \iflanguage{english}{{\textbf{Keywords:} #1}}{}}
-				}
+\newcommand\mykeywords[1]{\hspace{\absleftindent}\parbox{\linewidth-2.0\absleftindent}{
+        \iflanguage{polish}{\textbf{S³owa kluczowe:} #1}{%
+               \iflanguage{english}{\textbf{Keywords:} #1}}{}}
+                 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%             
 %% Definition of headers and footers appearing on pages
@@ -827,7 +826,7 @@ SPECIALIZATION: & \@specjalnosc\\
 \wydzial{FACULTY OF ELECTRONICS}
 \kierunek{INFORMATICS}
 \specjalnosc{INTERNET ENGINEERING}
-\promotor{PhD, Tomasz Kubik, K30W04D03}
+\promotor{dr in¿.\ Tomasz Kubik, K30W04D03}
 \date{WROC£AW, 2021}
 
 % Setting the space above nonnumbered chapters and list: ToC, LoT, LoF, Index

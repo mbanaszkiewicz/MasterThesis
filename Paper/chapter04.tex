@@ -4,9 +4,9 @@ This chapter contains information about algorithms and software which are used a
 
 \section{Quicksort}
 \label{sec: QuickSortImp}
-Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer , are a great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}. The algorithm takes O(n log n) comparisons to sort n items on average.
+Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a~large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer, are a~great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}. The algorithm takes $O(n \log n)$ comparisons to sort $n$ items on average.
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, caption={Sequential Quicksort pseudocode}, label={lst:PseudoQuickSort}]
+\begin{lstlisting}[basicstyle=\ttfamily\small, caption={Sequential \texttt{quicksort} pseudocode}, label={lst:PseudoQuickSort}]
 
 QUICKSORT(A, p, r)
 	if p < r
@@ -28,7 +28,7 @@ PARTITION(A, p, r)
 \subsubsection{Imperative sequential implementation}
 This version is a "traditional" implementation of the algorithm. It is written in imperative style and quite lengthy (listing~\ref{lst:ImpSeqQuickSort}).
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative sequential quicksort implementation}, label={lst:ImpSeqQuickSort},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative sequential \texttt{quicksort} implementation}, label={lst:ImpSeqQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static void Sort(int[] source, int left, int right)
 {
@@ -65,8 +65,8 @@ private static void Swap(ref int a, ref int b)
 \end{lstlisting}
 
 \subsubsection{Imperative parallel implementation}
-Parallel version was implemented in a manner in which somebody who is not well versed in .NET's parallelism would implement it. Many developers know async-await state machine because is often used in projects with asynchronous operations . On top of that no precautions for thread oversaturation were taken (listing~\ref{lst:ImpParQuickSort}).
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative parallel quicksort}, label={lst:ImpParQuickSort},
+Parallel version was implemented in a manner in which somebody who is not well versed in .NET's parallelism would implement it. Many developers know async-await state machine because is often used in projects with asynchronous operations. On top of that no precautions for thread oversaturation were taken (listing~\ref{lst:ImpParQuickSort}).
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative parallel \texttt{quicksort}}, label={lst:ImpParQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static async Task Sort(int[] source, int left, int right)
 {
@@ -81,7 +81,7 @@ private static async Task Sort(int[] source, int left, int right)
 
 \subsubsection{Imperative optimized implementation}
 Optimized version uses depth control and removes the use of async-await state machine (listing~\ref{lst:ImpOptQuickSort}).
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative optimized quicksort}, label={lst:ImpOptQuickSort},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Imperative optimized \texttt{quicksort}}, label={lst:ImpOptQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static void Sort(int[] source, int left, int right, int depth)
 {
@@ -105,7 +105,7 @@ private static void Sort(int[] source, int left, int right, int depth)
 
 \subsubsection{Functional sequential implementation}
 This version of the algorithm was implemented using LINQ in a functional, declarative manner. It is conspicuous that this version is more concise and easier to read (listing~\ref{lst:FunSeqQuickSort}).
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional sequential quicksort implementation}, label={lst:FunSeqQuickSort},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional sequential \texttt{quicksort} implementation}, label={lst:FunSeqQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static ImmutableList<int> Sort(ImmutableList<int> source)
 {
@@ -127,7 +127,7 @@ private static ImmutableList<int> Sort(ImmutableList<int> source)
 \subsubsection{Functional parallel implementation}
 Parallel implementation was achieved in the same way, using \texttt{Task.Run} and async-await state machine 
 (listing~\ref{lst:FunParQuickSort}).
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional parallel quicksort}, label={lst:FunParQuickSort},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional parallel \texttt{quicksort}}, label={lst:FunParQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private async Task<ImmutableList<int>> Sort(ImmutableList<int> source)
 {
@@ -149,7 +149,7 @@ private async Task<ImmutableList<int>> Sort(ImmutableList<int> source)
 
 \subsubsection{Functional optimized implementation}
 Optimized version uses depth control and removes the use of async-await state machine (listing~\ref{lst:FunOptQuickSort}).
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional optimized quicksort}, label={lst:FunOptQuickSort},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Functional optimized \texttt{quicksor}t}, label={lst:FunOptQuickSort},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static Task<ImmutableList<int>> Sort(ImmutableList<int> source, int depth)
 {
@@ -263,7 +263,7 @@ private static double DistanceTo(this ImmutableList<double> @from, ImmutableList
 \texttt{UpdateCentroids} evaluates each cluster and reassigns centroids to newly calculated centers in two steps. In the first one \texttt{GroupBy} function is used to aggregate the points using the \texttt{GetNearestCentroid} function as a key. In the next one, each point grouping is used to calculate new centers for each given point. This step is achieved via local accumulator in \texttt{Aggregate} function and collection combining in \texttt{Zip} function which threads centroids and accumulator sequences. Finally, each center is determined through dividing with number of points in the cluster (listing~\ref{lst:SeqKMeans}).
 
 
-\begin{lstlisting}[style=sharpcstyle, caption={Sequential k-means algorithm}, label={lst:SeqKMeans},
+\begin{lstlisting}[style=sharpcstyle, caption={Sequential \texttt{k-means} algorithm}, label={lst:SeqKMeans},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Func<DataSet, DataSet> UpdateCentroids()
   => centroids =>
@@ -284,7 +284,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 This implementation uses PLINQ (section~\ref{sec:PLINQ}) which easily transforms sequential LINQ query into a parallel one with 2 lines of code.
 This was enabled by using \texttt{Aggregate}, LINQ's equivalent of functional sequence transforming function: \texttt{Seq.Fold}. Force parallelism execution mode is used to make sure that PLINQ internal mechanism won't transform the query into a sequential one.
 
-\begin{lstlisting}[style=sharpcstyle, caption={Parallel k-means algorithm}, label={lst:ParKMeans},
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{k-means} algorithm}, label={lst:ParKMeans},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Func<DataSet, DataSet> UpdateCentroids()
   => centroids =>
@@ -305,7 +305,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 \subsubsection{Parallel implementation with partitioner}
 To further boost the parallel implementation, data partitioner was used to load balance the data between threads (section~\ref{sec:Partitioners}) (listing~\ref{lst:PartParKMeans}). 
 
-\begin{lstlisting}[style=sharpcstyle, caption={Parallel k-means algorithm with partitioner}, label={lst:PartParKMeans},
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{k-means} algorithm with partitioner}, label={lst:PartParKMeans},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Func<DataSet, DataSet> UpdateCentroids()
   => centroids 
@@ -386,7 +386,7 @@ private static void UnlockBitmap(Bitmap bitmap, BitmapData bitmapData)
 This implementation consists of two nested loops. The outer one iterates over the columns of the bitmap while the inner one iterates over its rows. 
 Pixel coordinates are translated into real and imaginary parts of a complex number by using the \texttt{ComputeColumn} and \texttt{ComputeRow} functions. Afterwards \texttt{BelongsToMandelbrot} function checks if the number is part of the Mandelbrot set (listing~\ref{lst:SeqMandelbrot}).
 
-\begin{lstlisting}[style=sharpcstyle, caption={Sequential Mandelbrot algorithm}, label={lst:SeqMandelbrot},
+\begin{lstlisting}[style=sharpcstyle, caption={Sequential \texttt{Mandelbrot} algorithm}, label={lst:SeqMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
@@ -422,7 +422,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \subsubsection{Parallel implementation}
 Parallel version was implemented using Fork/Join (section~\ref{sec:ForkJoin}) pattern. TPL (section~\ref{sec:TPL})  enables us to easily apply this pattern with multiple parallelization constructs, in this case the \texttt{Parallel.For} replacement for sequential loops (listing~\ref{lst:ParMandelbrot}).
 
-\begin{lstlisting}[style=sharpcstyle, caption={Parallel Mandelbrot algorithm}, label={lst:ParMandelbrot},
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{Mandelbrot} algorithm}, label={lst:ParMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
@@ -455,7 +455,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \subsubsection{Double parallel implementation}
 This version replaced both sequential loops with TPL's \texttt{Parallel.For} construct. It will be useful to examine how oversaturation impacts the algorithm performance (listing~\ref{lst:DoubleParMandelbrot})
 
-\begin{lstlisting}[style=sharpcstyle, caption={Double parallel Mandelbrot algorithm}, label={lst:DoubleParMandelbrot},
+\begin{lstlisting}[style=sharpcstyle, caption={Double parallel \texttt{Mandelbrot} algorithm}, label={lst:DoubleParMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
@@ -489,7 +489,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 
 In some cases .NET's Garbage Collector can be the bottleneck of the application. Reference type objects are allocated on the heap and are very cheap to use as a function argument since only the pointer is copied. These objects though have a memory overhead and may heavily tax the GC which will stop the execution of the program until cleanup is done. Contrary to that, value type objects are allocated on the stack and will never cause GC to pause the program. This version uses \texttt{ComplexNumberStruct} objects which are identical to previous versions except they are value type instead of reference type (listing~\ref{lst:ParStructMandelbrot}).
 
-\begin{lstlisting}[style=sharpcstyle, caption={Parallel Mandelbrot algorithm using value types}, label={lst:ParStructMandelbrot},
+\begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{Mandelbrot} algorithm using value types}, label={lst:ParStructMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private Action<BitmapData, byte[]> DrawingStrategy()
   => (bitmapData, pixels) =>
@@ -526,7 +526,7 @@ private static bool BelongsToMandelbrot(ComplexNumberStruct number, int iteratio
 \label{sec: NuGetImp}
 NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (section~\ref{sec:MapReduce}). Software has estimated complexity of O($i*nlog_n$), i being the number of operations and n being the amount of packages. 
 
-Methods used in package ranking are defined in listing~\ref{lst:NugetPackageRanking}. These functions will be later plugged into multiple, generic implementations of MapReduce pattern. \texttt{Map} function is responsible for extracting key-value tuples from NuGet packages. Key represents the package name and float it's score, which will be later computed into the overall score of the package in the  \texttt{Reduce} function.
+Methods used in package ranking are defined in listing~\ref{lst:NugetPackageRanking}. These functions will be later plugged into multiple, generic implementations of MapReduce pattern. \texttt{Map} function is responsible for extracting key-value tuples from NuGet packages. Key represents the package name and float it's score, which will be later computed into the overall score of the package in the \texttt{Reduce} function.
 
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Nuget package ranking functions}, label={lst:NugetPackageRanking},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -550,7 +550,7 @@ private static (string packageName, float) Reduce(string packageName, IEnumerabl
 MapReduce pattern is described in detail in section~\ref{sec:MapReduce}. 
 In simple terms \texttt{Map} function is responsible for mapping objects into collections of key-value pairs. In this case it will transform \texttt{NuGetPackage} objects into collection of packageName-score tuples.  \texttt{Reduce} function receives collection of values grouped by pairs, in this case groups of scores grouped by the name of the package. The pattern was implemented using LINQ, with eager materialization in both \texttt{Map} and  \texttt{Reduce} to avoid multiple evaluation of the same sequence (listing~\ref{lst:SeqMapReduce}).
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential MapReduce implementation}, label={lst:SeqMapReduce},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential \texttt{MapReduce} implementation}, label={lst:SeqMapReduce},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 public static IEnumerable<TReduced> MapReduce<TIn, TOutKey, TOutValue, TReduced>(
   this IEnumerable<TIn> source,
@@ -580,7 +580,7 @@ private static IEnumerable<TReduced> Reduce<TKey, TValue, TReduced>
 \subsubsection{Parallel implementation}
 Parallel implementation adds additional paramater which controls the degree of parallelism to avoid oversaturation. This version was also implemented using PLINQ in a very intuitive and readable way, thanks to the use of MapReduce pattern (listing~\ref{lst:ParMapReduce}).
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel MapReduce implementation}, label={lst:ParMapReduce},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel \texttt{MapReduce} implementation}, label={lst:ParMapReduce},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static ParallelQuery<TSource> ToParallel<TSource>(this IEnumerable<TSource> source, int degreeOfParallelism)
   => source
@@ -603,7 +603,7 @@ private static IEnumerable<TReduced> MapReduce<TIn, TOutKey, TOutValue, TReduced
 \subsubsection{Parallel implementation with partitioner}
 In the last version load balancing partitioner was used to try to evenly spread the work between the threads (listing~\ref{lst:PartParMapReduce}).
 
-\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel MapReduce implementation with partitioner}, label={lst:PartParMapReduce},
+\begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel \texttt{MapReduce} implementation with partitioner}, label={lst:PartParMapReduce},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
 private static ParallelQuery<TSource> ToParallel<TSource>(this OrderablePartitioner<TSource> source, int degreeOfParallelism)
   => source

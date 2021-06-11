@@ -4,7 +4,7 @@ This chapter serves as an overall introduction to the reader to concurrency in .
 \section{Concurrency terminology}
 This section defines common terminology used in this thesis. These terms are often used in the same context, but even though they are similar, they have different meanings. It is imperative to be aware of these distinctions in order to be able to reason clearly about software and multithreading.
 
-\subsubsection{Sequential programming}
+\paragraph{Sequential programming\newline}
 \emph{Sequential programming} is a way of writing code as step by step instructions. It is a convenient and easy to understand approach where mistakes about what to do and when do it are less common.
 The disadvantage of performing operations this way is that the thread must wait during parts of the process, being effectively blocked. Blocking threads and singular instructions make poor use of device resources.
 To reiterate, sequential programming is a set of consecutive, progressively ordered instruction execution in linear fashion (fig.~\ref{fig:seq}).
@@ -18,7 +18,7 @@ To reiterate, sequential programming is a set of consecutive, progressively orde
 
 In imperative and object-oriented languages there is a tendency to write sequential code, with all attention and resources focused on the task currently running. Programs are modeled and executed by performing an ordered set of statements, one after another~\cite{terrell_2018}.
 
-\subsubsection{Concurrent programming}
+\paragraph{Concurrent programming\newline}
 In computer science, \emph{concurrency} is the ability of different parts of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome~\cite{lamport1978time}.
 
 Concurrency is used to achieve real multitasking in an application, by modeling the application into multiple, autonomous processes that run at the same in different threads.
@@ -35,7 +35,7 @@ But in a single-core environment, the execution of one thread is temporarily pau
 Concurrency is often confused with parallelism \cite{waza}, but concurrent programs only \emph{may} be executed in parallel 
 by assigning each process to a separate processor or processor core, or distributing a computation across a network~\cite{mordechai}.
 
-\subsubsection{Parallel programming}
+\paragraph{Parallel programming\newline}
 \emph{Parallelism} is the idea of processing tasks simultaneously for performance and throughput improvement of a program. Although all parallel programs are concurrent, it was demonstrated that not all concurrency is parallel.
 Parallel execution is constrained by the runtime environment of the program, devices need to be equiped with multicore CPUs to support it (fig.~\ref{fig:convspar}).
 
@@ -47,10 +47,8 @@ Timing is the qualifying factor for parallelism. It may be achieved by dividing 
 	\label{fig:seqvspar}
 \end{figure}
 
-\subsubsection{CPU vs GPU computing}
-With the advent of general-purpose computing on graphics processing units one may ask why even bother with CPU parallel programming. Is is true that GPGPU has many advantages over CPU computing, but there two major drawbacks: branching and varying instructions. GPGPU as a technique is very good at dealing with single instructions applied to large amount of data. When branching which is switching instructions during execution happens, GPGPU tends to be outperformed by CPU computing. Thus, for general software development, full of boolean logic and if statements, CPU computing is still the standard way of proceeding \cite{Tarditi2006}.
-
-\subsubsection{Amdahl's Law}
+\section{Benefits of parallelization}
+\paragraph{Amdahl's Law\newline}
 Gene Amdahl made several insights about parallel programming in his 1967 paper~\cite{Amdahl1967}. One of these insights would later be formulated into Amdahl's law:
 \begin{quotation}
 "...the effort expended on achieving high parallel processing rates is wasted unless it is accompanied by achievements in sequential processing rates of very nearly the same magnitude."
@@ -79,10 +77,13 @@ where
 	\item $N$ is the number of available cores.
 \end{itemize}
 
+\paragraph{CPU vs GPU computing\newline}
+With the advent of general-purpose computing on graphics processing units one may ask why even bother with CPU parallel programming. Is is true that GPGPU has many advantages over CPU computing, but there two major drawbacks: branching and varying instructions. GPGPU as a technique is very good at dealing with single instructions applied to large amount of data. When branching which is switching instructions during execution happens, GPGPU tends to be outperformed by CPU computing. Thus, for general software development, full of boolean logic and if statements, CPU computing is still the standard way of proceeding \cite{Tarditi2006}.
+
 \section{Concurrency and threads in .NET}
 This section will introduce .NET, the subject platform of this thesis. While in-depth understanding of it's vast inner workings may be helpful, it is not necessary for comprehension of this paper. Thus only a brief overview of .NET and Common Language Runtime (CLR) will be presented, reserving most space for explanation of .NET's threading and parallel execution tools. For readers desiring deeper knowledge and insights into CLR concepts I highly recommend exhaustive book \emph{CLR via C\#} by Jefrrey Richter \cite{Richter2012}.
 
-\subsubsection{.NET and CLR}
+\subsection{.NET and CLR}
 \emph{.NET} is a free, open-source development platform developed by Microsoft that supports building and running cross-platform apps of many kinds like:
 \begin{itemize}
 	\item web apps, web APIs, and microservices,
@@ -106,7 +107,7 @@ CLR execution model is presented in fig.~\ref{fig:clr}.
 \end{figure}
 
 
-\subsubsection{Threading in .NET}
+\subsection{Threading in .NET}
 A \emph{thread} is the fundamental unit to which an operating system (OS) allocates CPU time. Numerous threads can run inside of a \emph{process} which is a separate, executing program inside the OS.
 When a thread is paused, system uses structures built into the thread to save it's context. The context contains all the information required for the thread to effortlessly resume execution. All threads spawned in the process share the same virtual address space and they can access and execute any part of the source code, including the parts currently handled by another thread.
 
@@ -125,7 +126,7 @@ Since all threads can accesses properties and methods of an single object, \emph
 	\item Collection classes in the System.Collections.Concurrent namespace. 
 \end{itemize}
 
-\subsubsection{Thread overhead}
+\subsection{Thread overhead}
 Threads are a powerful tool which enable greater responsiveness and throughput of program, but as with every virtualization mechanism, threads have memory consumption and runtime execution performance overhead associated with them. That overhead will be later measured during experiments, so it's important to explore what's causing it. \\
 
 Creating, destroying and having threads existing in the system has time and space overhead since all threads has one of each of the following:
@@ -148,7 +149,7 @@ On top of that, if the new thread doesn't use the same code and data as the prev
 
 Context switches are needed to provide end users with responsive experience, but there is no other memory or performance benefit to them. Since they are pure overhead, they should be minimized when programming for performance~\cite{Richter2012Overhead}.
    
-\subsubsection{ThreadPool in CLR} 
+\subsection{ThreadPool in CLR} 
 To improve the resource consumption situation, the CLR contains code to manage its own ThreadPool. Instead of creating and deleting threads for every request, it maintains a set of threads for reuse. Tasks from operation queue are dispatched to threads existing in the pool. When the task is completed, thread is returned to the pool instead of being deleted (fig.~\ref{fig:threadpool}).
 
 \begin{figure}[htb]
@@ -162,6 +163,7 @@ To improve the resource consumption situation, the CLR contains code to manage i
 CLR's ThreadPool saw many advancements in .NET 4.0 release, facilitating concurrent and parallel execution on multi-core architectures. Two major points were considered during development, quick work dispatch and throttling the degree of parallelism. While the former one is very important, it has relatively low impact on the topic of this paper. 
 However, it is important to know that the CLR uses Hill Climbing algorithm and signal processing techniques to throttle the amount of threads spawned in the ThreadPool. These can, in specific and rare situations, be manually adjusted for further performance increases \cite{Fuentes2010}.
 
+\subsection{Tools and patterns}
 \subsubsection{TPL}
 \label{sec:TPL}
 Task Parallel Library (TPL) is a library for .NET that makes it easy to take advantage of potential parallelism in a program. The library relies heavily on generics and delegate expressions to provide custom control structures expressing structured parallelism such as map-reduce in user programs. Types and APIs of TPL are available in the System.Threading and System.Threading.Tasks namespaces.
@@ -190,12 +192,10 @@ The Fork/Join pattern is built from two primary steps. First a single thread spl
 
 \subsubsection{MapReduce}
 \label{sec:MapReduce}
-
 MapReduce pattern, introduced in \emph{MapReduce: Simplified
 Data Processing on Large Clusters} \cite{MapReduce} paper provides solution for big data analysis. It's designed to enable scalable computations on multiple machines. It has found great use in domains requiring operations on massive datasets like machine learning, image processing or data mining.
 \emph{map} and \emph{reduce} combinators used in fuctional paradigm were the source of inspiration for the MapReduce model (Fig. \ref{fig:MapReduce}). This style of programming can be used without knowledge of concurrent programming, all low-level details can be handled by the actual runtime (TPL in case of .NET).
-The overarching idea of this pattern is to query streams of data by various maps and reductions. \emph{Map} operations are the ones that preserve the number of elements but transform them into a different format. Afterwards the elements are reduced by filtering or aggregating. 
-\\ \\
+The overarching idea of this pattern is to query streams of data by various maps and reductions. \emph{Map} operations are the ones that preserve the number of elements but transform them into a different format. Afterwards the elements are reduced by filtering or aggregating. \\
 In this thesis MapReduce will be implemented in a generic fashion with two main phases:
 \begin{itemize}
 	\item \emph{Map} receives the input and is responsible for mapping objects into collections of key-value pairs. The values are grouped by the key value and passed to the second phase.
