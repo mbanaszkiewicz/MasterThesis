@@ -4,7 +4,7 @@ This chapter contains information about algorithms and software which are used a
 
 \section{Quicksort}
 \label{sec: QuickSortImp}
-Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a~large array into two sub-arrays of low and high elements, depending if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer, are a~great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}. The algorithm takes $O(n \log n)$ comparisons to sort $n$ items on average.
+Quicksort is an in-place sorting algorithm, developed by British computer scientist Tony Hoare in 1959. It is a divide-and-conquer algorithm. It works by selecting a 'pivot' and dividing a~large array into two sub-arrays of low and high elements, depending on if they are bigger or smaller than the pivot. Recursive algorithms, especially ones based on a form of divide-and-conquer, are a~great candidate for parallelization and CPU-bound computations. Quicksort pseudocode (shown in listing~\ref{lst:PseudoQuickSort}) is based on description from \emph{Introduction to Algorithms}~\cite{Cormen2009}. The algorithm takes $O(n \log n)$ comparisons to sort $n$ items on average.
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, caption={Sequential \texttt{quicksort} pseudocode}, label={lst:PseudoQuickSort}]
 
@@ -180,7 +180,7 @@ private static Task<T> ParallelizeUnlessDepthIsReached<T>(Func<int, Task<T>> fun
 \label{sec: KMeansImp}
 K-means, otherwise commonly know as Lloyd's algorithm, is an unsupervised machine learning algorithm which is used to process a data set into clusters.
 They represent a geometric shape with a mass center, a centroid.
-Each of the clusters has its own centroid which is the sum of points divided by number of total points. Finding a solution for Lloyd's algorithm is a NP-hard problem even for two clusters. It's complexity can be expressed as O(nkdi) where:
+Each of the clusters has its own centroid, which is the sum of points divided by the number of total points. Finding a solution for Lloyd's algorithm is a NP-hard problem, even for two clusters. Its complexity can be expressed as O(nkdi) where:
 \begin{itemize}
 	\item \emph{n} is the number of vectors with d-dimensions
 	\item \emph{k} is the number of cluster
@@ -193,11 +193,11 @@ The iteration involves these steps:
 \begin{enumerate}
 	\item Sum up points in each cluster.
 	\item Divide each sum by the number of points in respective cluster.
-	\item Reassign all points to a closest centroid, distance is calculated through Euclidean distance function.
+	\item Reassign all points to the closest centroid, distance is calculated through Euclidean distance function.
 	\item Repeat until locations stabilize.
 \end{enumerate}
 
-In the following subsections 3 implementations of centroid recalculation algorithm will be presented. Each of the them is injected into k-means algorithm (listing~\ref{lst:KMeans}) during performance benchmarking.
+In the following subsections, 3 implementations of the centroid recalculation algorithm will be presented. Each of them is injected into the k-means algorithm (listing~\ref{lst:KMeans}) during performance benchmarking.
 
 \begin{lstlisting}[style=sharpcstyle, caption={K-means centroid computation}, label={lst:KMeans},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -260,7 +260,8 @@ private static double DistanceTo(this ImmutableList<double> @from, ImmutableList
 
 \subsubsection{Sequential implementation}
 
-\texttt{UpdateCentroids} evaluates each cluster and reassigns centroids to newly calculated centers in two steps. In the first one \texttt{GroupBy} function is used to aggregate the points using the \texttt{GetNearestCentroid} function as a key. In the next one, each point grouping is used to calculate new centers for each given point. This step is achieved via local accumulator in \texttt{Aggregate} function and collection combining in \texttt{Zip} function which threads centroids and accumulator sequences. Finally, each center is determined through dividing with number of points in the cluster (listing~\ref{lst:SeqKMeans}).
+\texttt{UpdateCentroids} evaluates each cluster and reassigns centroids to newly calculated centers in two steps. In the first one, \texttt{GroupBy} function is used to aggregate the points using the \texttt{GetNearestCentroid} function as a key. In the next one, each point grouping is used to calculate new centers for each given point. This step is achieved via local accumulator in \texttt{Aggregate} function and collection combining in \texttt{Zip} function which threads centroids and accumulator sequences. Finally, each center is determined through dividing with number of points in the cluster (listing~\ref{lst:SeqKMeans}).
+
 
 
 \begin{lstlisting}[style=sharpcstyle, caption={Sequential \texttt{k-means} algorithm}, label={lst:SeqKMeans},
@@ -281,7 +282,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 
 \subsubsection{Parallel implementation}
 
-This implementation uses PLINQ (section~\ref{sec:PLINQ}) which easily transforms sequential LINQ query into a parallel one with 2 lines of code.
+This implementation uses PLINQ (section~\ref{sec:PLINQ}) which easily transforms a sequential LINQ query into a parallel one with 2 lines of code.
 This was enabled by using \texttt{Aggregate}, LINQ's equivalent of functional sequence transforming function: \texttt{Seq.Fold}. Force parallelism execution mode is used to make sure that PLINQ internal mechanism won't transform the query into a sequential one.
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{k-means} algorithm}, label={lst:ParKMeans},
@@ -303,7 +304,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 \end{lstlisting}
 
 \subsubsection{Parallel implementation with partitioner}
-To further boost the parallel implementation, data partitioner was used to load balance the data between threads (section~\ref{sec:Partitioners}) (listing~\ref{lst:PartParKMeans}). 
+To further boost the parallel implementation, a data partitioner was used to load balance the data between threads (section~\ref{sec:Partitioners}) (listing~\ref{lst:PartParKMeans}). 
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{k-means} algorithm with partitioner}, label={lst:PartParKMeans},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -328,7 +329,7 @@ private ImmutableList<double> CalculateCenter(IGrouping<ImmutableList<double>, I
 \section{Mandelbrot}
 \label{sec: MandelbrotImp}
 Mandelbrot set images are made by sampling complex numbers and testing for each sample point whether the orbit of the critical point $z = 0$ under iteration of the quadratic map remains bounded (eq.~\ref{eq:Mandelbrot})~\cite{MandelbrotExplorer}. Images of the Mandelbrot set display an elaborate boundary that reveals complex structure arising from the application of simple rules. It's one of the best-known examples of mathematical visualization. It was named in the tribute of a pioneer of fractal geometry, Benoit Mandelbrot, by Adrien Douady~\cite{Douady}.
-It's complexity can be expressed as O(rci) where:
+Its complexity can be expressed as O(rci) where:
 \begin{itemize}
 	\item \emph{r} is the number of rows in the map
 	\item \emph{c} is the number of columns in the map
@@ -341,7 +342,7 @@ z_n + 1 = z_n^2 + c
 \label{eq:Mandelbrot}
 \end{equation}
 
-In the following subsections 3 implementations of Mandelbrot set drawing algorithms will be presented. Each of the them is injected into bitmap generating code (listing~\ref{lst:Bitmap}) during performance benchmarking. Example visualization made during the experiments is presented in fig.~\ref{fig:MandelbrotVis}.
+In the following subsections, 3 implementations of Mandelbrot set drawing algorithms will be presented. Each of them is injected into bitmap generating code (listing~\ref{lst:Bitmap}) during performance benchmarking. An example visualization made during the experiments is presented in fig.~\ref{fig:MandelbrotVis}.
 
 \begin{lstlisting}[style=sharpcstyle, caption={Mandelbrot bitmap generation}, label={lst:Bitmap},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -383,8 +384,8 @@ private static void UnlockBitmap(Bitmap bitmap, BitmapData bitmapData)
 
 \pagebreak
 \subsubsection{Sequential implementation}
-This implementation consists of two nested loops. The outer one iterates over the columns of the bitmap while the inner one iterates over its rows. 
-Pixel coordinates are translated into real and imaginary parts of a complex number by using the \texttt{ComputeColumn} and \texttt{ComputeRow} functions. Afterwards \texttt{BelongsToMandelbrot} function checks if the number is part of the Mandelbrot set (listing~\ref{lst:SeqMandelbrot}).
+This implementation consists of two nested loops. The outer one iterates over the columns of the bitmap, while the inner one iterates over its rows. 
+Pixel coordinates are translated into real and imaginary parts of a complex number by using the \texttt{ComputeColumn} and \texttt{ComputeRow} functions. Afterwards, \texttt{BelongsToMandelbrot} function checks if the number is part of the Mandelbrot set (listing~\ref{lst:SeqMandelbrot}).
 
 \begin{lstlisting}[style=sharpcstyle, caption={Sequential \texttt{Mandelbrot} algorithm}, label={lst:SeqMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -420,7 +421,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \end{lstlisting}
 
 \subsubsection{Parallel implementation}
-Parallel version was implemented using Fork/Join (section~\ref{sec:ForkJoin}) pattern. TPL (section~\ref{sec:TPL})  enables us to easily apply this pattern with multiple parallelization constructs, in this case the \texttt{Parallel.For} replacement for sequential loops (listing~\ref{lst:ParMandelbrot}).
+Parallel version was implemented using Fork/Join (section~\ref{sec:ForkJoin}) pattern. TPL (section~\ref{sec:TPL}) enables us to easily apply this pattern with multiple parallelization constructs, in this case the \texttt{Parallel.For} replacement for sequential loops (listing~\ref{lst:ParMandelbrot}).
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{Mandelbrot} algorithm}, label={lst:ParMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -453,7 +454,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 \end{lstlisting}
 
 \subsubsection{Double parallel implementation}
-This version replaced both sequential loops with TPL's \texttt{Parallel.For} construct. It will be useful to examine how oversaturation impacts the algorithm performance (listing~\ref{lst:DoubleParMandelbrot})
+This version replaced both sequential loops with TPL's \texttt{Parallel.For} construct. It will be useful to examine how oversaturation impacts the algorithm performance (listing~\ref{lst:DoubleParMandelbrot}).
 
 \begin{lstlisting}[style=sharpcstyle, caption={Double parallel \texttt{Mandelbrot} algorithm}, label={lst:DoubleParMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -487,7 +488,7 @@ private static bool BelongsToMandelbrot(ComplexNumber number, int iterations)
 
 \subsubsection{Parallel implementation using value types}
 
-In some cases .NET's Garbage Collector can be the bottleneck of the application. Reference type objects are allocated on the heap and are very cheap to use as a function argument since only the pointer is copied. These objects though have a memory overhead and may heavily tax the GC which will stop the execution of the program until cleanup is done. Contrary to that, value type objects are allocated on the stack and will never cause GC to pause the program. This version uses \texttt{ComplexNumberStruct} objects which are identical to previous versions except they are value type instead of reference type (listing~\ref{lst:ParStructMandelbrot}).
+In some cases .NET's Garbage Collector can be the bottleneck of the application. Reference type objects are allocated on the heap and are very cheap to use as a function argument since only the pointer is copied. These objects though have a memory overhead and may heavily tax the GC, which will stop the execution of the program until cleanup is done. Contrary to that, value type objects are allocated on the stack and will never cause GC to pause the program. This version uses \texttt{ComplexNumberStruct} objects which are identical to previous versions except they are value type instead of reference type (listing~\ref{lst:ParStructMandelbrot}).
 
 \begin{lstlisting}[style=sharpcstyle, caption={Parallel \texttt{Mandelbrot} algorithm using value types}, label={lst:ParStructMandelbrot},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -524,7 +525,7 @@ private static bool BelongsToMandelbrot(ComplexNumberStruct number, int iteratio
 
 \section{NuGet package ranking} 
 \label{sec: NuGetImp}
-NuGet is Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. Following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (section~\ref{sec:MapReduce}). Software has estimated complexity of O($i*nlog_n$), i being the number of operations and n being the amount of packages. 
+NuGet is a Microsoft-supported mechanism for sharing code, a package manager which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles. It's a central package repository used by almost all .NET developers. The following software is used to download, analyze and rank NuGet packages by summing up the score of its dependencies and adding that to the score of the package itself. The software was implemented using MapReduce pattern (section~\ref{sec:MapReduce}). Software has estimated complexity of O($i*nlog_n$), \emph{i} being the number of operations and \emph{n} being the amount of packages. 
 
 Methods used in package ranking are defined in listing~\ref{lst:NugetPackageRanking}. These functions will be later plugged into multiple, generic implementations of MapReduce pattern. \texttt{Map} function is responsible for extracting key-value tuples from NuGet packages. Key represents the package name and float it's score, which will be later computed into the overall score of the package in the \texttt{Reduce} function.
 
@@ -548,7 +549,7 @@ private static (string packageName, float) Reduce(string packageName, IEnumerabl
 
 \subsubsection{Sequential implementation}
 MapReduce pattern is described in detail in section~\ref{sec:MapReduce}. 
-In simple terms \texttt{Map} function is responsible for mapping objects into collections of key-value pairs. In this case it will transform \texttt{NuGetPackage} objects into collection of packageName-score tuples.  \texttt{Reduce} function receives collection of values grouped by pairs, in this case groups of scores grouped by the name of the package. The pattern was implemented using LINQ, with eager materialization in both \texttt{Map} and  \texttt{Reduce} to avoid multiple evaluation of the same sequence (listing~\ref{lst:SeqMapReduce}).
+In simple terms, \texttt{Map} function is responsible for mapping objects into collections of key-value pairs. In this case, it will transform \texttt{NuGetPackage} objects into a collection of packageName-score tuples.  \texttt{Reduce} function receives a collection of values grouped by pairs, in this case groups of scores grouped by the name of the package. The pattern was implemented using LINQ, with eager materialization in both \texttt{Map} and \texttt{Reduce} to avoid multiple evaluation of the same sequence (listing~\ref{lst:SeqMapReduce}).
 
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Sequential \texttt{MapReduce} implementation}, label={lst:SeqMapReduce},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -578,7 +579,7 @@ private static IEnumerable<TReduced> Reduce<TKey, TValue, TReduced>
 \end{lstlisting}
 
 \subsubsection{Parallel implementation}
-Parallel implementation adds additional paramater which controls the degree of parallelism to avoid oversaturation. This version was also implemented using PLINQ in a very intuitive and readable way, thanks to the use of MapReduce pattern (listing~\ref{lst:ParMapReduce}).
+Parallel implementation adds an additional parameter which controls the degree of parallelism to avoid oversaturation. This version was also implemented using PLINQ in a very intuitive and readable way, thanks to the use of MapReduce pattern (listing~\ref{lst:ParMapReduce}).
 
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel \texttt{MapReduce} implementation}, label={lst:ParMapReduce},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -601,7 +602,7 @@ private static IEnumerable<TReduced> MapReduce<TIn, TOutKey, TOutValue, TReduced
 \end{lstlisting}
 
 \subsubsection{Parallel implementation with partitioner}
-In the last version load balancing partitioner was used to try to evenly spread the work between the threads (listing~\ref{lst:PartParMapReduce}).
+In the last version, load balancing partitioner was used to try to evenly spread the work between the threads (listing~\ref{lst:PartParMapReduce}).
 
 \begin{lstlisting}[language={[sharp]c}, style=sharpcstyle, caption={Parallel \texttt{MapReduce} implementation with partitioner}, label={lst:PartParMapReduce},
 numbers=none, xleftmargin=0pt,framexleftmargin=0pt,framexrightmargin=0pt,framexbottommargin=0pt]
@@ -625,5 +626,4 @@ private static IEnumerable<TReduced> PartitionerMapReduce<TIn, TOutKey, TOutValu
 \end{lstlisting}
 
 With the last piece of software described, this chapter comes to an end. Following chapter will put these algorithms to a test using benchmarks described in chapter~\ref{chap:3}.
-
 

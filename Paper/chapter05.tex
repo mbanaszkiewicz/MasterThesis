@@ -1,22 +1,21 @@
 \chapter{Experiments}
 \label{chap:5}
-Chapter~\ref{chap:3} described how the experiments are to be executed and Chapter 4 described the subjects of the tests, algorithms and software. This chapter contains the results of these experiments. Each of the sections will contain graphs and tables showcasing the results, alongside a brief description of the numbers produced. 
+Chapter~\ref{chap:3} described how the experiments are to be executed, and Chapter 4 described the subjects of the tests, algorithms and software. This chapter contains the results of these experiments. Each of the sections will contain graphs and tables showcasing the results, alongside a brief description of the numbers produced. 
 
 \section{Quicksort}
 \label{sec: QuickSort}
 Quicksort experiments were conducted with 3 sizes of arrays, 6 implementations and 2 .NET environment version (tab.~\ref{tab:QuicksortParameters}). 
 
-.NET version had significant impact on functional implementation of the algortihm. Functional version showed average of $\approx 27\%$ improvement (fig.~\ref{fig:47vsCoreFunc1000000}) on .NET Core 3.1, while the imperative smaller but still significant  $\approx 9\%$ (fig.~\ref{fig:47vsCoreImp1000000}).
+.NET version had significant impact on functional implementation of the algortihm. Functional version showed an average of $\approx 27\%$ improvement (fig.~\ref{fig:47vsCoreFunc1000000}) on .NET Core 3.1, while the imperative smaller but still significant  $\approx 9\%$ (fig.~\ref{fig:47vsCoreImp1000000}).
 
-Async-await version performed worse in all scenarios. Functional version was slower on average by $\approx 54\%$, while the imperative by dramatic $\approx 96\%$. These relations where consistent across all array sizes and version, slightly favouring .NET Core 3.1 (tab.~\ref{tab:QuicksortBenchmarking}).
+Async-await version performed worse in all scenarios. The functional version was slower on average by $\approx 54\%$, while the imperative by dramatic $\approx 96\%$. These relations were consistent across all array sizes and version, slightly favouring .NET Core 3.1 (tab.~\ref{tab:QuicksortBenchmarking}).
 
-The optimized parallel versions with depth control performed significantly better. LINQ version gained average reduction  of $\approx 45\%$ while the imperative one 
+The optimized parallel versions with depth control performed significantly better. LINQ version gained average reduction of $\approx 45\%$ while the imperative one 
 $\approx 21\%$. Here difference between .NET version was more pronounced. A difference of 4 percentage points for the functional one (43\% -> 47\%) and 7 percentage points for the imperative one (18\% -> 25\%) (tab.~\ref{tab:QuicksortBenchmarking}).
 
-Imperative version of quick sort algorithm performer better than the functional one. On average it was faster by $\approx 95\%$ on .NET Framework 4.7 and $\approx 91\%$ on .NET Core 3.1 (fig.~\ref{fig:FuncVsImp1000000}).
+Imperative version of quick sort algorithm performer better than the functional one. On average, it was faster by $\approx 95\%$ on .NET Framework 4.7 and $\approx 91\%$ on .NET Core 3.1 (fig.~\ref{fig:FuncVsImp1000000}).
 
-Memory consumption increased in both versions. Functional parallel version consumed $\approx 17\%$ more memory by average. Imperative parallel version increased it $\approx 73\%$. This was consistent among the .NET versions but consumption increased less the bigger the sorted array was (tab.~\ref{tab:QuicksortBenchmarking}).
-
+Memory consumption increased in both versions. Functional parallel version consumed $\approx 17\%$ more memory by average. Imperative parallel version increased it $\approx 73\%$. This was consistent among the .NET versions, but consumption increased less the bigger the sorted array was (tab.~\ref{tab:QuicksortBenchmarking}).
 
 \begin{table}[!ht]
     \centering
@@ -136,10 +135,10 @@ OptimizedParallelImperative	&	1000000	&	158.91	&	2.51	&	2.1	&	18250	&	3750	&	750
 \section{K-means clustering}
 \label{sec: K-means}
 K-means clustering algorithm experiments were conducted using \emph{White 
-wine quality} dataset \cite{WhiteWine}. Sequential version of the algorithm 
+wine quality} dataset \cite{WhiteWine}. The sequential version of the algorithm 
 had MET $\approx 2.45s$ while the parallel one had MET $\approx 0.5s$, for a $
 \approx 80\%$ reduction at the cost of $\approx 18\%$ increase of memory 
-consumption. Using partitioner further dropped down the MET to $\approx 0.43s$
+consumption. Using partitioner further dropped MET to $\approx 0.43s$
  which is a $\approx 82\%$ reduction from the sequential version and $\approx 
 15\%$ from the parallel one with equal memory consumption increase (fig.~\ref{fig:KMeansPerformance}, fig.~\ref{fig:KMeansMemory}, tab.~\ref{tab:KMeansBenchmarking}).
 
@@ -193,16 +192,14 @@ PartitionerParallel & 434.5 	& 2.69 	& 2.52 	& 23000 & 	8000 & 	0 & 184  \\
 Mandelbrot algorithm experiments were conducted using parameters presented in 
 tab.~\ref{tab:MandelbrotParameters}. They describe amount of pixels 
 generated and bitmap dimensions.
-Sequential version of the algorithm had a MET  $\approx 5.6s$ . Parallel 
-counterpart clocked at MET  $\approx 2.1s$, for a $\approx 62\%$ reduction. 
-Parallel version with two \emph{Parallel.For} loops had a MET $\approx 2.7s$ 
+Sequential version of the algorithm had a MET $\approx 5.6s$. Parallel 
+counterpart clocked at MET $\approx 2.1s$, for a $\approx 62\%$ reduction. 
+Parallel version with two \texttt{Parallel.For} loops had a MET $\approx 2.7s$ 
 which is $\approx 21\%$ slower than the less parallelized version using only 
 one parallel loop. The best performing version using value type complex 
 number had MET $\approx 1.9s$, for a $\approx 66\%$  reduction compared to 
-sequential version and $\approx 11\%$  reduction to the parallel version. 
-Additionaly, the value type version had 0 GC clean ups and virtually no (
-compared to others) memory consumption (fig.~\ref{fig:MandelbrotPerformance}
-, tab.~\ref{tab:MandelbrotBenchmarking}).
+the sequential version and $\approx 11\%$  reduction to the parallel version. 
+Additionaly, the value type version had 0 GC clean-ups and virtually no (compared to others) memory consumption (fig.~\ref{fig:MandelbrotPerformance}, tab.~\ref{tab:MandelbrotBenchmarking}).
 
 \begin{table}[!ht]
     \centering
@@ -266,16 +263,16 @@ compared to others) memory consumption (fig.~\ref{fig:MandelbrotPerformance}
 NuGet package ranking software was tested using 3 datasets varying in size, other parameters were constast across tests (tab.~\ref{tab:NuGetParameters}). 
 
 When testing with the small dataset, sequential version had MET $\approx 1.7s$, while parallel one had MET $\approx 0.35s$ for a $\approx 79\%$ reduction. 
-In this case, usage of partitioner worsened the performance with MET  $\approx 0.38s$, which is $\approx 6\%$ slower (fig.~\ref{fig:NugetPerfSmall}). 
+In this case, usage of partitioner worsened the performance with MET $\approx 0.38s$, which is $\approx 6\%$ slower (fig.~\ref{fig:NugetPerfSmall}). 
 
 During tests with the medium dataset, sequential version had MET $\approx 17.5 s$. Parallel version clocket at $\approx 4.6s$, for a $\approx 76\%$ 
-reduction. This time partitioner version improved the performance at MET $ \approx 3s$, which is $\approx 35\%$ faster than the bare parallel 
+reduction. This time partitioner version improved the performance to MET $ \approx 3s$, which is $\approx 35\%$ faster than the bare parallel 
 counterpart (fig.~\ref{fig:NugetPerfMed}). 
 
-Finally sequential version on the large dataset had MET $\approx 56.9s$ while the parallel one had MET $\approx 14.4s$ which is $\approx 75\%$ less.
+Finally, sequential version on the large dataset had MET $\approx 56.9s$ while the parallel one had MET $\approx 14.4s$ which is $\approx 75\%$ less.
 The partitioner continued the reducing trend at MET $\approx 9.4s$, improving the parallel version by $\approx 42 \%$ (fig.~\ref{fig:NugetPerfLarge}). 
 
-Across all dataset the parallel version observed increase of memory consumption of $\approx 14\%$ (fig.~\ref{fig:NugetMemory}) (tab.~\ref{tab:NugetBenchmarking}).
+Across all dataset, the parallel version observed increase of memory consumption of $\approx 14\%$ (fig.~\ref{fig:NugetMemory}) (tab.~\ref{tab:NugetBenchmarking}).
 \begin{table}[!ht]
     \centering
     \caption{Nuget package ranking experiments parameters}
@@ -369,6 +366,5 @@ Across all dataset the parallel version observed increase of memory consumption 
 All experiments were properly displayed and described. Next chapter will 
 discuss the implications of these results and formulate a set of guidelines 
 based on them. 
-
 
 

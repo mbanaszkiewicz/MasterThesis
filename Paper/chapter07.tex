@@ -1,7 +1,7 @@
 \chapter{Conclusions}
 The goal of this thesis was to explore how application of concurrency tools proviced by the .NET platform
 on algorithms and software impacts their performance. This entailed implementing each of the software pieces
-in multiple versions, using various tools like Task Parallel Library or PLINQ and executing extensive experiments on them.
+in multiple versions, using various tools like Task Parallel Library or PLINQ, and executing extensive experiments on them.
 \\ \\ 
 The outcome of this thesis are multiple implementations of following software pieces: 
 \begin{itemize}
@@ -11,9 +11,9 @@ The outcome of this thesis are multiple implementations of following software pi
 	\item Nuget package ranking.
 \end{itemize}
 
-These versions used among others: TPL's \texttt{Parallel.For}, PLINQ's parallel queries, load balancing data partitioners and Fork/Join and MapReduce patterns.
-For each of them tests measuring mean estimated time, memory consumption and others were conducted. 
-Test data was presented in form of tables, graphs and written summaries. 
+These versions used, among others: TPL's \texttt{Parallel.For}, PLINQ's parallel queries, load balancing data partitioners and Fork/Join and MapReduce patterns.
+For each of them, tests measuring mean estimated time, memory consumption and others were conducted. 
+Test data was presented in the form of tables, graphs and written summaries. 
 Finally, the results of the tests were analyzed and catalyzed into a set of guidelines to aid future parallel ventures in .NET. 
 \\ \\ 
-Key aspect of this thesis was starting the benchmarking in the early stages of development. Thanks to that many early, faulty implementations were discarded and the versions left might be called truly optimized. The hardest part was the implementation alone, parallel programming even for experienced person is complicated and requires a great dose of focus and dedication. Hopefully this paper will inspire next developers to conduct similar experiments on different algorithms and setups, further expanding this body of literature. 
+Key aspect of this thesis was starting the benchmarking in the early stages of development. Thanks to that, many early, faulty implementations were discarded, and the versions left might be called truly optimized. The hardest part was the implementation alone, parallel programming even for an experienced person is complicated and requires a great dose of focus and dedication. Hopefully this paper will inspire next developers to conduct similar experiments on different algorithms and setups, further expanding this body of literature. 

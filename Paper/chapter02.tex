@@ -1,11 +1,12 @@
 \chapter{Concurrency and Threads in .NET}
+
 This chapter serves as an overall introduction to the reader to concurrency in .NET. Common terminology used in parallel computing will be presented together with .NET specific tools and technologies. 
 
 \section{Concurrency terminology}
 This section defines common terminology used in this thesis. These terms are often used in the same context, but even though they are similar, they have different meanings. It is imperative to be aware of these distinctions in order to be able to reason clearly about software and multithreading.
 
 \paragraph{Sequential programming\newline}
-\emph{Sequential programming} is a way of writing code as step by step instructions. It is a convenient and easy to understand approach where mistakes about what to do and when do it are less common.
+\emph{Sequential programming} is a way of writing code as step-by-step instructions. It is a convenient and easy to understand approach where mistakes about what to do and when to do it are less common.
 The disadvantage of performing operations this way is that the thread must wait during parts of the process, being effectively blocked. Blocking threads and singular instructions make poor use of device resources.
 To reiterate, sequential programming is a set of consecutive, progressively ordered instruction execution in linear fashion (fig.~\ref{fig:seq}).
 
@@ -16,13 +17,13 @@ To reiterate, sequential programming is a set of consecutive, progressively orde
 	\label{fig:seq}
 \end{figure}
 
-In imperative and object-oriented languages there is a tendency to write sequential code, with all attention and resources focused on the task currently running. Programs are modeled and executed by performing an ordered set of statements, one after another~\cite{terrell_2018}.
+In imperative and object-oriented languages, there is a tendency to write sequential code, with all attention and resources focused on the task currently running. Programs are modeled and executed by performing an ordered set of statements, one after another~\cite{terrell_2018}.
 
 \paragraph{Concurrent programming\newline}
 In computer science, \emph{concurrency} is the ability of different parts of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome~\cite{lamport1978time}.
 
 Concurrency is used to achieve real multitasking in an application, by modeling the application into multiple, autonomous processes that run at the same in different threads.
-As an example let's examine an online video streamer. The program downloads data from the network, decompresses it and displays the video on screen.
+As an example, let's examine an online video streamer. The program downloads data from the network, decompresses it and displays the video on screen.
 Concurrency gives the impression that all of these parts of the program are executing simultaneously, an illusion of parallelism is created. 
 But in a single-core environment, the execution of one thread is temporarily paused and switched to another thread, this is called context switching, as shown in fig.~\ref{fig:convspar}.
 \begin{figure}[htb]
@@ -39,7 +40,7 @@ by assigning each process to a separate processor or processor core, or distribu
 \emph{Parallelism} is the idea of processing tasks simultaneously for performance and throughput improvement of a program. Although all parallel programs are concurrent, it was demonstrated that not all concurrency is parallel.
 Parallel execution is constrained by the runtime environment of the program, devices need to be equiped with multicore CPUs to support it (fig.~\ref{fig:convspar}).
 
-Timing is the qualifying factor for parallelism. It may be achieved by dividing a single task into multiple, self-contained subtasks. When they are run simultaneously on available cores and their execution overlaps in time then the program is parallel (fig.~\ref{fig:seqvspar}).
+Timing is the qualifying factor for parallelism. It may be achieved by dividing a single task into multiple, self-contained subtasks. When they are run simultaneously on available cores and their execution overlaps in time, then the program is parallel (fig.~\ref{fig:seqvspar}).
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=1.0]{figures02/seqvspar.png}
@@ -60,11 +61,11 @@ T_N = \frac{1}{(1 - P) + \frac{P}{N}}
 where
 \begin{itemize}
 	\item $T_N$ is the theoretical speedup of execution,
-	\item $P$ is percentage of parallel code,
-	\item $N$ is available number of cores.
+	\item $P$ is the percentage of parallel code,
+	\item $N$ is the available number of cores.
 \end{itemize}
 
-This equation emphasizes reducing the amount of sequential code but it makes many simplifying assumptions which make it fit only few very specific scenarios. It doesn't take into account performance saturation, thread overhead or overlapping of serial and parallel code \cite{Popov2010}.
+This equation emphasizes reducing the amount of sequential code, but it makes many simplifying assumptions which make it fit only a few very specific scenarios. It doesn't take into account performance saturation, thread overhead or overlapping of serial and parallel code \cite{Popov2010}.
 John L. Gustafson in his article named \emph{"Reevaluating Amdahl's Law"} \cite{Gustafson1988} examined the theoretical speedup in a different and more contemporary perspective, which includes distributed systems and cloud computing. His formula is as follows: 
 \begin{equation}
 T = S + (N*P)
@@ -78,10 +79,10 @@ where
 \end{itemize}
 
 \paragraph{CPU vs GPU computing\newline}
-With the advent of general-purpose computing on graphics processing units one may ask why even bother with CPU parallel programming. Is is true that GPGPU has many advantages over CPU computing, but there two major drawbacks: branching and varying instructions. GPGPU as a technique is very good at dealing with single instructions applied to large amount of data. When branching which is switching instructions during execution happens, GPGPU tends to be outperformed by CPU computing. Thus, for general software development, full of boolean logic and if statements, CPU computing is still the standard way of proceeding \cite{Tarditi2006}.
+With the advent of general-purpose computing on graphics processing units, one may ask why even bother with CPU parallel programming. Is it true that GPGPU has many advantages over CPU computing, but there two major drawbacks: branching and varying instructions. GPGPU as a technique is very good at dealing with single instructions applied to large amount of data. When branching which is switching instructions during execution happens, GPGPU tends to be outperformed by CPU computing. Thus, for general software development, full of boolean logic and if statements, CPU computing is still the standard way of proceeding \cite{Tarditi2006}.
 
 \section{Concurrency and threads in .NET}
-This section will introduce .NET, the subject platform of this thesis. While in-depth understanding of it's vast inner workings may be helpful, it is not necessary for comprehension of this paper. Thus only a brief overview of .NET and Common Language Runtime (CLR) will be presented, reserving most space for explanation of .NET's threading and parallel execution tools. For readers desiring deeper knowledge and insights into CLR concepts I highly recommend exhaustive book \emph{CLR via C\#} by Jefrrey Richter \cite{Richter2012}.
+This section will introduce .NET, the subject platform of this thesis. While in-depth understanding of its vast inner workings may be helpful, it is not necessary for comprehension of this paper. Thus, only a brief overview of .NET and Common Language Runtime (CLR) will be presented, reserving most space for explanation of .NET's threading and parallel execution tools. For readers desiring deeper knowledge and insights into CLR concepts, I highly recommend exhaustive book \emph{CLR via C\#} by Jefrrey Richter \cite{Richter2012}.
 
 \subsection{.NET and CLR}
 \emph{.NET} is a free, open-source development platform developed by Microsoft that supports building and running cross-platform apps of many kinds like:
@@ -96,7 +97,7 @@ All applications have access to the same runtime, APIs and class library which a
 
 \emph{CLR} is the foundational virtual machine component of .NET which implements the Virtual Execution System (VES) defined by Microsoft's Common Language Infrastructure (CLI). The runtime is an agent that provides a managed execution environment, supporting core services such as memory management, thread management, and remoting, while also enforcing strict type safety and other forms of code accuracy that promote security and robustness~\cite{IntroductionToNet}.\\
 
-The managed execution process starts with choosing one of Commong Language Specification (CLS) compliant compilers, most popular being C\#, F\# and Visual Basic. The compiler translates source code into Microsoft Intermediate Language (MSIL). In this form code is CPU-independent and before it is run it must be converted to native code, usually by just-in-time (JIT) compiler. This process is performed on demand at application run time, when the contents of an assembly are loaded and executed \cite{ManagedExecution}.
+The managed execution process starts with choosing one of Common Language Specification (CLS) compliant compilers, most popular being C\#, F\# and Visual Basic. The compiler translates source code into Microsoft Intermediate Language (MSIL). In this form code is CPU-independent, and before it is run it must be converted to native code, usually by just-in-time (JIT) compiler. This process is performed on demand at application run time, when the contents of an assembly are loaded and executed \cite{ManagedExecution}.
 CLR execution model is presented in fig.~\ref{fig:clr}.
 
 \begin{figure}[htb]
@@ -108,8 +109,8 @@ CLR execution model is presented in fig.~\ref{fig:clr}.
 
 
 \subsection{Threading in .NET}
-A \emph{thread} is the fundamental unit to which an operating system (OS) allocates CPU time. Numerous threads can run inside of a \emph{process} which is a separate, executing program inside the OS.
-When a thread is paused, system uses structures built into the thread to save it's context. The context contains all the information required for the thread to effortlessly resume execution. All threads spawned in the process share the same virtual address space and they can access and execute any part of the source code, including the parts currently handled by another thread.
+A \emph{thread} is the fundamental unit to which an operating system (OS) allocates CPU time. Numerous threads can run inside a \emph{process} which is a separate, executing program inside the OS.
+When a thread is paused, the system uses structures built into the thread to save its context. The context contains all the information required for the thread to effortlessly resume execution. All threads spawned in the process share the same virtual address space, and they can access and execute any part of the source code, including the parts currently handled by another thread.
 
 Most .NET programs start execution with a single thread, which is usually called the \emph{primary} thread. If the application requires parallel or asynchronous operations during runtime, additional threads, called \emph{worker threads} are created.
 
@@ -117,17 +118,17 @@ Management of all threads is done through the /emph{Thread} class, including thr
  
 A managed thread is either a \emph{background thread} or a \emph{foreground thread}. Foreground threads are what keeps the execution environment running. When all foreground threads in a managed process have been stopped, the system closes all background threads and shuts down the process. 
 
-Since all threads can accesses properties and methods of an single object, \emph{synchronization} is critical during multithreaded processing. Without it objects might me mutated into invalid state or threads might interrupt or even prevent each other from completing. A class whose members are protected from such interruptions is called \emph{thread-safe}~\cite{ManagedThreading}.\\ 
+Since all threads can accesses properties and methods of a single object, \emph{synchronization} is critical during multithreaded processing. Without it, objects might be mutated into invalid state or threads might interrupt or even prevent each other from completing. A class whose members are protected from such interruptions is called \emph{thread-safe}~\cite{ManagedThreading}.\\ 
 
-.NET provides several synchronization strategies including but not limited to:
+.NET provides several synchronization strategies, including but not limited to:
 \begin{itemize}
-	\item Synchronized code regions with \emph{Monitor} class or compiler support.
+	\item Synchronized code regions with \texttt{Monitor} class or compiler support.
 	\item Manual synchronization with synchronization primitives.
-	\item Collection classes in the System.Collections.Concurrent namespace. 
+	\item Collection classes in the \texttt{System.Collections.Concurrent} namespace. 
 \end{itemize}
 
 \subsection{Thread overhead}
-Threads are a powerful tool which enable greater responsiveness and throughput of program, but as with every virtualization mechanism, threads have memory consumption and runtime execution performance overhead associated with them. That overhead will be later measured during experiments, so it's important to explore what's causing it. \\
+Threads are a powerful tool which enable greater responsiveness and throughput of a program, but as with every virtualization mechanism, threads have memory consumption and runtime execution performance overhead associated with them. That overhead will be later measured during experiments, so it's important to explore what's causing it. \\
 
 Creating, destroying and having threads existing in the system has time and space overhead since all threads has one of each of the following:
 \begin{itemize}
@@ -138,19 +139,19 @@ Creating, destroying and having threads existing in the system has time and spac
 	\item \textbf{DLL thread-attach and thread-detach notifications} -- \texttt{DLL\_THREAD\_ATTACH} and \texttt{DLL\_THREAD\_DETACH} flags are passed to unmanaged DLLs when they are loaded by the process.
 \end{itemize}
 
-A CPU can only simultaneously execute as many threads as there are physical cores. Therefore, OS has to share the actual CPU hardware among all the threads (logical CPUs) that are sitting around in the system. In .NET a thread is allowed to run for a time-slice. When it expires, context switch occurs. Every context switch requires:
+A CPU can only simultaneously execute as many threads as there are physical cores. Therefore, OS has to share the actual CPU hardware among all the threads (logical CPUs) that are sitting around in the system. In .NET, a thread is allowed to run for a time-slice. When it expires, a context switch occurs. Every context switch requires:
 \begin{itemize}
 	\item Saving the values of CPU's registers to the thread's kernel object.
-	\item Selecting another thread to schedule. If this thread belong to another process, then new virtual address space must be loaded.
+	\item Selecting another thread to schedule. If this thread belongs to another process, then new virtual address space must be loaded.
 	\item Load values of CPU's registers from the thread's kernel object.
 \end{itemize}
 
-On top of that, if the new thread doesn't use the same code and data as the previous thread, then CPU has to access RAM memory to populate it's cache.\\
+On top of that, if the new thread doesn't use the same code and data as the previous thread, then the CPU has to access RAM memory to populate its cache.\\
 
-Context switches are needed to provide end users with responsive experience, but there is no other memory or performance benefit to them. Since they are pure overhead, they should be minimized when programming for performance~\cite{Richter2012Overhead}.
-   
+Context switches are needed to provide end users with a responsive experience, but there is no other memory or performance benefit to them. Since they are pure overhead, they should be minimized when programming for performance~\cite{Richter2012Overhead}.
+
 \subsection{ThreadPool in CLR} 
-To improve the resource consumption situation, the CLR contains code to manage its own ThreadPool. Instead of creating and deleting threads for every request, it maintains a set of threads for reuse. Tasks from operation queue are dispatched to threads existing in the pool. When the task is completed, thread is returned to the pool instead of being deleted (fig.~\ref{fig:threadpool}).
+To improve the resource consumption situation, the CLR contains code to manage its own ThreadPool. Instead of creating and deleting threads for every request, it maintains a set of threads for reuse. Tasks from the operation queue are dispatched to threads existing in the pool. When the task is completed, the thread is returned to the pool instead of being deleted (fig.~\ref{fig:threadpool}).
 
 \begin{figure}[htb]
 	\centering
@@ -163,6 +164,7 @@ To improve the resource consumption situation, the CLR contains code to manage i
 CLR's ThreadPool saw many advancements in .NET 4.0 release, facilitating concurrent and parallel execution on multi-core architectures. Two major points were considered during development, quick work dispatch and throttling the degree of parallelism. While the former one is very important, it has relatively low impact on the topic of this paper. 
 However, it is important to know that the CLR uses Hill Climbing algorithm and signal processing techniques to throttle the amount of threads spawned in the ThreadPool. These can, in specific and rare situations, be manually adjusted for further performance increases \cite{Fuentes2010}.
 
+
 \subsection{Tools and patterns}
 \subsubsection{TPL}
 \label{sec:TPL}
@@ -172,17 +174,23 @@ The TPL abstracts many low-level details like state management, cancellation, pa
 
 \subsubsection{PLINQ}
 \label{sec:PLINQ}
-Language Integrated Query (or LINQ as it is commonly called) is a query execution engine which features a unified model for querying any enumerable data source in a type-safe manner. Parallel LINQ (PLINQ) is a parallel execution engine that can be used to execute LINQ queries on multi-core systems. PLINQ provides excellent support for implementing declarative data parallelism in applications using the \texttt{ParallelEnumerable} and \texttt{ParallelQuery} classes which can be found in \texttt{System.Linq} namespace.
+Task Parallel Library (TPL) is a library for .NET that makes it easy to take advantage of potential parallelism in a program. The library relies heavily on generics and delegate expressions to provide custom control structures expressing structured parallelism such as map-reduce in user programs. Types and APIs of TPL are available in the System.Threading and System.Threading.Tasks namespaces.
+
+The TPL abstracts many low-level details like state management, cancellation, partitioning of work or scheduling threads on the ThreadPool. It also dynamically scales the degree of parallelism to optimize usage of available processors. Starting with .NET Framework 4, the TPL is the preferred way to write multithreaded and parallel code~\cite{Leijen2009}.
+
+\subsubsection{PLINQ}
+\label{sec:PLINQ}
+Language Integrated Query (or LINQ as it is commonly called) is a query execution engine which features a unified model for querying any enumerable data source in a type-safe manner. Parallel LINQ (PLINQ) is a parallel execution engine that can be used to execute LINQ queries on multi-core systems. PLINQ provides excellent support for implementing declarative data parallelism in applications using the \texttt{ParallelEnumerable} and \texttt{ParallelQuery} classes, which can be found in \texttt{System.Linq} namespace.
 
 Most important methods of \texttt{ParallelQuery} class are called \texttt{.AsParallel()} and \texttt{.AsSequential()}. These enable easy conversion of sequential queries into parallel ones and vice versa.
 
 \subsubsection{Partitioners}
 \label{sec:Partitioners}
-Data source needs to be partitioned into multiples sections before parallelizing an operation on it. Only then these sections can be accessed concurrently my multiple threads. PLINQ and the TPL provide default partitioners which do not use load balancing. Custom partitioners can be provided to change that. Overloads of the \texttt{Partitioner.Create} method enable developer's to specify whether it should attempt load balance data between threads. It uses chunk partitioning in which the elements are passed in small chunks to each task when they request it. This approach helps ensure that work is spread evenly throughout all working tasks until the entire query is completed~\cite{Partitioners}.
+Data source needs to be partitioned into multiples sections before parallelizing an operation on it. Only then these sections can be accessed concurrently by multiple threads. PLINQ and the TPL provide default partitioners which do not use load balancing. Custom partitioners can be provided to change that. Overloads of the \texttt{Partitioner.Create} method enable developer's to specify whether it should attempt to load balance data between threads. It uses chunk partitioning, in which the elements are passed in small chunks to each task when they request it. This approach helps ensure that work is dispersed evenly throughout all working tasks until the entire query is completed~\cite{Partitioners}.
 
 \subsubsection{Fork/Join}
 \label{sec:ForkJoin}
-The Fork/Join pattern is built from two primary steps. First a single thread splits a given task into a series of subtasks designated to run in parallel. Afterwards the thread waits for the parallel operations to complete so that it can merge the results into the final output (fig.~\ref{fig:ForkJoin}). When applied recursively, Fork/Join achieves the divide-and-conquer paradigm.
+The Fork/Join pattern is built from two primary steps. First, a single thread splits a given task into a series of subtasks designated to run in parallel. Afterwards, the thread waits for the parallel operations to complete so that it can merge the results into the final output (fig.~\ref{fig:ForkJoin}). When applied recursively, Fork/Join achieves the divide-and-conquer paradigm.
 \begin{figure}[htb]
 	\centering
 		\includegraphics[scale=1.0]{figures02/forkjoin.png}
@@ -193,13 +201,13 @@ The Fork/Join pattern is built from two primary steps. First a single thread spl
 \subsubsection{MapReduce}
 \label{sec:MapReduce}
 MapReduce pattern, introduced in \emph{MapReduce: Simplified
-Data Processing on Large Clusters} \cite{MapReduce} paper provides solution for big data analysis. It's designed to enable scalable computations on multiple machines. It has found great use in domains requiring operations on massive datasets like machine learning, image processing or data mining.
+Data Processing on Large Clusters} \cite{MapReduce} paper, provides solution for big data analysis. It's designed to enable scalable computations on multiple machines. It has found great use in domains requiring operations on massive datasets like machine learning, image processing or data mining.
 \emph{map} and \emph{reduce} combinators used in fuctional paradigm were the source of inspiration for the MapReduce model (Fig. \ref{fig:MapReduce}). This style of programming can be used without knowledge of concurrent programming, all low-level details can be handled by the actual runtime (TPL in case of .NET).
-The overarching idea of this pattern is to query streams of data by various maps and reductions. \emph{Map} operations are the ones that preserve the number of elements but transform them into a different format. Afterwards the elements are reduced by filtering or aggregating. \\
-In this thesis MapReduce will be implemented in a generic fashion with two main phases:
+The overarching idea of this pattern is to query streams of data by various maps and reductions. \emph{Map} operations are the ones that preserve the number of elements but transform them into a different format. Afterwards, the elements are reduced by filtering or aggregating. \\
+In this thesis, MapReduce will be implemented in a generic fashion with two main phases:
 \begin{itemize}
 	\item \emph{Map} receives the input and is responsible for mapping objects into collections of key-value pairs. The values are grouped by the key value and passed to the second phase.
-\item \emph{Reduce} aggregates the results from \emph{Map} by applying a function to values with the same key, with goal of reducing the amount of data. From there more functions can be composed into the chain.
+\item \emph{Reduce} aggregates the results from \emph{Map} by applying a function to values with the same key, with the goal of reducing the amount of data. From there, more functions can be composed into the chain.
 \end{itemize}
 
 \begin{figure}[htb]
@@ -209,4 +217,4 @@ In this thesis MapReduce will be implemented in a generic fashion with two main 
 		\label{fig:MapReduce}
 \end{figure}
 
-Having explained .NET parallelism tools and concepts used in the thesis, next chapter will present the test environment in which experiments will be conducted. 
+Having explained .NET parallelism tools and concepts used in the thesis, the next chapter will present the test environment in which experiments will be conducted. 
